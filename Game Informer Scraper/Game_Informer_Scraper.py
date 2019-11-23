@@ -2,11 +2,15 @@
 import requests
 from bs4 import BeautifulSoup
 import re
-import datetime
+import json
+
+# TODO
+# - Create array of indices and add index if the length of gamesArray, systemsArray, and yearReleasedArray differ.
+# Used to correct special episode titles.
 
 # return true if tag is h2 and text includes 'season'
-def game(tag):
-    return (tag.name == "h2") and tag.find("span", text=re.compile("Season"))
+#def game(tag):
+#    return (tag.name == "h2") and tag.find("span", text=re.compile("Season"))
 
 url = 'https://replay.fandom.com/wiki/List_of_Replay_episodes'
 response = requests.get(url, timeout=5)
@@ -19,6 +23,7 @@ if response:
 
     replaySeason = 0
     replayEpisodeArray = []
+    # for each season
     for season in content.find_all("span", text=re.compile("Season")):
 
         # Print season number
@@ -35,26 +40,23 @@ if response:
         else:
             replaySeason = 0
 
+        # for each episode of replay
         for replayEpisode in season.parent.find_next_sibling("table").find_all("tr"):
             dataArray = replayEpisode.find_all("td", recursive=False, limit=10)
             if dataArray:
                 print("-------------------------------------------------------") # separates each episode
-                replayEpisodeDict = {
-                    "episodeNumber": 0,
-                    "episodeTitle": dataArray[1].a['title'].replace('\n',''),
-                    "fandomWikiURL": dataArray[1].a['href'],
-                    "mainSegmentGames": [],
-                    "system": [], # dataArray[2].string.replace('\n',''),
-                    "yearReleased": [], # int(dataArray[3].string.replace('\n','')),
-                    "airDate": dataArray[4].get_text(strip=True).replace('\n',''),
-                    "videoLength": dataArray[5].get_text(strip=True).replace('\n',''),
-                    "middleSegment": "", # only in season 3
-                    "middleSegmentContent": "", # only in season 3
-                    "secondSegment": "", # assign Replay Roulette to season 1
-                    "secondSegmentGames": []
-                    }
+
+                # empty dict to assign keys and values
+                replayEpisodeDict = {}
+
                 # episodeNumber
                 replayEpisodeDict["episodeNumber"] = int(dataArray[0].get_text(strip=True).replace('\n',''))
+
+                # episodeTitle
+                replayEpisodeDict["episodeTitle"] = dataArray[1].a['title'].replace('\n','')
+
+                # fandom wiki URL
+                replayEpisodeDict["fandomWikiURL"] = dataArray[1].a['href']
 
                 # mainSegmentGames
                 gamesArray = []
@@ -95,13 +97,19 @@ if response:
                 # add array of games to episode dictionary
                 replayEpisodeDict["mainSegmentGamesAdv"] = mainSegmentGamesArrayAdv
 
+                # airDate
+                replayEpisodeDict["airDate"] = dataArray[4].get_text(strip=True).replace('\n','')
+
+                # videoLength
+                replayEpisodeDict["videoLength"] = dataArray[5].get_text(strip=True).replace('\n','')
+
                 # middleSegment / middleSegmentContent (only for season 3)
                 # TODO: Only add key/value for episodes in Season 3. Don't include in other seasons
                 if replaySeason==3:
                     replayEpisodeDict["middleSegment"] = dataArray[6].get_text(strip=True).replace('\n','')
                     replayEpisodeDict["middleSegmentContent"] = dataArray[7].get_text(strip=True).replace('\n','')
 
-                # secondSegment
+                # secondSegment (assign RR to first season)
                 if replaySeason == 1:
                     index = 5
                     replayEpisodeDict["secondSegment"] = "RR"
@@ -112,60 +120,86 @@ if response:
                 # secondSegmentGames
                 secondSegmentGamesArray = []
                 # SPECIAL CASE: check if there is a missing tag element (see episode 379)
+                # OR use last element of dataArray assuming it will always be secondSegmentGames
                 if len(dataArray) == index+2:
                     for gameString in dataArray[index+1].stripped_strings:
                         secondSegmentGamesArray.append(gameString)
                 replayEpisodeDict["secondSegmentGames"] = secondSegmentGamesArray
 
-                #replayEpisodeArray.append(replayEpisodeObject)
+                # season
+                replayEpisodeDict["season"] = replaySeason
+
+                replayEpisodeArray.append(replayEpisodeDict)
                 print(replayEpisodeDict)
-            #for data in dataArray:
-            #    print(data.string) # data.text.encode('utf-8')
-        # set season value to apply to each replay episode
 
-#        EPISODES TO TEST: 102, 106, 212, 216, 218, 269, 320, 379, 492
-#        replayEpisodeObject = {
-#            "episodeNumber": 286,
-#            "episodeTitle": "Prince of Persia: The Sands of Time",
-#            "fandomWikiURL": "", # use to get summary of episode and list of host/guests
-#            "mainSegmentGames": [Prince of Persia: The Sands of Time],
-#            "system": "[PS3]",
-#            "yearReleased": [2010],
-#            "airdate": "6/6/15",
-#            "videoLength": "1:02:04",
-#            "middleSegment": "",
-#            "middleSegmentFandomWikiURL": "",
-#            "middleSegmentContent": "Nintendo 64 Price Drop and Player's Choice Games Ad",
-#            "secondSegment": "Replay Roulette",
-#            "secondSegmentFandomWikiURL": "",
-#            "secondSegmentGames": ["Prince of Persia: The Forgotten Sands"],
-#
-#            "mainSegmentGames": [
-#                {
-#                    "title": "",
-#                    "system": "",
-#                    "yearReleased": ""
-#                },
-#                {
-#                    "title": "",
-#                    "system": "",
-#                    "yearReleased": ""
-#                 }
-#              ],
-#
-#            "season": 3,
-#            "guests": [host, guest01, guest02, ...],
-#
-#            "youtubeURL": "",
-#            "youtubeImageURL": "",
-#            "youtubeDescription": ""
-#            }
-
+    with open('gameInformerReplayFandomWikiData.json', 'w') as outfile:
+        json.dump(replayEpisodeArray, outfile, indent=4)
 else:
     print('An error has occurred')
 
-gameDict = {
-    "title": "",
-    "system": "",
-    "yearReleased": ""
-    }
+#gameDict = {
+#    "title": "",
+#    "system": "",
+#    "yearReleased": ""
+#    }
+
+#EPISODES TO TEST: 1,102, 106, 212, 216, 218, 253, 269, 277
+# 307, 320, 322, 324, 331, 344, 347, 349, 355, 361, 362, 366, 379, 392
+# 403-408, 412, 414 422, 443, 444, 449, 452-454, 458, 466, 469, 480, 492
+#
+#replayEpisodeDict02 = {
+#    "episodeNumber": 286,
+#    "episodeTitle": "Replay: Prince of Persia: The Sands of Time",
+#    "fandomWikiURL": "", # use to get summary of episode and list of host/guests
+#    "mainSegmentGames": [
+#        {
+#            "title": "",
+#            "system": "",
+#            "yearReleased": ""
+#        },
+#        {
+#            "title": "",
+#            "system": "",
+#            "yearReleased": ""
+#        }
+#    ],
+#    "airDate": "6/6/15",
+#    "videoLength": "1:02:04",
+#    "middleSegment": "",
+#    "middleSegmentFandomWikiURL": "",
+#    "middleSegmentContent": "Nintendo 64 Price Drop and Player's Choice Games Ad",
+#    "secondSegment": "RR",
+#    "secondSegmentFandomWikiURL": "",
+#    "segondSegmentGames": [
+#        {
+#            "title": "Prince of Persia: The Forgotten Sands",
+#            "system": "",
+#            "yearReleased": ""
+#        },
+#        {
+#            "title": "",
+#            "system": "",
+#            "yearReleased": ""
+#        }
+#    ],
+#    "season": 3,
+#    "guests": ["host", "guest1", "guest2"],
+#    "youTubeURL": "",
+#    "youTubeThumbnailURL": "",
+#    "youTubeDescription": ""
+#}
+
+#                replayEpisodeDict = {
+#                    "episodeNumber": 0,
+#                    "episodeTitle": dataArray[1].a['title'].replace('\n',''),
+#                    "fandomWikiURL": dataArray[1].a['href'],
+#                    "mainSegmentGames": [],
+#                    "system": [], # dataArray[2].string.replace('\n',''),
+#                    "yearReleased": [], # int(dataArray[3].string.replace('\n','')),
+#                    "airDate": dataArray[4].get_text(strip=True).replace('\n',''),
+#                    "videoLength": dataArray[5].get_text(strip=True).replace('\n',''),
+#                    "middleSegment": "", # only in season 3
+#                    "middleSegmentContent": "", # only in season 3
+#                    "secondSegment": "", # assign Replay Roulette to season 1
+#                    "secondSegmentGames": []
+#                    }
