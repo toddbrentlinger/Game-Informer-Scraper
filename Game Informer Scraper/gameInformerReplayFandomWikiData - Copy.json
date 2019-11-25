@@ -1,31 +1,5 @@
 [
     {
-        "episodeNumber": 514,
-        "episodeTitle": "Replay: Silent Hill: Downpour Part 2",
-        "fandomWikiURL": "/wiki/Replay:_Silent_Hill:_Downpour_Part_2",
-        "mainSegmentGames": [
-            "Silent Hill: Downpour Part 2"
-        ],
-        "system": [
-            "Xbox 360"
-        ],
-        "yearReleased": [
-            "2012"
-        ],
-        "mainSegmentGamesAdv": [
-            {
-                "title": "Silent Hill: Downpour Part 2",
-                "system": "Xbox 360",
-                "yearReleased": "2012"
-            }
-        ],
-        "airDate": "11/22/19",
-        "videoLength": "1:14:28",
-        "secondSegment": "",
-        "secondSegmentGames": [],
-        "season": 6
-    },
-    {
         "episodeNumber": 513,
         "episodeTitle": "Replay: Star Wars: The Force Unleashed",
         "fandomWikiURL": "/wiki/Replay:_Star_Wars:_The_Force_Unleashed",
@@ -948,7 +922,8 @@
         "episodeTitle": "Replay: Otogi Series",
         "fandomWikiURL": "/wiki/Replay:_Otogi_Series",
         "mainSegmentGames": [
-            "Otogi: Myth of Demons",
+            "Otogi Series:",
+            "Otogi: Myth of Demons,",
             "Otogi 2: Immortal Warriors"
         ],
         "system": [
@@ -959,7 +934,12 @@
         ],
         "mainSegmentGamesAdv": [
             {
-                "title": "Otogi: Myth of Demons",
+                "title": "Otogi Series:",
+                "system": "Xbox",
+                "yearReleased": "2003-2004"
+            },
+            {
+                "title": "Otogi: Myth of Demons,",
                 "system": "Xbox",
                 "yearReleased": "2003-2004"
             },
@@ -1262,7 +1242,8 @@
         "episodeTitle": "Replay: Iron Mans",
         "fandomWikiURL": "/wiki/Replay:_Iron_Mans",
         "mainSegmentGames": [
-            "Iron Man",
+            "Iron Mans:",
+            "Iron Man,",
             "Iron Man 2"
         ],
         "system": [
@@ -1274,8 +1255,13 @@
         ],
         "mainSegmentGamesAdv": [
             {
-                "title": "Iron Man",
+                "title": "Iron Mans:",
                 "system": "PlayStation 3",
+                "yearReleased": "2008-2010"
+            },
+            {
+                "title": "Iron Man,",
+                "system": "Xbox 360",
                 "yearReleased": "2008-2010"
             },
             {
@@ -1353,9 +1339,10 @@
         "episodeTitle": "Replay: The Santa Versus Krampus Holiday Spectacular",
         "fandomWikiURL": "/wiki/Replay:_The_Santa_Versus_Krampus_Holiday_Spectacular",
         "mainSegmentGames": [
-            "Santa Simulator",
-            "Jingle",
-            "Santa's Story of Christmas",
+            "The Santa Versus Krampus Holiday Spectacular:",
+            "Santa Simulator,",
+            "Jingle,",
+            "Santa's Story of Christmas,",
             "Krampus is Home"
         ],
         "system": [
@@ -1366,17 +1353,22 @@
         ],
         "mainSegmentGamesAdv": [
             {
-                "title": "Santa Simulator",
+                "title": "The Santa Versus Krampus Holiday Spectacular:",
                 "system": "PC",
                 "yearReleased": "2018"
             },
             {
-                "title": "Jingle",
+                "title": "Santa Simulator,",
                 "system": "PC",
                 "yearReleased": "2018"
             },
             {
-                "title": "Santa's Story of Christmas",
+                "title": "Jingle,",
+                "system": "PC",
+                "yearReleased": "2018"
+            },
+            {
+                "title": "Santa's Story of Christmas,",
                 "system": "PC",
                 "yearReleased": "2018"
             },
@@ -1595,6 +1587,7 @@
         "episodeTitle": "Replay: The 2018 Halloween Spooktacular",
         "fandomWikiURL": "/wiki/Replay:_The_2018_Halloween_Spooktacular",
         "mainSegmentGames": [
+            "The 2018 Halloween Spooktacular:",
             "Fatal Frame II: Crimson Butterfly"
         ],
         "system": [
@@ -1604,6 +1597,11 @@
             "2003"
         ],
         "mainSegmentGamesAdv": [
+            {
+                "title": "The 2018 Halloween Spooktacular:",
+                "system": "PlayStation 2",
+                "yearReleased": "2003"
+            },
             {
                 "title": "Fatal Frame II: Crimson Butterfly",
                 "system": "PlayStation 2",
@@ -1707,7 +1705,8 @@
         "episodeTitle": "Replay: The Telltale and Capcom Vancouver Tribute",
         "fandomWikiURL": "/wiki/Replay:_The_Telltale_and_Capcom_Vancouver_Tribute",
         "mainSegmentGames": [
-            "The Walking Dead S1E5: No Time Left",
+            "The Telltale and Capcom Vancouver Tribute:",
+            "The Walking Dead S1E5: No Time Left,",
             "Dead Rising 2"
         ],
         "system": [
@@ -1718,7 +1717,12 @@
         ],
         "mainSegmentGamesAdv": [
             {
-                "title": "The Walking Dead S1E5: No Time Left",
+                "title": "The Telltale and Capcom Vancouver Tribute:",
+                "system": "Xbox 360",
+                "yearReleased": "2010-2012"
+            },
+            {
+                "title": "The Walking Dead S1E5: No Time Left,",
                 "system": "Xbox 360",
                 "yearReleased": "2010-2012"
             },
@@ -1853,9 +1857,10 @@
         "episodeTitle": "Replay: The Scooby-Doo Spectacular",
         "fandomWikiURL": "/wiki/Replay:_The_Scooby-Doo_Spectacular",
         "mainSegmentGames": [
-            "Scooby-Doo Mystery",
-            "Scooby-Doo! Night of 100 Frights",
-            "Scooby-Doo! Mystery Mayhem",
+            "The Scooby-Doo Spectacular:",
+            "Scooby-Doo Mystery,",
+            "Scooby-Doo! Night of 100 Frights,",
+            "Scooby-Doo! Mystery Mayhem,",
             "Scooby-Doo! Unmasked"
         ],
         "system": [
@@ -1867,17 +1872,22 @@
         ],
         "mainSegmentGamesAdv": [
             {
-                "title": "Scooby-Doo Mystery",
+                "title": "The Scooby-Doo Spectacular:",
                 "system": "Sega Genesis",
                 "yearReleased": "1995-2005"
             },
             {
-                "title": "Scooby-Doo! Night of 100 Frights",
+                "title": "Scooby-Doo Mystery,",
                 "system": "PlayStation 2",
                 "yearReleased": "1995-2005"
             },
             {
-                "title": "Scooby-Doo! Mystery Mayhem",
+                "title": "Scooby-Doo! Night of 100 Frights,",
+                "system": "PlayStation 2",
+                "yearReleased": "1995-2005"
+            },
+            {
+                "title": "Scooby-Doo! Mystery Mayhem,",
                 "system": "PlayStation 2",
                 "yearReleased": "1995-2005"
             },
@@ -2022,14 +2032,15 @@
         "episodeTitle": "Replay: The Game Gear Spectacular",
         "fandomWikiURL": "/wiki/Replay:_The_Game_Gear_Spectacular",
         "mainSegmentGames": [
-            "Legend of Illusion Starring Mickey Mouse",
-            "Arena: Maze of Death",
-            "Vampire: Master of Darkness",
-            "Jurassic Park",
-            "Dragon Crystal",
-            "Garfield: Caught in the Act",
-            "Stargate",
-            "Bugs Bunny in Double Trouble",
+            "The Game Gear Spectacular:",
+            "Legend of Illusion Starring Mickey Mouse,",
+            "Arena: Maze of Death,",
+            "Vampire: Master of Darkness,",
+            "Jurassic Park,",
+            "Dragon Crystal,",
+            "Garfield: Caught in the Act,",
+            "Stargate,",
+            "Bugs Bunny in Double Trouble,",
             "Sonic Labyrinth"
         ],
         "system": [
@@ -2040,42 +2051,47 @@
         ],
         "mainSegmentGamesAdv": [
             {
-                "title": "Legend of Illusion Starring Mickey Mouse",
+                "title": "The Game Gear Spectacular:",
                 "system": "Game Gear",
                 "yearReleased": "1990-1996"
             },
             {
-                "title": "Arena: Maze of Death",
+                "title": "Legend of Illusion Starring Mickey Mouse,",
                 "system": "Game Gear",
                 "yearReleased": "1990-1996"
             },
             {
-                "title": "Vampire: Master of Darkness",
+                "title": "Arena: Maze of Death,",
                 "system": "Game Gear",
                 "yearReleased": "1990-1996"
             },
             {
-                "title": "Jurassic Park",
+                "title": "Vampire: Master of Darkness,",
                 "system": "Game Gear",
                 "yearReleased": "1990-1996"
             },
             {
-                "title": "Dragon Crystal",
+                "title": "Jurassic Park,",
                 "system": "Game Gear",
                 "yearReleased": "1990-1996"
             },
             {
-                "title": "Garfield: Caught in the Act",
+                "title": "Dragon Crystal,",
                 "system": "Game Gear",
                 "yearReleased": "1990-1996"
             },
             {
-                "title": "Stargate",
+                "title": "Garfield: Caught in the Act,",
                 "system": "Game Gear",
                 "yearReleased": "1990-1996"
             },
             {
-                "title": "Bugs Bunny in Double Trouble",
+                "title": "Stargate,",
+                "system": "Game Gear",
+                "yearReleased": "1990-1996"
+            },
+            {
+                "title": "Bugs Bunny in Double Trouble,",
                 "system": "Game Gear",
                 "yearReleased": "1990-1996"
             },
@@ -2098,7 +2114,8 @@
         "episodeTitle": "Replay: The Celebrity Fighting Episode",
         "fandomWikiURL": "/wiki/Replay:_The_Celebrity_Fighting_Episode",
         "mainSegmentGames": [
-            "Celebrity Deathmatch",
+            "The Celebrity Fighting Episode:",
+            "Celebrity Deathmatch,",
             "Backyard Wrestling 2: There Goes the Neighborhood"
         ],
         "system": [
@@ -2109,7 +2126,12 @@
         ],
         "mainSegmentGamesAdv": [
             {
-                "title": "Celebrity Deathmatch",
+                "title": "The Celebrity Fighting Episode:",
+                "system": "PlayStation 2",
+                "yearReleased": "2003-2004"
+            },
+            {
+                "title": "Celebrity Deathmatch,",
                 "system": "PlayStation 2",
                 "yearReleased": "2003-2004"
             },
@@ -2695,9 +2717,10 @@
         "episodeTitle": "Replay: The Winter Olympics Spectacular",
         "fandomWikiURL": "/wiki/Replay:_The_Winter_Olympics_Spectacular",
         "mainSegmentGames": [
-            "Winter Games",
-            "Winter Olympics",
-            "The Games: Winter Challenge",
+            "The Winter Olympics Spectacular:",
+            "Winter Games,",
+            "Winter Olympics,",
+            "The Games: Winter Challenge,",
             "Torino 2006"
         ],
         "system": [
@@ -2711,18 +2734,23 @@
         ],
         "mainSegmentGamesAdv": [
             {
-                "title": "Winter Games",
+                "title": "The Winter Olympics Spectacular:",
                 "system": "NES",
                 "yearReleased": "1985-2006"
             },
             {
-                "title": "Winter Olympics",
+                "title": "Winter Games,",
                 "system": "Super NES",
                 "yearReleased": "1985-2006"
             },
             {
-                "title": "The Games: Winter Challenge",
+                "title": "Winter Olympics,",
                 "system": "Genesis",
+                "yearReleased": "1985-2006"
+            },
+            {
+                "title": "The Games: Winter Challenge,",
+                "system": "PlayStation 2",
                 "yearReleased": "1985-2006"
             },
             {
@@ -2942,10 +2970,11 @@
         "episodeTitle": "Replay: The 2017 Holiday Special",
         "fandomWikiURL": "/wiki/Replay:_The_2017_Holiday_Special",
         "mainSegmentGames": [
-            "Cookies vs. Claus",
-            "Frosty Nights",
-            "Who's your Santa!?",
-            "Sugy the Christmas elf",
+            "The 2017 Holiday Special:",
+            "Cookies vs. Claus,",
+            "Frosty Nights,",
+            "Who's your Santa!?,",
+            "Sugy the Christmas elf,",
             "Santa Rockstar"
         ],
         "system": [
@@ -2956,22 +2985,27 @@
         ],
         "mainSegmentGamesAdv": [
             {
-                "title": "Cookies vs. Claus",
+                "title": "The 2017 Holiday Special:",
                 "system": "PC",
                 "yearReleased": "2016-2017"
             },
             {
-                "title": "Frosty Nights",
+                "title": "Cookies vs. Claus,",
                 "system": "PC",
                 "yearReleased": "2016-2017"
             },
             {
-                "title": "Who's your Santa!?",
+                "title": "Frosty Nights,",
                 "system": "PC",
                 "yearReleased": "2016-2017"
             },
             {
-                "title": "Sugy the Christmas elf",
+                "title": "Who's your Santa!?,",
+                "system": "PC",
+                "yearReleased": "2016-2017"
+            },
+            {
+                "title": "Sugy the Christmas elf,",
                 "system": "PC",
                 "yearReleased": "2016-2017"
             },
@@ -3022,10 +3056,11 @@
         "episodeTitle": "Replay: The 3DO Spectacular: Round 2",
         "fandomWikiURL": "/wiki/Replay:_The_3DO_Spectacular:_Round_2",
         "mainSegmentGames": [
-            "Cyberdillo",
-            "The Daedalus Encounter",
-            "Captain Quazar",
-            "Escape from Monster Manor",
+            "The 3DO Spectacular: Round 2:",
+            "Cyberdillo,",
+            "The Daedalus Encounter,",
+            "Captain Quazar,",
+            "Escape from Monster Manor,",
             "Killing Time"
         ],
         "system": [
@@ -3036,22 +3071,27 @@
         ],
         "mainSegmentGamesAdv": [
             {
-                "title": "Cyberdillo",
+                "title": "The 3DO Spectacular: Round 2:",
                 "system": "3DO",
                 "yearReleased": "1993-1996"
             },
             {
-                "title": "The Daedalus Encounter",
+                "title": "Cyberdillo,",
                 "system": "3DO",
                 "yearReleased": "1993-1996"
             },
             {
-                "title": "Captain Quazar",
+                "title": "The Daedalus Encounter,",
                 "system": "3DO",
                 "yearReleased": "1993-1996"
             },
             {
-                "title": "Escape from Monster Manor",
+                "title": "Captain Quazar,",
+                "system": "3DO",
+                "yearReleased": "1993-1996"
+            },
+            {
+                "title": "Escape from Monster Manor,",
                 "system": "3DO",
                 "yearReleased": "1993-1996"
             },
@@ -3186,12 +3226,13 @@
         "episodeTitle": "Replay: The 3DO Spectacular",
         "fandomWikiURL": "/wiki/Replay:_The_3DO_Spectacular",
         "mainSegmentGames": [
-            "Crime Patrol 2: Drug Wars",
-            "Blade Force",
-            "Iron Angel of the Apocalypse: The Return",
-            "Phoenix 3",
-            "Demolition Man",
-            "Shockwave",
+            "The 3DO Spectacular:",
+            "Crime Patrol 2: Drug Wars,",
+            "Blade Force,",
+            "Iron Angel of the Apocalypse: The Return,",
+            "Phoenix 3,",
+            "Demolition Man,",
+            "Shockwave,",
             "Supreme Warrior"
         ],
         "system": [
@@ -3202,32 +3243,37 @@
         ],
         "mainSegmentGamesAdv": [
             {
-                "title": "Crime Patrol 2: Drug Wars",
+                "title": "The 3DO Spectacular:",
                 "system": "3DO",
                 "yearReleased": "1993-1995"
             },
             {
-                "title": "Blade Force",
+                "title": "Crime Patrol 2: Drug Wars,",
                 "system": "3DO",
                 "yearReleased": "1993-1995"
             },
             {
-                "title": "Iron Angel of the Apocalypse: The Return",
+                "title": "Blade Force,",
                 "system": "3DO",
                 "yearReleased": "1993-1995"
             },
             {
-                "title": "Phoenix 3",
+                "title": "Iron Angel of the Apocalypse: The Return,",
                 "system": "3DO",
                 "yearReleased": "1993-1995"
             },
             {
-                "title": "Demolition Man",
+                "title": "Phoenix 3,",
                 "system": "3DO",
                 "yearReleased": "1993-1995"
             },
             {
-                "title": "Shockwave",
+                "title": "Demolition Man,",
+                "system": "3DO",
+                "yearReleased": "1993-1995"
+            },
+            {
+                "title": "Shockwave,",
                 "system": "3DO",
                 "yearReleased": "1993-1995"
             },
@@ -3250,8 +3296,9 @@
         "episodeTitle": "Replay: The 2017 Halloween Stuptacular",
         "fandomWikiURL": "/wiki/Replay:_The_2017_Halloween_Stuptacular",
         "mainSegmentGames": [
-            "Ghost Vibration",
-            "Bram Stoker's Dracula",
+            "The 2017 Halloween Stuptacular:",
+            "Ghost Vibration,",
+            "Bram Stoker's Dracula,",
             "Kid Dracula"
         ],
         "system": [
@@ -3264,13 +3311,18 @@
         ],
         "mainSegmentGamesAdv": [
             {
-                "title": "Ghost Vibration",
+                "title": "The 2017 Halloween Stuptacular:",
                 "system": "PlayStation 2",
                 "yearReleased": "1993-2002"
             },
             {
-                "title": "Bram Stoker's Dracula",
+                "title": "Ghost Vibration,",
                 "system": "Super NES",
+                "yearReleased": "1993-2002"
+            },
+            {
+                "title": "Bram Stoker's Dracula,",
+                "system": "Game Boy",
                 "yearReleased": "1993-2002"
             },
             {
@@ -3348,27 +3400,28 @@
         "episodeTitle": "Replay: The Atari 2600 Spectacular",
         "fandomWikiURL": "/wiki/Replay:_The_Atari_2600_Spectacular",
         "mainSegmentGames": [
-            "Combat",
-            "Combat Two",
-            "Return to Haunted House",
-            "Save Mary",
-            "Pitfall!",
-            "H.E.R.O.",
-            "Oink!",
-            "Kaboom!",
-            "Solaris",
-            "Secret Quest",
-            "Megamania",
-            "Adventure II",
-            "Outlaw",
-            "Video Pinball",
-            "Off the Wall",
-            "Miss It!",
-            "Escape It!",
-            "Football",
-            "Gravitar",
-            "Centipede",
-            "Wizard",
+            "The Atari 2600 Spectacular:",
+            "Combat,",
+            "Combat Two,",
+            "Return to Haunted House,",
+            "Save Mary,",
+            "Pitfall!,",
+            "H.E.R.O.,",
+            "Oink!,",
+            "Kaboom!,",
+            "Solaris,",
+            "Secret Quest,",
+            "Megamania,",
+            "Adventure II,",
+            "Outlaw,",
+            "Video Pinball,",
+            "Off the Wall,",
+            "Miss It!,",
+            "Escape It!,",
+            "Football,",
+            "Gravitar,",
+            "Centipede,",
+            "Wizard,",
             "Saboteur"
         ],
         "system": [
@@ -3379,107 +3432,112 @@
         ],
         "mainSegmentGamesAdv": [
             {
-                "title": "Combat",
+                "title": "The Atari 2600 Spectacular:",
                 "system": "Atari 2600",
                 "yearReleased": "1977-1990"
             },
             {
-                "title": "Combat Two",
+                "title": "Combat,",
                 "system": "Atari 2600",
                 "yearReleased": "1977-1990"
             },
             {
-                "title": "Return to Haunted House",
+                "title": "Combat Two,",
                 "system": "Atari 2600",
                 "yearReleased": "1977-1990"
             },
             {
-                "title": "Save Mary",
+                "title": "Return to Haunted House,",
                 "system": "Atari 2600",
                 "yearReleased": "1977-1990"
             },
             {
-                "title": "Pitfall!",
+                "title": "Save Mary,",
                 "system": "Atari 2600",
                 "yearReleased": "1977-1990"
             },
             {
-                "title": "H.E.R.O.",
+                "title": "Pitfall!,",
                 "system": "Atari 2600",
                 "yearReleased": "1977-1990"
             },
             {
-                "title": "Oink!",
+                "title": "H.E.R.O.,",
                 "system": "Atari 2600",
                 "yearReleased": "1977-1990"
             },
             {
-                "title": "Kaboom!",
+                "title": "Oink!,",
                 "system": "Atari 2600",
                 "yearReleased": "1977-1990"
             },
             {
-                "title": "Solaris",
+                "title": "Kaboom!,",
                 "system": "Atari 2600",
                 "yearReleased": "1977-1990"
             },
             {
-                "title": "Secret Quest",
+                "title": "Solaris,",
                 "system": "Atari 2600",
                 "yearReleased": "1977-1990"
             },
             {
-                "title": "Megamania",
+                "title": "Secret Quest,",
                 "system": "Atari 2600",
                 "yearReleased": "1977-1990"
             },
             {
-                "title": "Adventure II",
+                "title": "Megamania,",
                 "system": "Atari 2600",
                 "yearReleased": "1977-1990"
             },
             {
-                "title": "Outlaw",
+                "title": "Adventure II,",
                 "system": "Atari 2600",
                 "yearReleased": "1977-1990"
             },
             {
-                "title": "Video Pinball",
+                "title": "Outlaw,",
                 "system": "Atari 2600",
                 "yearReleased": "1977-1990"
             },
             {
-                "title": "Off the Wall",
+                "title": "Video Pinball,",
                 "system": "Atari 2600",
                 "yearReleased": "1977-1990"
             },
             {
-                "title": "Miss It!",
+                "title": "Off the Wall,",
                 "system": "Atari 2600",
                 "yearReleased": "1977-1990"
             },
             {
-                "title": "Escape It!",
+                "title": "Miss It!,",
                 "system": "Atari 2600",
                 "yearReleased": "1977-1990"
             },
             {
-                "title": "Football",
+                "title": "Escape It!,",
                 "system": "Atari 2600",
                 "yearReleased": "1977-1990"
             },
             {
-                "title": "Gravitar",
+                "title": "Football,",
                 "system": "Atari 2600",
                 "yearReleased": "1977-1990"
             },
             {
-                "title": "Centipede",
+                "title": "Gravitar,",
                 "system": "Atari 2600",
                 "yearReleased": "1977-1990"
             },
             {
-                "title": "Wizard",
+                "title": "Centipede,",
+                "system": "Atari 2600",
+                "yearReleased": "1977-1990"
+            },
+            {
+                "title": "Wizard,",
                 "system": "Atari 2600",
                 "yearReleased": "1977-1990"
             },
@@ -3784,10 +3842,11 @@
         "episodeTitle": "Replay: The Tween Television Extravaganza",
         "fandomWikiURL": "/wiki/Replay:_The_Tween_Television_Extravaganza",
         "mainSegmentGames": [
-            "Cory in the House",
-            "Drake and Josh: Talent Showdown",
-            "Unfabulous",
-            "Sabrina the Teenage Witch: Potion Commotion",
+            "The Tween Television Extravaganza:",
+            "Cory in the House,",
+            "Drake and Josh: Talent Showdown,",
+            "Unfabulous,",
+            "Sabrina the Teenage Witch: Potion Commotion,",
             "Double Dare"
         ],
         "system": [
@@ -3800,22 +3859,27 @@
         ],
         "mainSegmentGamesAdv": [
             {
-                "title": "Cory in the House",
+                "title": "The Tween Television Extravaganza:",
                 "system": "Nintendo DS",
                 "yearReleased": "1990-2008"
             },
             {
-                "title": "Drake and Josh: Talent Showdown",
+                "title": "Cory in the House,",
                 "system": "Game Boy Advance",
                 "yearReleased": "1990-2008"
             },
             {
-                "title": "Unfabulous",
+                "title": "Drake and Josh: Talent Showdown,",
                 "system": "NES",
                 "yearReleased": "1990-2008"
             },
             {
-                "title": "Sabrina the Teenage Witch: Potion Commotion",
+                "title": "Unfabulous,",
+                "system": "NES",
+                "yearReleased": "1990-2008"
+            },
+            {
+                "title": "Sabrina the Teenage Witch: Potion Commotion,",
                 "system": "NES",
                 "yearReleased": "1990-2008"
             },
@@ -4186,10 +4250,11 @@
         "episodeTitle": "Replay: The Power Rangers Spectacular",
         "fandomWikiURL": "/wiki/Replay:_The_Power_Rangers_Spectacular",
         "mainSegmentGames": [
-            "Mighty Morphin Power Rangers: The Movie",
-            "Mighty Morphin Power Rangers",
-            "Power Rangers Zeo: Battle Racers",
-            "Power Rangers Ninja Storm",
+            "The Power Rangers Spectacular:",
+            "Mighty Morphin Power Rangers: The Movie,",
+            "Mighty Morphin Power Rangers,",
+            "Power Rangers Zeo: Battle Racers,",
+            "Power Rangers Ninja Storm,",
             "Power Rangers S.P.D."
         ],
         "system": [
@@ -4208,24 +4273,29 @@
         ],
         "mainSegmentGamesAdv": [
             {
-                "title": "Mighty Morphin Power Rangers: The Movie",
+                "title": "The Power Rangers Spectacular:",
                 "system": "Genesis",
                 "yearReleased": "1995"
             },
             {
-                "title": "Mighty Morphin Power Rangers",
+                "title": "Mighty Morphin Power Rangers: The Movie,",
                 "system": "Genesis",
                 "yearReleased": "1994"
             },
             {
-                "title": "Power Rangers Zeo: Battle Racers",
+                "title": "Mighty Morphin Power Rangers,",
                 "system": "Super NES",
                 "yearReleased": "1996"
             },
             {
-                "title": "Power Rangers Ninja Storm",
+                "title": "Power Rangers Zeo: Battle Racers,",
                 "system": "Game Boy Advance",
                 "yearReleased": "2003"
+            },
+            {
+                "title": "Power Rangers Ninja Storm,",
+                "system": "Game Boy Advance",
+                "yearReleased": "2005"
             },
             {
                 "title": "Power Rangers S.P.D.",
@@ -4727,6 +4797,7 @@
         "episodeTitle": "Replay: The Jaguar Disaster",
         "fandomWikiURL": "/wiki/Replay:_The_Jaguar_Disaster",
         "mainSegmentGames": [
+            "The Jaguar Disaster:",
             "Kasumi Ninja",
             "Towers II: Plight of the Stargazer",
             "Dragon: The Bruce Lee Story",
@@ -4751,29 +4822,34 @@
         ],
         "mainSegmentGamesAdv": [
             {
-                "title": "Kasumi Ninja",
+                "title": "The Jaguar Disaster:",
                 "system": "Jaguar",
                 "yearReleased": "1994"
             },
             {
-                "title": "Towers II: Plight of the Stargazer",
+                "title": "Kasumi Ninja",
                 "system": "Jaguar",
                 "yearReleased": "1996"
             },
             {
-                "title": "Dragon: The Bruce Lee Story",
+                "title": "Towers II: Plight of the Stargazer",
                 "system": "Jaguar",
                 "yearReleased": "1994"
             },
             {
-                "title": "Ultra Vortek",
+                "title": "Dragon: The Bruce Lee Story",
                 "system": "Jaguar",
                 "yearReleased": "1995"
             },
             {
-                "title": "Iron Soldier",
+                "title": "Ultra Vortek",
                 "system": "Jaguar",
                 "yearReleased": "1994"
+            },
+            {
+                "title": "Iron Soldier",
+                "system": "Jaguar",
+                "yearReleased": "1995"
             },
             {
                 "title": "White Men Can't Jump",
@@ -4783,7 +4859,7 @@
             {
                 "title": "Atari Karts",
                 "system": "Jaguar",
-                "yearReleased": "1995"
+                "yearReleased": "1994"
             },
             {
                 "title": "Alien vs Predator",
@@ -4806,6 +4882,7 @@
         "episodeTitle": "Replay: The Terminator Spectacular",
         "fandomWikiURL": "/wiki/Replay:_The_Terminator_Spectacular",
         "mainSegmentGames": [
+            "The Terminator Spectacular:",
             "RoboCop Versus The Terminator",
             "The Terminator",
             "Terminator 2: Judgment Day",
@@ -4822,6 +4899,11 @@
         ],
         "mainSegmentGamesAdv": [
             {
+                "title": "The Terminator Spectacular:",
+                "system": "Super NES",
+                "yearReleased": "1993"
+            },
+            {
                 "title": "RoboCop Versus The Terminator",
                 "system": "Super NES",
                 "yearReleased": "1993"
@@ -4834,7 +4916,7 @@
             {
                 "title": "Terminator 2: Judgment Day",
                 "system": "Super NES",
-                "yearReleased": "1993"
+                "yearReleased": "1994"
             },
             {
                 "title": "T2: The Arcade Game",
@@ -5007,6 +5089,7 @@
         "episodeTitle": "Replay: The Bad South Park Games",
         "fandomWikiURL": "/wiki/Replay:_The_Bad_South_Park_Games",
         "mainSegmentGames": [
+            "The Bad South Park Games:",
             "South Park: Chef's Luv Shack",
             "South Park Rally",
             "South Park",
@@ -5024,19 +5107,24 @@
         ],
         "mainSegmentGamesAdv": [
             {
-                "title": "South Park: Chef's Luv Shack",
+                "title": "The Bad South Park Games:",
                 "system": "Nintendo 64",
                 "yearReleased": "1999"
             },
             {
-                "title": "South Park Rally",
+                "title": "South Park: Chef's Luv Shack",
                 "system": "Xbox 360",
                 "yearReleased": "2000"
             },
             {
-                "title": "South Park",
+                "title": "South Park Rally",
                 "system": "Xbox 360",
                 "yearReleased": "1998"
+            },
+            {
+                "title": "South Park",
+                "system": "Xbox 360",
+                "yearReleased": "2012"
             },
             {
                 "title": "South Park: Tenorman's Revenge",
@@ -5217,6 +5305,7 @@
         "episodeTitle": "Replay: The Football Episode",
         "fandomWikiURL": "/wiki/Replay:_The_Football_Episode",
         "mainSegmentGames": [
+            "The Football Episode:",
             "10-Yard Fight",
             "John Elway's Quarterback",
             "Tecmo Super Bowl",
@@ -5251,54 +5340,59 @@
         ],
         "mainSegmentGamesAdv": [
             {
-                "title": "10-Yard Fight",
+                "title": "The Football Episode:",
                 "system": "NES",
                 "yearReleased": "1985"
             },
             {
-                "title": "John Elway's Quarterback",
+                "title": "10-Yard Fight",
                 "system": "Super NES",
                 "yearReleased": "1987"
             },
             {
-                "title": "Tecmo Super Bowl",
+                "title": "John Elway's Quarterback",
                 "system": "Genesis",
                 "yearReleased": "1991"
             },
             {
-                "title": "NFL Football",
+                "title": "Tecmo Super Bowl",
                 "system": "PlayStation",
                 "yearReleased": "1993"
             },
             {
-                "title": "Pro Quarterback",
+                "title": "NFL Football",
                 "system": "Dreamcast",
                 "yearReleased": "1992"
             },
             {
-                "title": "NFL Quarterback Club 96",
+                "title": "Pro Quarterback",
                 "system": "Dreamcast",
                 "yearReleased": "1995"
             },
             {
-                "title": "Joe Montana Football",
+                "title": "NFL Quarterback Club 96",
                 "system": "Dreamcast",
                 "yearReleased": "1991"
             },
             {
-                "title": "John Madden Football",
+                "title": "Joe Montana Football",
                 "system": "Dreamcast",
                 "yearReleased": "1990"
             },
             {
-                "title": "NFL GameDay '97",
+                "title": "John Madden Football",
                 "system": "Dreamcast",
                 "yearReleased": "1996"
             },
             {
-                "title": "NFL Xtreme",
+                "title": "NFL GameDay '97",
                 "system": "Dreamcast",
                 "yearReleased": "1998"
+            },
+            {
+                "title": "NFL Xtreme",
+                "system": "Dreamcast",
+                "yearReleased": "1999"
             },
             {
                 "title": "NFL 2K",
@@ -5352,6 +5446,7 @@
         "episodeTitle": "Replay: The Sega Saturn Showcase",
         "fandomWikiURL": "/wiki/Replay:_The_Sega_Saturn_Showcase",
         "mainSegmentGames": [
+            "The Sega Saturn Showcase:",
             "Enemy Zero",
             "Heir of Zendor: The Legend and The Land",
             "Three Dirty Dwarves",
@@ -5370,9 +5465,14 @@
         ],
         "mainSegmentGamesAdv": [
             {
-                "title": "Enemy Zero",
+                "title": "The Sega Saturn Showcase:",
                 "system": "Sega Saturn",
                 "yearReleased": "1997"
+            },
+            {
+                "title": "Enemy Zero",
+                "system": "Sega Saturn",
+                "yearReleased": "1996"
             },
             {
                 "title": "Heir of Zendor: The Legend and The Land",
@@ -5382,7 +5482,7 @@
             {
                 "title": "Three Dirty Dwarves",
                 "system": "Sega Saturn",
-                "yearReleased": "1996"
+                "yearReleased": "1997"
             },
             {
                 "title": "Darklight Conflict",
@@ -5470,6 +5570,7 @@
         "episodeTitle": "Replay: The Philips CD-i's \"Best\" and Worst Games",
         "fandomWikiURL": "/wiki/Replay:_The_Philips_CD-i%27s_%22Best%22_and_Worst_Games",
         "mainSegmentGames": [
+            "The Philips CD-i's \"Best\" and Worst Games:",
             "Escape from Cyber City",
             "Thunder in Paradise",
             "Burn Cycle",
@@ -5492,14 +5593,19 @@
         ],
         "mainSegmentGamesAdv": [
             {
-                "title": "Escape from Cyber City",
+                "title": "The Philips CD-i's \"Best\" and Worst Games:",
                 "system": "Philips CD-i",
                 "yearReleased": "1992"
             },
             {
-                "title": "Thunder in Paradise",
+                "title": "Escape from Cyber City",
                 "system": "Philips CD-i",
                 "yearReleased": "1995"
+            },
+            {
+                "title": "Thunder in Paradise",
+                "system": "Philips CD-i",
+                "yearReleased": "1994"
             },
             {
                 "title": "Burn Cycle",
@@ -5509,7 +5615,7 @@
             {
                 "title": "Mutant Rampage: Bodyslam",
                 "system": "Philips CD-i",
-                "yearReleased": "1994"
+                "yearReleased": "1993"
             },
             {
                 "title": "Kether",
@@ -6208,6 +6314,7 @@
         "episodeTitle": "Replay: Sega 32X Spectacular Starring Knuckles' Chaotix",
         "fandomWikiURL": "/wiki/Replay:_Sega_32X_Spectacular_Starring_Knuckles%27_Chaotix",
         "mainSegmentGames": [
+            "Sega 32X Spectacular (Tim Turi Farewell Episode):",
             "Knuckles' Chaotix",
             "Star Wars Arcade",
             "Kolibri",
@@ -6228,14 +6335,19 @@
         ],
         "mainSegmentGamesAdv": [
             {
-                "title": "Knuckles' Chaotix",
+                "title": "Sega 32X Spectacular (Tim Turi Farewell Episode):",
                 "system": "Sega 32X",
                 "yearReleased": "1995"
             },
             {
-                "title": "Star Wars Arcade",
+                "title": "Knuckles' Chaotix",
                 "system": "Sega 32X",
                 "yearReleased": "1994"
+            },
+            {
+                "title": "Star Wars Arcade",
+                "system": "Sega 32X",
+                "yearReleased": "1995"
             },
             {
                 "title": "Kolibri",
@@ -6245,12 +6357,12 @@
             {
                 "title": "Tempo",
                 "system": "Sega 32X",
-                "yearReleased": "1995"
+                "yearReleased": "1994"
             },
             {
                 "title": "Cosmic Carnage",
                 "system": "Sega 32X",
-                "yearReleased": "1994"
+                "yearReleased": "1996"
             },
             {
                 "title": "Spider-Man: Web of Fire",
@@ -6303,6 +6415,7 @@
         "episodeTitle": "Replay: The Surprisingly Terrifying Hellscape of the TurboGrafx-16",
         "fandomWikiURL": "/wiki/Replay:_The_Surprisingly_Terrifying_Hellscape_of_the_TurboGrafx-16",
         "mainSegmentGames": [
+            "The Surprisingly Terrifying Hellscape of the TurboGrafx-16:",
             "Night Creatures",
             "Silent Debuggers",
             "Ballistix",
@@ -6329,14 +6442,19 @@
         ],
         "mainSegmentGamesAdv": [
             {
-                "title": "Night Creatures",
+                "title": "The Surprisingly Terrifying Hellscape of the TurboGrafx-16:",
                 "system": "TurboGrafx-16",
                 "yearReleased": "1992"
             },
             {
-                "title": "Silent Debuggers",
+                "title": "Night Creatures",
                 "system": "TurboGrafx-16",
                 "yearReleased": "1991"
+            },
+            {
+                "title": "Silent Debuggers",
+                "system": "TurboGrafx-16",
+                "yearReleased": "1992"
             },
             {
                 "title": "Ballistix",
@@ -6967,7 +7085,7 @@
         "episodeTitle": "Replay: Katamari Damacy",
         "fandomWikiURL": "/wiki/Replay:_Katamari_Damacy",
         "mainSegmentGames": [
-            "Katamari Damacy",
+            "Katamari Damacy,",
             "Noby Noby Boy"
         ],
         "system": [
@@ -6980,7 +7098,7 @@
         ],
         "mainSegmentGamesAdv": [
             {
-                "title": "Katamari Damacy",
+                "title": "Katamari Damacy,",
                 "system": "PlayStation 2",
                 "yearReleased": "2004"
             },
@@ -7718,7 +7836,7 @@
             }
         ],
         "airDate": "4/4/15",
-        "videoLength": "53:08",
+        "videoLength": ":07",
         "middleSegment": "Suite Nostalgia",
         "middleSegmentContent": "Mega Man Series",
         "secondSegment": "---",
@@ -12707,7 +12825,8 @@
         "videoLength": "43:03",
         "secondSegment": "RR",
         "secondSegmentGames": [
-            "Final Fantasy VIII (demo)"
+            "Final Fantasy VIII",
+            "(demo)"
         ],
         "season": 1
     },
@@ -15532,22 +15651,22 @@
         ],
         "mainSegmentGamesAdv": [
             {
-                "title": "Twisted Metal 1\u20134",
+                "title": "Twisted Metal 1",
                 "system": "PlayStation",
                 "yearReleased": "1995"
             },
             {
-                "title": "Twisted Metal 1\u20134",
+                "title": "Twisted Metal 2",
                 "system": "PlayStation",
                 "yearReleased": "1996"
             },
             {
-                "title": "Twisted Metal 1\u20134",
+                "title": "Twisted Metal 3",
                 "system": "PlayStation",
                 "yearReleased": "1998"
             },
             {
-                "title": "Twisted Metal 1\u20134",
+                "title": "Twisted Metal 4",
                 "system": "PlayStation",
                 "yearReleased": "1999"
             }

@@ -24,6 +24,7 @@
     <Compile Include="Game_Informer_Scraper.py" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="gameInformerReplayFandomWikiData - Copy.json" />
     <Content Include="gameInformerReplayFandomWikiData.json" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets" />
