@@ -21,7 +21,9 @@
     <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="Game_Informer_Scraper.py" />
+    <Compile Include="Game_Informer_Scraper.py">
+      <SubType>Code</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Content Include="gameInformerReplayFandomWikiData - Copy.json" />
