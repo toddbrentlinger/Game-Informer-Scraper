@@ -5,17 +5,23 @@ import json
 import time
 
 # TODO:
+# - Create second array of objects for game data. Reference the game title string in the first array to link
+# the data between them.
+#  
+# scrapeReplayEpisode()
+# - For each h2 in mainContent, create dictionary/object with "title" equal to h2 id attribute
+#   and "content" equal to array of string values
 
 tempReplayEpisodeURLArr = [
     '/wiki/Replay:_The_X-Files',
     '/wiki/Replay:_The_2018_Halloween_Spooktacular',
-    '/wiki/Replay:_Dead_Man%27s_Hand',
     '/wiki/Replay:_The_Jaguar_Disaster',
     '/wiki/Replay:_Xena:_Warrior_Princess',
-    '/wiki/Replay:_Gex:_Enter_the_Gecko'
+    '/wiki/Replay:_Gex:_Enter_the_Gecko',
+    '/wiki/Replay:_Twisted_Metal_1–4',
+    '/wiki/Replay:_Halloween_Stuptacular!'
     ]
 
-# time.sleep(1) # pause code for a second so not spamming website with requests
 # Function:
 # scrapeReplayEpisode(episodeURL)
 def scrapeReplayEpisode(episodeURL):
@@ -32,6 +38,7 @@ def scrapeReplayEpisode(episodeURL):
         mainContent = content.find(id='mw-content-text')
 
         # Episode Description
+        # TODO: Get all text until next h2 or table tag. Ignore tags(including their children): aside, nav, 
         episodeDescriptionArr = []
         for para in mainContent.find_all('p'):
             paraText = para.get_text().replace('\n', '')
@@ -40,6 +47,8 @@ def scrapeReplayEpisode(episodeURL):
         replayEpisode["description"] = episodeDescriptionArr
 
         # External Links
+        # ISSUE: Could have list in description so cannot find first 'ul' tag
+        # SOLUTION: use 
         episodeExternalLinksArr = []
         episodeExternalLinks = mainContent.find('ul')
         if episodeExternalLinks: # check if there is an unordered list (check is array is empty)
@@ -50,6 +59,8 @@ def scrapeReplayEpisode(episodeURL):
                     }
                 episodeExternalLinksArr.append(externalLinkObject)
         replayEpisode["externalLinks"] = episodeExternalLinksArr
+
+        # Misc Headers
 
         # Aside
         asideElement = mainContent.find('aside', recursive=False)
@@ -64,22 +75,38 @@ def scrapeReplayEpisode(episodeURL):
                 imageSrcSet = imageElement.get('srcset')
                 if imageSrcSet: # check if srcset attribute exists
                     imageSrcSet = imageSrcSet.split() # split string at whitespaces
+                    # remove commas from end of strings (ex. '1x,' in [ 'https://...', '1x,', 'https://...', 2x ])
+                    imageSrcSet = [ str.strip(',') for str in imageSrcSet ]
                     imageObject["source"] = imageSrcSet
                 else: # else use src attribute
                     imageObject["source"] = [ imageElement.get('src') ]
             replayEpisode["image"] = imageObject
 
             # System
-            replayEpisode["system"] = asideElement.find('div', {"data-source": "system"}).get_text()
+            # TODO: Make array of strings
+            #replayEpisode["system"] = asideElement.find('div', {"data-source": "system"}).get_text()
+            systemArr = []
+            for systemString in asideElement.find('div', {"data-source": "system"}).stripped_strings:
+                systemArr.append(systemString.replace('\n', ''))
+            replayEpisode["system"] = systemArr
 
             # Released Date
-            replayEpisode["gamedate"] = asideElement.find('div', {"data-source": "gamedate"}).get_text()
+            # TODO: Make array of strings and ignore sup tags(ex. Ep.1: Twisted Metal 1-4)
+            #replayEpisode["gamedate"] = asideElement.find('div', {"data-source": "gamedate"}).get_text()
+            gameDateArr = []
+            for gameDateString in asideElement.find('div', {"data-source": "gamedate"}).stripped_strings:
+                gameDateArr.append(gameDateString.replace('\n', ''))
+            replayEpisode["gamedate"] = gameDateArr
 
             # Air Date
-            replayEpisode["airdate"] = asideElement.find('div', {"data-source": "airdate"}).get_text()
+            replayEpisode["airdate"] = asideElement.find('div', {"data-source": "airdate"}).get_text().replace('\n', ' ').strip()
 
             # Running Time
-            replayEpisode["runtime"] = asideElement.find('div', {"data-source": "runtime"}).get_text()
+            replayEpisode["runtime"] = asideElement.find('div', {"data-source": "runtime"}).get_text().replace('\n', ' ').strip()
+
+            # Host(s)
+
+            # Featuring
 
         # Return replay episode dictionary
         return replayEpisode
@@ -87,16 +114,21 @@ def scrapeReplayEpisode(episodeURL):
         print('No response from episode URL: ' + episodeURL)
 
 # TEMP - test array of a few random URLs before running on all episode URLs
+replayGamesArray = []
 for episode in tempReplayEpisodeURLArr:
-    print(scrapeReplayEpisode(episode), '\n')
-    time.sleep(1)
+    replayGamesArray.append(scrapeReplayEpisode(episode))
+    time.sleep(1) # pause code for a second so not spamming website with requests
+print(replayGamesArray, '\n')
+# Write JSON to local file
+with open('gameInformerReplayFandomWikiGamesData.json', 'w') as outfile:
+    json.dump(replayGamesArray, outfile, indent=4)
 
 # Function: scrapeGameInformerFandomWiki()
 # scrapeGameInformerFandomWiki(startEpisode = 1, endEpisode = 0, scrapeEachEpisodeSite = false)
 # startEpisode - earliest episode to include
 # endEpisode - default value of 0 corresponds to most recent episode listed on site (could also use most recent episode number)
 # scrapeEachEpisodeSite - boolean to scrape additional data of each episode using each indiviual episode webpage
-def scrapeGameInformerFandomWiki(startEpisode = 1, endEpisode = 0, scrapeEachEpisodeSite = False):
+def scrapeGameInformerFandomWiki(startEpisode = 1, endEpisode = 0, scrapeEachEpisodeSite = True):
     url = 'https://replay.fandom.com/wiki/List_of_Replay_episodes'
     response = requests.get(url, timeout=5)
 
