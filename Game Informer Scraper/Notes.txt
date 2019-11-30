@@ -1,0 +1,54 @@
+Scrape Game Informer Replay Fandom Wiki
+scrapeGameInformerFandomWiki()
+
+gameDict = {
+    "title": "",
+    "system": "",
+    "yearReleased": ""
+    }
+
+EPISODES TO TEST: *1,102, 106, *212, 216, 218, *253, 269, 277
+ *307, *320, *322, 324, *331, *344, *347, *349, *355, *361, *362, *366, *379, *392
+ *403-408, *412, *414, *422, *443, *444, *449, 452-455, *458, *466, *469, *480, *492
+
+replayEpisodeDict02 = {
+    "episodeNumber": 286,
+    "episodeTitle": "Replay: Prince of Persia: The Sands of Time",
+    "fandomWikiURL": "", # use to get summary of episode and list of host/guests
+    "mainSegmentGames": [
+        {
+            "title": "",
+            "system": "",
+            "yearReleased": ""
+        },
+        {
+            "title": "",
+            "system": "",
+            "yearReleased": ""
+        }
+    ],
+    "airDate": "6/6/15",
+    "videoLength": "1:02:04",
+    "middleSegment": "",
+    "middleSegmentFandomWikiURL": "",
+    "middleSegmentContent": "Nintendo 64 Price Drop and Player's Choice Games Ad",
+    "secondSegment": "RR",
+    "secondSegmentFandomWikiURL": "",
+    "segondSegmentGames": [
+        {
+            "title": "Prince of Persia: The Forgotten Sands",
+            "system": "",
+            "yearReleased": ""
+        },
+        {
+            "title": "",
+            "system": "",
+            "yearReleased": ""
+        }
+    ],
+    "season": 3,
+    "guests": ["host", "guest1", "guest2"],
+    "youTubeURL": "",
+    "youTubeThumbnailURL": "",
+    "youTubeDescription": ""
+}

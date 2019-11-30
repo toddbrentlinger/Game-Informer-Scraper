@@ -3,8 +3,16 @@ from bs4 import BeautifulSoup
 import re
 import json
 import time
+from GI_Replay_Episode_Webpage_Scraper import get_headline_data
 
 # TODO:
+# - Write function for each headline that cycles through siblings until reaching next h2, or table tag
+# which represents the end of the mainContent to read.
+#       - If tag is list: put all list values into separate array before appending the whole array
+#       into the main array as a single element
+#       - Else: Get text from each sibling element and append to array
+#       - Return array
+# - Give External links their own property but add other headline content in single property array of objects
 # - Create second array of objects for game data. Reference the game title string in the first array to link
 # the data between them.
 #  
@@ -13,18 +21,53 @@ import time
 #   and "content" equal to array of string values
 
 tempReplayEpisodeURLArr = [
-    '/wiki/Replay:_The_X-Files',
-    '/wiki/Replay:_The_2018_Halloween_Spooktacular',
     '/wiki/Replay:_The_Jaguar_Disaster',
     '/wiki/Replay:_Xena:_Warrior_Princess',
     '/wiki/Replay:_Gex:_Enter_the_Gecko',
     '/wiki/Replay:_Twisted_Metal_1–4',
-    '/wiki/Replay:_Halloween_Stuptacular!'
+    '/wiki/Replay:_Halloween_Stuptacular!',
+    '/wiki/Replay:_The_Sniper_2',
+    '/wiki/Replay:_Sonic_Adventure',
+    '/wiki/Replay:_Quest_64',
+    '/wiki/Replay:_Bushido_Blade',
+    '/Replay:_Silent_Hill:_Downpour',
+    '/wiki/Replay:_Crystal%27s_Pony_Tale',
+    '/wiki/Replay:_Dragon_Ball_Z:_Chou_Saiya_Densetsu'
     ]
+
+# Functions for Beautiful Soup find_all()
+#def anchor_child_of_li(tag):
+#    return tag.name == 'a' and tag.find_parent('li')
+
+# TEMP Function:
+def scrapeReplayEpisode(episodeURL):
+    baseURL = 'https://replay.fandom.com'
+    response = requests.get(baseURL + episodeURL, timeout=5)
+
+    if response:
+        content = BeautifulSoup(response.content, "html.parser")
+
+        # Replay episode dictionary to add properties/values
+        replayEpisode = {}
+
+        # Content to scrape within tag with id = mw-content-text
+        mainContent = content.find(id='mw-content-text')
+
+        # Loop through each child tag of the main content
+        for child in mainContent.children:
+            if child.name == 'aside' or child.name == 'h2':
+                headlineID, headlineDataArr = get_headline_data(child)
+                replayEpisode[headlineID] = headlineDataArr
+        
+        # Print success message
+        print('Replay episode webpage was scrapped!')
+
+        # Return replay episode dictionary
+        return replayEpisode
 
 # Function:
 # scrapeReplayEpisode(episodeURL)
-def scrapeReplayEpisode(episodeURL):
+def scrapeReplayEpisodeOld(episodeURL):
     baseURL = 'https://replay.fandom.com'
     response = requests.get(baseURL + episodeURL, timeout=5)
 
@@ -39,28 +82,123 @@ def scrapeReplayEpisode(episodeURL):
 
         # Episode Description
         # TODO: Get all text until next h2 or table tag. Ignore tags(including their children): aside, nav, 
+        # TODO: If encounter ul list instead of p, create separate array of list values to append to description array
+        # SOLUTION: Recursive function that adds array of list values no matter how deep the hierarchy goes
         episodeDescriptionArr = []
-        for para in mainContent.find_all('p'):
-            paraText = para.get_text().replace('\n', '')
-            if paraText: # test if string is empty before appending to array
-                episodeDescriptionArr.append(paraText)
+        # Loop through each child tag of the main content
+        for child in mainContent.children:
+            # Ignore tag aside and tag names that return None
+            if child.name is None or child.name == 'aside':
+                continue
+            # Break loop if enounter h2, table, or nav tags
+            if child.name == 'h2' or child.name == 'table' or child.name == 'nav':
+                break
+            # TODO: Test if the following if-else outputs are equal. If yes, replace with single line
+            if child.name == 'ul':
+                descriptionText = [text for text in child.stripped_strings]
+            else:
+                descriptionText = child.get_text().replace('\n', '')
+            if descriptionText: # test if empty before appending to array
+                episodeDescriptionArr.append(descriptionText)
+        # Add array to description property of replayEpisode
         replayEpisode["description"] = episodeDescriptionArr
 
         # External Links
         # ISSUE: Could have list in description so cannot find first 'ul' tag
-        # SOLUTION: use 
-        episodeExternalLinksArr = []
-        episodeExternalLinks = mainContent.find('ul')
-        if episodeExternalLinks: # check if there is an unordered list (check is array is empty)
-            for externalLink in episodeExternalLinks.find_all('a'):
-                externalLinkObject = {
-                    "href": externalLink.get('href'),
-                    "title": externalLink.get_text()
-                    }
-                episodeExternalLinksArr.append(externalLinkObject)
-        replayEpisode["externalLinks"] = episodeExternalLinksArr
+        # SOLUTION: use id='External_links'
+#        episodeExternalLinksArr = []
+#        episodeExternalLinks = mainContent.find('ul')
+#        if episodeExternalLinks: # check if there is an unordered list (check is array is empty)
+#            for externalLink in episodeExternalLinks.find_all('a'):
+#                externalLinkObject = {
+#                    "href": externalLink.get('href'),
+#                    "title": externalLink.get_text()
+#                    }
+#                episodeExternalLinksArr.append(externalLinkObject)
+#        replayEpisode["externalLinks"] = episodeExternalLinksArr
 
         # Misc Headers
+        # span class='mw-headline' then check for ids and put any unknown header into a separate variable
+        episodeExternalLinksArr = []
+        episodeNotesArr = []
+        episodeQuotesArr = []
+        episodeCreditCookiesArr = []
+        episodeMiscHeadlinesArr = []
+        # NOTE: Might be better to search for all h2 direct children of mainContent
+        #for headline in mainContent.find_all('span', 'mw-headline'):
+        for headline in mainContent.find_all('h2', recursive=False):
+            headlineID = headline.span['id']
+
+            # ----- External Links -----
+            if headlineID == 'External_Links' or headlineID == 'External_links':
+                # scan each sibling tag until reach table or h2; if anchor tag, copy data
+                for sibling in headline.next_siblings:
+                    if sibling.name is None:
+                        continue
+                    if sibling.name == 'table' or sibling.name == 'h2':
+                        break
+                    for externalLink in sibling.find_all(lambda tag : tag.name == 'a' and tag.find_parent('li')):
+                        externalLinkObject = {
+                            "href": externalLink.get('href'),
+                            "title": externalLink.get_text()
+                            }
+                        episodeExternalLinksArr.append(externalLinkObject)
+                replayEpisode["externalLinks"] = episodeExternalLinksArr
+
+            # ----- Notes -----
+            elif headlineID == 'Notes':
+                for sibling in headline.next_siblings:
+                    if sibling.name is None:
+                        continue
+                    if sibling.name == 'table' or sibling.name == 'h2':
+                        break
+                    notesText = sibling.get_text(strip=True)
+                    if notesText: # test if empty before appending to array
+                        episodeNotesArr.append(notesText)
+                replayEpisode["notes"] = episodeNotesArr
+
+            # ----- Quotes -----
+            elif headlineID == 'Quotes':
+                for sibling in headline.next_siblings:
+                    if sibling.name is None:
+                        continue
+                    if sibling.name == 'table' or sibling.name == 'h2':
+                        break
+                    quoteText = sibling.get_text(strip=True)
+                    if quoteText: # test if empty before appending to array
+                        episodeQuotesArr.append(quoteText)
+                replayEpisode["quotes"] = episodeQuotesArr
+
+            # ----- Credit Cookie -----
+            elif headlineID == 'Credit_Cookie' or headlineID == 'Credit_cookie':
+                for sibling in headline.next_siblings:
+                    if sibling.name is None:
+                        continue
+                    if sibling.name == 'table' or sibling.name == 'h2':
+                        break
+                    creditCookieText = sibling.get_text(strip=True)
+                    if creditCookieText: # test if empty before appending to array
+                        episodeCreditCookiesArr.append(creditCookieText)
+                replayEpisode["creditCookie"] = episodeCreditCookiesArr
+
+            # Misc (add all other headline to single array)
+            else:
+                miscHeadlineObject = {}
+                miscHeadlineTextArr = []
+                miscHeadlineObject['id'] = headlineID
+                for sibling in headline.next_siblings:
+                    if sibling.name is None:
+                        continue
+                    if sibling.name == 'table' or sibling.name == 'h2':
+                        break
+                    miscText = sibling.get_text(strip=True)
+                    if miscText: # test if empty before appending to array
+                        miscHeadlineTextArr.append(miscText)
+                miscHeadlineObject['text'] = miscHeadlineTextArr
+                episodeMiscHeadlinesArr.append(miscHeadlineObject)
+
+        # After loop finishes, add misc headlines array to replay episode object
+        replayEpisode["misc"] = episodeMiscHeadlinesArr
 
         # Aside
         asideElement = mainContent.find('aside', recursive=False)
@@ -86,7 +224,7 @@ def scrapeReplayEpisode(episodeURL):
             # TODO: Make array of strings
             #replayEpisode["system"] = asideElement.find('div', {"data-source": "system"}).get_text()
             systemArr = []
-            for systemString in asideElement.find('div', {"data-source": "system"}).stripped_strings:
+            for systemString in asideElement.find('div', {"data-source": "system"}).div.stripped_strings:
                 systemArr.append(systemString.replace('\n', ''))
             replayEpisode["system"] = systemArr
 
@@ -94,34 +232,41 @@ def scrapeReplayEpisode(episodeURL):
             # TODO: Make array of strings and ignore sup tags(ex. Ep.1: Twisted Metal 1-4)
             #replayEpisode["gamedate"] = asideElement.find('div', {"data-source": "gamedate"}).get_text()
             gameDateArr = []
-            for gameDateString in asideElement.find('div', {"data-source": "gamedate"}).stripped_strings:
+            for gameDateString in asideElement.find('div', {"data-source": "gamedate"}).div.stripped_strings:
                 gameDateArr.append(gameDateString.replace('\n', ''))
             replayEpisode["gamedate"] = gameDateArr
 
             # Air Date
-            replayEpisode["airdate"] = asideElement.find('div', {"data-source": "airdate"}).get_text().replace('\n', ' ').strip()
+            replayEpisode["airdate"] = asideElement.find('div', {"data-source": "airdate"}).div.get_text(strip=True).replace('\n', ' ')
 
             # Running Time
-            replayEpisode["runtime"] = asideElement.find('div', {"data-source": "runtime"}).get_text().replace('\n', ' ').strip()
+            replayEpisode["runtime"] = asideElement.find('div', {"data-source": "runtime"}).div.get_text(strip=True).replace('\n', ' ')
 
             # Host(s)
+            hostElement = asideElement.find('div', {"data-source": "host"})
+            if hostElement:
+                replayEpisode["host"] = [text for text in hostElement.div.stripped_strings]
 
             # Featuring
+            featuringElement = asideElement.find('div', {"data-source": "featuring"})
+            if featuringElement:
+                replayEpisode["featuring"] = [text for text in featuringElement.div.stripped_strings]
 
+        # Print success message
+        print('Replay episode webpage was scrapped!')
         # Return replay episode dictionary
         return replayEpisode
     else:
         print('No response from episode URL: ' + episodeURL)
 
 # TEMP - test array of a few random URLs before running on all episode URLs
-replayGamesArray = []
+replayEpisodesArray = []
 for episode in tempReplayEpisodeURLArr:
-    replayGamesArray.append(scrapeReplayEpisode(episode))
+    replayEpisodesArray.append(scrapeReplayEpisode(episode))
     time.sleep(1) # pause code for a second so not spamming website with requests
-print(replayGamesArray, '\n')
 # Write JSON to local file
-with open('gameInformerReplayFandomWikiGamesData.json', 'w') as outfile:
-    json.dump(replayGamesArray, outfile, indent=4)
+with open('gameInformerReplayFandomWikiEpisodeData.json', 'w') as outfile:
+    json.dump(replayEpisodesArray, outfile, indent=4)
 
 # Function: scrapeGameInformerFandomWiki()
 # scrapeGameInformerFandomWiki(startEpisode = 1, endEpisode = 0, scrapeEachEpisodeSite = false)
@@ -285,58 +430,3 @@ def scrapeGameInformerFandomWiki(startEpisode = 1, endEpisode = 0, scrapeEachEpi
         print('\n', 'Success. Web scrape completed!', '\n')
     else:
         print('An error has occurred')
-
-# Scrape Game Informer Replay Fandom Wiki
-#scrapeGameInformerFandomWiki()
-
-#gameDict = {
-#    "title": "",
-#    "system": "",
-#    "yearReleased": ""
-#    }
-
-#EPISODES TO TEST: *1,102, 106, *212, 216, 218, *253, 269, 277
-# *307, *320, *322, 324, *331, *344, *347, *349, *355, *361, *362, *366, *379, *392
-# *403-408, *412, *414, *422, *443, *444, *449, 452-455, *458, *466, *469, *480, *492
-#
-#replayEpisodeDict02 = {
-#    "episodeNumber": 286,
-#    "episodeTitle": "Replay: Prince of Persia: The Sands of Time",
-#    "fandomWikiURL": "", # use to get summary of episode and list of host/guests
-#    "mainSegmentGames": [
-#        {
-#            "title": "",
-#            "system": "",
-#            "yearReleased": ""
-#        },
-#        {
-#            "title": "",
-#            "system": "",
-#            "yearReleased": ""
-#        }
-#    ],
-#    "airDate": "6/6/15",
-#    "videoLength": "1:02:04",
-#    "middleSegment": "",
-#    "middleSegmentFandomWikiURL": "",
-#    "middleSegmentContent": "Nintendo 64 Price Drop and Player's Choice Games Ad",
-#    "secondSegment": "RR",
-#    "secondSegmentFandomWikiURL": "",
-#    "segondSegmentGames": [
-#        {
-#            "title": "Prince of Persia: The Forgotten Sands",
-#            "system": "",
-#            "yearReleased": ""
-#        },
-#        {
-#            "title": "",
-#            "system": "",
-#            "yearReleased": ""
-#        }
-#    ],
-#    "season": 3,
-#    "guests": ["host", "guest1", "guest2"],
-#    "youTubeURL": "",
-#    "youTubeThumbnailURL": "",
-#    "youTubeDescription": ""
-#}
