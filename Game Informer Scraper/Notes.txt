@@ -1,4 +1,17 @@
 Scrape Game Informer Replay Fandom Wiki
+
+TODO:
+Gallery Image Progression from one url
+Start With:
+https://vignette.wikia.nocookie.net/replay/images/c/cf/Vault05_replay_bushidoblade.png/revision/latest/scale-to-width-down/185?cb=20130719135446
+185 x 97:
+https://vignette.wikia.nocookie.net/replay/images/c/cf/Vault05_replay_bushidoblade.png/revision/latest/scale-to-width-down/185?cb=20130719135446
+640 x 337:
+https://vignette.wikia.nocookie.net/replay/images/c/cf/Vault05_replay_bushidoblade.png/revision/latest/scale-to-width-down/640?cb=20130719135446
+Full:
+https://vignette.wikia.nocookie.net/replay/images/c/cf/Vault05_replay_bushidoblade.png/revision/latest?cb=20130719135446
+
+
 scrapeGameInformerFandomWiki()
 
 gameDict = {

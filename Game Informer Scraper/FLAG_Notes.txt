@@ -1,0 +1,95 @@
+FLAGs from scrape on 12/14/19
+
+[515, 1, 2, 2]
+[492, 1, 3, 3]
+[449, 4, 2, 1]
+[392, 5, 3, 1]
+[362, 8, 1, 8]
+[361, 4, 1, 4]
+[355, 4, 2, 4]
+[349, 11, 5, 11]
+[347, 5, 1, 5]
+[344, 7, 1, 7]
+[331, 4, 3, 4]
+[324, 2, 1, 2]
+[322, 6, 1, 6]
+[320, 9, 1, 9]
+[253, 1, 3, 3]
+[212, 1, 3, 3]
+[1, 1, 1, 4]
+
+{'episode': 515, 'system': ['Xbox 360', 'PC']}
+{'episode': 492, 'system': ['Supers NES', 'Nintendo 64', 'PlayStation 3']}
+{'episode': 480, 'yearReleased': '2003-2004'}
+{'episode': 469, 'yearReleased': '2008-2010'}
+{'episode': 454, 'yearReleased': '2010-2012'}
+{'episode': 453, 'yearReleased': '1983-1992'}
+{'episode': 452, 'yearReleased': '1982-1989'}
+{'episode': 449, 'system': ['Sega Genesis', 'PlayStation 2']}
+{'episode': 449, 'yearReleased': '1995-2005'}
+{'episode': 444, 'yearReleased': '1990-1996'}
+{'episode': 443, 'yearReleased': '2003-2004'}
+{'episode': 422, 'yearReleased': '1985-2006'}
+{'episode': 414, 'yearReleased': '2016-2017'}
+{'episode': 412, 'yearReleased': '1993-1996'}
+{'episode': 408, 'yearReleased': '---'}
+{'episode': 407, 'yearReleased': '1993-1995'}
+{'episode': 406, 'yearReleased': '1993-2002'}
+{'episode': 405, 'yearReleased': '---'}
+{'episode': 404, 'yearReleased': '---'}
+{'episode': 403, 'yearReleased': '1977-1990'}
+{'episode': 392, 'system': ['Nintendo DS', 'Game Boy Advance', 'NES']}
+{'episode': 392, 'yearReleased': '1990-2008'}
+{'episode': 355, 'system': ['Nintendo 64', 'Xbox 360']}
+{'episode': 349, 'system': ['NES', 'Super NES', 'Genesis', 'PlayStation', 'Dreamcast']}
+{'episode': 331, 'system': ['Super NES', 'GameCube', 'Nintendo DS']}
+{'episode': 253, 'system': ['Nintendo 64', 'GameCube', 'GameCube']}
+{'episode': 212, 'system': ['Game Boy', 'NES', 'Super NES']}
+
+FLAGs from scrape on 11/30/19
+
+[515, 1, 2, 2]
+[492, 1, 3, 3]
+[449, 4, 2, 1]
+[392, 5, 3, 1]
+[362, 8, 1, 8]
+[361, 4, 1, 4]
+[355, 4, 2, 4]
+[349, 11, 5, 11]
+[347, 5, 1, 5]
+[344, 7, 1, 7]
+[331, 4, 3, 4]
+[324, 2, 1, 2]
+[322, 6, 1, 6]
+[320, 9, 1, 9]
+[253, 1, 3, 3]
+[212, 1, 3, 3]
+[1, 1, 1, 4]
+
+{'episode': 515, 'system': ['Xbox 360', 'PC']}
+{'episode': 492, 'system': ['Supers NES', 'Nintendo 64', 'PlayStation 3']}
+{'episode': 480, 'yearReleased': '2003-2004'}
+{'episode': 469, 'yearReleased': '2008-2010'}
+{'episode': 454, 'yearReleased': '2010-2012'}
+{'episode': 453, 'yearReleased': '1983-1992'}
+{'episode': 452, 'yearReleased': '1982-1989'}
+{'episode': 449, 'system': ['Sega Genesis', 'PlayStation 2']}
+{'episode': 449, 'yearReleased': '1995-2005'}
+{'episode': 444, 'yearReleased': '1990-1996'}
+{'episode': 443, 'yearReleased': '2003-2004'}
+{'episode': 422, 'yearReleased': '1985-2006'}
+{'episode': 414, 'yearReleased': '2016-2017'}
+{'episode': 412, 'yearReleased': '1993-1996'}
+{'episode': 408, 'yearReleased': '---'}
+{'episode': 407, 'yearReleased': '1993-1995'}
+{'episode': 406, 'yearReleased': '1993-2002'}
+{'episode': 405, 'yearReleased': '---'}
+{'episode': 404, 'yearReleased': '---'}
+{'episode': 403, 'yearReleased': '1977-1990'}
+{'episode': 392, 'system': ['Nintendo DS', 'Game Boy Advance', 'NES']}
+{'episode': 392, 'yearReleased': '1990-2008'}
+{'episode': 355, 'system': ['Nintendo 64', 'Xbox 360']}
+{'episode': 349, 'system': ['NES', 'Super NES', 'Genesis', 'PlayStation', 'Dreamcast']}
+{'episode': 331, 'system': ['Super NES', 'GameCube', 'Nintendo DS']}
+{'episode': 253, 'system': ['Nintendo 64', 'GameCube', 'GameCube']}
+{'episode': 212, 'system': ['Game Boy', 'NES', 'Super NES']}

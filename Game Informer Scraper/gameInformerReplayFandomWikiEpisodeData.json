@@ -1,6 +1,24 @@
 [
     {
-        "description": []
+        "description": [],
+        "image": {
+            "width": "300",
+            "height": "169",
+            "srcset": [
+                "https://vignette.wikia.nocookie.net/replay/images/5/59/JaguarD.jpg/revision/latest/scale-to-width-down/310?cb=20170108075802",
+                "1x",
+                "https://vignette.wikia.nocookie.net/replay/images/5/59/JaguarD.jpg/revision/latest?cb=20170108075802",
+                "2x"
+            ]
+        },
+        "system": [
+            "Atari Jaguar"
+        ],
+        "gamedate": [
+            "1994-1996"
+        ],
+        "airdate": "November 25, 2016",
+        "runtime": "1:01:12"
     },
     {
         "description": [],
@@ -13,6 +31,32 @@
                 "href": "https://www.youtube.com/watch?v=RlqTywDdCco",
                 "title": "Replay: Xena: Warrior Princess"
             }
+        ],
+        "image": {
+            "width": "200",
+            "height": "179",
+            "srcset": [
+                "https://vignette.wikia.nocookie.net/replay/images/c/c1/Replay_XenaWarriorPrincess.jpg/revision/latest?cb=20180325190802",
+                "1x",
+                "https://vignette.wikia.nocookie.net/replay/images/c/c1/Replay_XenaWarriorPrincess.jpg/revision/latest?cb=20180325190802",
+                "2x"
+            ]
+        },
+        "system": [
+            "PlayStation",
+            "Nintendo 64"
+        ],
+        "gamedate": [
+            "1999"
+        ],
+        "airdate": "February 8, 2014",
+        "runtime": "33:04",
+        "host": [
+            "Andrew Reiner"
+        ],
+        "featuring": [
+            "Ben Reeves",
+            "Matt Miller"
         ]
     },
     {
@@ -37,6 +81,32 @@
                 "href": "http://en.wikipedia.org/wiki/Sabrina,_the_Teenage_Witch_(TV_series)#Video_games",
                 "title": "Sabrina the Teenage Witch: A Twitch in Time"
             }
+        ],
+        "image": {
+            "width": "200",
+            "height": "179",
+            "srcset": [
+                "https://vignette.wikia.nocookie.net/replay/images/9/9c/Replay_GexEnterTheGecko.jpg/revision/latest?cb=20120501001452",
+                "1x",
+                "https://vignette.wikia.nocookie.net/replay/images/9/9c/Replay_GexEnterTheGecko.jpg/revision/latest?cb=20120501001452",
+                "2x"
+            ]
+        },
+        "system": [
+            "PlayStation"
+        ],
+        "gamedate": [
+            "January 31, 1998"
+        ],
+        "airdate": "October 9, 2010",
+        "runtime": "30:48",
+        "host": [
+            "Phil Kollar"
+        ],
+        "featuring": [
+            "Tim Turi",
+            "Ben Reeves",
+            "Andrew Reiner"
         ]
     },
     {
@@ -55,8 +125,7 @@
         "notes": [],
         "quotes": [
             [
-                "Reiner",
-                ": \"I kind of like wiener [action].\""
+                " Reiner: \"I kind of like wiener [action].\""
             ]
         ],
         "credit_cookie": [
@@ -119,6 +188,43 @@
                 "href": "http://www.gamespot.com/twisted-metal-4/platform/ps",
                 "title": "Twisted Metal 4"
             }
+        ],
+        "image": {
+            "width": "200",
+            "height": "179",
+            "srcset": [
+                "https://vignette.wikia.nocookie.net/replay/images/b/b0/Replay_TwistedMetal1-4.jpg/revision/latest?cb=20111229232335",
+                "1x",
+                "https://vignette.wikia.nocookie.net/replay/images/b/b0/Replay_TwistedMetal1-4.jpg/revision/latest?cb=20111229232335",
+                "2x"
+            ]
+        },
+        "system": [
+            "PlayStation"
+        ],
+        "gamedate": [
+            "TM",
+            "November 5, 1995",
+            "TM2",
+            "October 31, 1996",
+            "TM3",
+            "October 31, 1998",
+            "CD",
+            "October 31, 1997",
+            "RT",
+            "September 30, 1998",
+            "TM4",
+            "October 31, 1999"
+        ],
+        "airdate": "January 27, 2010",
+        "runtime": "34:58",
+        "host": [
+            "Dan Ryckert"
+        ],
+        "featuring": [
+            "Tim Turi",
+            "Nick Ahrens",
+            "Andrew Reiner"
         ]
     },
     {
@@ -132,6 +238,39 @@
                 "href": "https://www.youtube.com/watch?v=xOcofKkEW0k",
                 "title": "Replay: Halloween Stuptacular!"
             }
+        ],
+        "image": {
+            "width": "300",
+            "height": "169",
+            "srcset": [
+                "https://vignette.wikia.nocookie.net/replay/images/7/7f/Replay_HalloweenStuptacular.jpg/revision/latest/scale-to-width-down/310?cb=20180714205704",
+                "1x",
+                "https://vignette.wikia.nocookie.net/replay/images/7/7f/Replay_HalloweenStuptacular.jpg/revision/latest?cb=20180714205704",
+                "2x"
+            ]
+        },
+        "system": [
+            "PC",
+            "NES",
+            "PlayStation 2",
+            "Xbox 360"
+        ],
+        "gamedate": [
+            "1990-2011"
+        ],
+        "airdate": "October 31, 2015",
+        "runtime": "53:15",
+        "host": [
+            "Andrew Reiner"
+        ],
+        "featuring": [
+            "Jeff Cork",
+            "Tim Turi",
+            "Dan Tack",
+            "Jeff Marchiafava",
+            "Joe Juba",
+            "Brian Shea",
+            "Ben Hanson"
         ]
     },
     {
@@ -145,6 +284,33 @@
                 "href": "https://www.youtube.com/watch?v=vCROd5J-_gI",
                 "title": "Replay: The Sniper 2"
             }
+        ],
+        "image": {
+            "width": "200",
+            "height": "179",
+            "srcset": [
+                "https://vignette.wikia.nocookie.net/replay/images/4/4b/Replay_TheSniper2.jpg/revision/latest?cb=20180415212711",
+                "1x",
+                "https://vignette.wikia.nocookie.net/replay/images/4/4b/Replay_TheSniper2.jpg/revision/latest?cb=20180415212711",
+                "2x"
+            ]
+        },
+        "system": [
+            "PlayStation 2"
+        ],
+        "gamedate": [
+            "March 5, 2004"
+        ],
+        "airdate": "August 9, 2014",
+        "runtime": "40:34",
+        "host": [
+            "Andrew Reiner"
+        ],
+        "featuring": [
+            "Joe Juba",
+            "Ben Reeves",
+            "Ben Hanson",
+            "Hilary Wilton"
         ]
     },
     {
@@ -192,6 +358,31 @@
                 "href": "https://en.wikipedia.org/wiki/Blue_Stinger",
                 "title": "Blue Stinger"
             }
+        ],
+        "image": {
+            "width": "200",
+            "height": "179",
+            "srcset": [
+                "https://vignette.wikia.nocookie.net/replay/images/4/4a/Replay_SonicAdventure.jpg/revision/latest?cb=20120225122115",
+                "1x",
+                "https://vignette.wikia.nocookie.net/replay/images/4/4a/Replay_SonicAdventure.jpg/revision/latest?cb=20120225122115",
+                "2x"
+            ]
+        },
+        "system": [
+            "Dreamcast"
+        ],
+        "gamedate": [
+            "September 9, 1999"
+        ],
+        "airdate": "June 4, 2011",
+        "runtime": "35:00",
+        "host": [
+            "Tim Turi"
+        ],
+        "featuring": [
+            "Andrew Reiner",
+            "Dan Ryckert"
         ]
     },
     {
@@ -206,187 +397,83 @@
         "quotes": [
             "Quest 64",
             [
-                "Dan",
-                ": \"What's this dumb looking game?\"",
-                "Phil",
-                ": \"Uh, listen to this epic music. Aren't you excited?\"",
-                "Dan",
-                ": \"No!\"",
-                "Tim",
-                ": \"...Everyone's liking these voice-overs except you Dan!\"",
-                "Tim",
-                ": \"He just sticks that thing right in front of him.\"",
-                "Phil",
-                ": \"I kind of want to do a Super Replay of this now. Just Tim reading the text, actually, just the script of Quest 64.\"",
-                "Tim",
-                ": \"Can we get Dan outta here?\"",
-                "Dan",
-                ": \"Is this the ninth time going down this staircase by the way?\"",
-                "Andrew",
-                ": \"...Stairs that cast no shadows....\"",
-                "Phil",
-                ": \"Who put a fence in the middle of this room?\"",
-                "Andrew",
-                ": \"That's where you put chickens, man!\"",
-                "Tim",
-                ": \"No one ever said these names out loud when they were writing this!\"",
-                "Dan",
-                ": \"His name is Marmaduke...\" everyone laughs, \"...You gotta go talk to Dunesbury\"",
-                "Tim",
-                ": \"Corpural Dunesbury.\"",
-                "Dan",
-                ": \"Okay, so you're standing inside a Sega Activator...\"",
-                "Andrew",
-                ": \"Over-the-shoulder fireball...\"",
-                "Phil",
-                ": \"Lets see if we can die in the first battle.\"",
-                "Tim",
-                ": \"That is a jarring way to enter battle.\"",
-                "Tim",
-                ": (Singing) \"Get out of my N64, Take you back to the store... Gonna play Blitz instead, cause I'm a meathead... My name is Dan Ryckert... Nothing rhymes with Ryckert.\"",
-                "Tim",
-                ": \"Have bread in here please!\"",
-                "Dan",
-                ": \"Does he have a face, or does he have like a red line?\"",
-                "Tim",
-                ": \"I think it was in",
-                "Quest 65",
-                "that they added faces.\"",
-                "Andrew",
-                ": \"You need blast-processing for eyes.\"",
-                "Andrew",
-                ": \"Kind of uplifting music for his death.\"",
-                "Tim",
-                ": \"Who needs voice acting?\"",
-                "Tim",
-                ": This one's really for Dan.\"",
-                "Tim",
-                ": \"This is just gonna be ALL the bread.\"",
-                "Phil",
-                ": It's the bread supply room.\"",
-                "Phil",
-                ": So when I asked if you would have learned combat by going in these rooms, the answer was no, they would not have taught you combat.\"",
-                "Tim",
-                ": \"They would have taught you disappointment.\""
+                "Dan: \"What's this dumb looking game?\" Phil: \"Uh, listen to this epic music. Aren't you excited?\" Dan: \"No!\"",
+                "Tim: \"...Everyone's liking these voice-overs except you Dan!\"",
+                "Tim: \"He just sticks that thing right in front of him.\"",
+                "Phil: \"I kind of want to do a Super Replay of this now. Just Tim reading the text, actually, just the script of Quest 64.\" Tim: \"Can we get Dan outta here?\"",
+                "Dan: \"Is this the ninth time going down this staircase by the way?\"",
+                "Andrew: \"...Stairs that cast no shadows....\"",
+                "Phil: \"Who put a fence in the middle of this room?\"",
+                "Andrew: \"That's where you put chickens, man!\"",
+                "Tim: \"No one ever said these names out loud when they were writing this!\"",
+                "Dan: \"His name is Marmaduke...\" everyone laughs, \"...You gotta go talk to Dunesbury\" Tim: \"Corpural Dunesbury.\"",
+                "Dan: \"Okay, so you're standing inside a Sega Activator...\"",
+                "Andrew: \"Over-the-shoulder fireball...\"",
+                "Phil: \"Lets see if we can die in the first battle.\"",
+                "Tim: \"That is a jarring way to enter battle.\"",
+                "Tim: (Singing) \"Get out of my N64, Take you back to the store... Gonna play Blitz instead, cause I'm a meathead... My name is Dan Ryckert... Nothing rhymes with Ryckert.\"",
+                "Tim: \"Have bread in here please!\"",
+                "Dan: \"Does he have a face, or does he have like a red line?\"",
+                "Tim: \"I think it was in Quest 65 that they added faces.\"",
+                "Andrew: \"You need blast-processing for eyes.\"",
+                "Andrew: \"Kind of uplifting music for his death.\"",
+                "Tim: \"Who needs voice acting?\"",
+                "Tim: This one's really for Dan.\"",
+                "Tim: \"This is just gonna be ALL the bread.\"",
+                "Phil: It's the bread supply room.\"",
+                "Phil: So when I asked if you would have learned combat by going in these rooms, the answer was no, they would not have taught you combat.\" Tim: \"They would have taught you disappointment.\""
             ],
             "Hybrid Heaven",
             [
-                "Phil",
-                ": \"Nobody knows who picked this game out?\"",
-                "Andrew",
-                ": \"I think it's a sign for a Super Replay... which we never promise or talk about.\"",
-                "Dan",
-                ": \"Whaaat are we doing here?!\"",
-                "Dan",
-                ": \"Is that horse effects on the TV?\"",
-                "Tim",
-                ": \"No one watches TV like that!\"",
-                "Dan",
-                ": \"Look at those dumb shoulders. They look like No Mercy characters.\"",
-                "Andrew",
-                ": \"That other guy has to move at some point, right?\"",
-                "Dan",
-                ": \"I don't want this! I don't want this on the TV! Why is this happening?!\"",
-                "Tim",
-                ": \"It's like three polygons, are you really worried about it?\"",
-                "Andrew",
-                ": It's gonna take away Dan's innocence.\"",
-                "Tim",
-                ": \"Just standing in mist, that's his shower?\"",
-                "Dan",
-                ": \"Smoke machine in a closet...\"",
-                "Tim",
-                ": \"with um, yeah, yeah with um... just plays white noise... leaving his TV on static.\"",
-                "Dan",
-                ": \"He's looking right down... I'm up here!\"",
-                "Andrew",
-                ": \"Look at the eyes!\"",
-                "Phil",
-                ": \"He's treating him like a piece of meat.\"",
-                "Dan",
-                ": \"PUT ON SOME PANTS!!\"",
-                "Tim",
-                ": \"This is Officer Karrington, are reporting indencent exposer to uh...\"",
-                "Dan",
-                ": \"Please shut your blinds.\"",
-                "Tim",
-                ": (After the girl on the answering machine says, \"Johnny, you haven't forgotten our pact have you,\") \"To put on pants one day...\"",
-                "Tim",
-                ": (Girl on answering machine: \"...just meet me there, okay!\") \"Oh and... wear pants.\"",
-                "Andrew",
-                ": \"It can't be the guy because he's wearing pants. We know that.\"",
-                "Dan",
-                ": \"Pull it faster than that! This isn't slo-mo!\"",
-                "Andrew",
-                ": (feminime voice) \"Okay, that was weird, off to work.\"",
-                "Phil",
-                ": \"Why did that guy naked so long if he's not gonna be the main character?\"",
-                "Tim",
-                ": \"They all turn into that guy's shower.\"",
-                "Dan",
-                ": \"I know we say this alot, but I really want a Super Replay of this!\"",
-                "Andrew",
-                ": \"It's a good thing they devoted an entire room to this station.\"",
-                "Andrew",
-                ": \"This guy seems underdressed for this place.\"",
-                "Dan",
-                ": \"I think that first guy was underdressed.\"",
-                "Tim",
-                ": \"Try not to fall off this one.\"",
-                "Phil",
-                ": \"So you guys, I thinking of heading to the overground later...\"",
-                "Dan",
-                ": \"Why do characters in this era always jump with their arms straight into the air?\"",
-                "Tim",
-                ": \"Life changer 8, the sequel.\"",
-                "Dan",
-                ": \"It's the 180 turn and the laydown buttons.\"",
-                "Andrew",
-                ": \"Look how seductive he's like...\"",
-                "Dan",
-                ": \"Oh my ***! NO!\"",
-                "Andrew",
-                ": \"Look at that!\"",
-                "Tim",
-                ": \"Playgirls shoot!\"",
-                "Tim",
-                ": \"Z-button's sole purpose.\"",
-                "Dan",
-                ": \"Go seductively pose on that.\"",
-                "Phil",
-                ": \"The 'switch to turn off laser fence' was right next to that laser fence.\"",
-                "Andrew",
-                ": \"I don't think they liked you calling that a 1, when it was clearly a VEPT.\"",
-                "Dan",
-                ": \"What is that thing by the way?\"",
-                "Tim",
-                ": \"Fashion monster!\"",
-                "Dan",
-                ": \"This is turned-based melee?\"",
-                "Phil",
-                ": \"I love how you just threw away your gun and decided to fist fight.\"",
-                "Tim",
-                ": \"All these guys wanna fist fight so bad.\"",
-                "Tim",
-                ": (Sultry masculine voice) \"Crawling time, baby!\"",
-                "Phil",
-                ": \"Dan, didn't you have a case of the mousedroids, for a while?\"",
-                "Dan",
-                ": \"Yeah, I cleared up though.\"",
-                "Dan",
-                ": (while Tim's in battle) \"Can you do the seductive crawl right now?\" Tim tries the Z-button.",
-                "Tim",
-                ": \"I wish.\""
+                "Phil: \"Nobody knows who picked this game out?\"",
+                "Andrew: \"I think it's a sign for a Super Replay... which we never promise or talk about.\"",
+                "Dan: \"Whaaat are we doing here?!\"",
+                "Dan: \"Is that horse effects on the TV?\"",
+                "Tim: \"No one watches TV like that!\"",
+                "Dan: \"Look at those dumb shoulders. They look like No Mercy characters.\"",
+                "Andrew: \"That other guy has to move at some point, right?\"",
+                "Dan: \"I don't want this! I don't want this on the TV! Why is this happening?!\" Tim: \"It's like three polygons, are you really worried about it?\"",
+                "Andrew: It's gonna take away Dan's innocence.\"",
+                "Tim: \"Just standing in mist, that's his shower?\"",
+                "Dan: \"Smoke machine in a closet...\" Tim: \"with um, yeah, yeah with um... just plays white noise... leaving his TV on static.\"",
+                "Dan: \"He's looking right down... I'm up here!\"",
+                "Andrew: \"Look at the eyes!\"",
+                "Phil: \"He's treating him like a piece of meat.\"",
+                "Dan: \"PUT ON SOME PANTS!!\"",
+                "Tim: \"This is Officer Karrington, are reporting indencent exposer to uh...\" Dan: \"Please shut your blinds.\"",
+                "Tim: (After the girl on the answering machine says, \"Johnny, you haven't forgotten our pact have you,\") \"To put on pants one day...\"",
+                "Tim: (Girl on answering machine: \"...just meet me there, okay!\") \"Oh and... wear pants.\"",
+                "Andrew: \"It can't be the guy because he's wearing pants. We know that.\"",
+                "Dan: \"Pull it faster than that! This isn't slo-mo!\"",
+                "Andrew: (feminime voice) \"Okay, that was weird, off to work.\"",
+                "Phil: \"Why did that guy naked so long if he's not gonna be the main character?\"",
+                "Tim: \"They all turn into that guy's shower.\"",
+                "Dan: \"I know we say this alot, but I really want a Super Replay of this!\"",
+                "Andrew: \"It's a good thing they devoted an entire room to this station.\"",
+                "Andrew: \"This guy seems underdressed for this place.\" Dan: \"I think that first guy was underdressed.\"",
+                "Tim: \"Try not to fall off this one.\"",
+                "Phil: \"So you guys, I thinking of heading to the overground later...\"",
+                "Dan: \"Why do characters in this era always jump with their arms straight into the air?\"",
+                "Tim: \"Life changer 8, the sequel.\"",
+                "Dan: \"It's the 180 turn and the laydown buttons.\"",
+                "Andrew: \"Look how seductive he's like...\" Dan: \"Oh my ***! NO!\" Andrew: \"Look at that!\" Tim: \"Playgirls shoot!\"",
+                "Tim: \"Z-button's sole purpose.\"",
+                "Dan: \"Go seductively pose on that.\"",
+                "Phil: \"The 'switch to turn off laser fence' was right next to that laser fence.\"",
+                "Andrew: \"I don't think they liked you calling that a 1, when it was clearly a VEPT.\"",
+                "Dan: \"What is that thing by the way?\" Tim: \"Fashion monster!\"",
+                "Dan: \"This is turned-based melee?\"",
+                "Phil: \"I love how you just threw away your gun and decided to fist fight.\"",
+                "Tim: \"All these guys wanna fist fight so bad.\"",
+                "Tim: (Sultry masculine voice) \"Crawling time, baby!\"",
+                "Phil: \"Dan, didn't you have a case of the mousedroids, for a while?\" Dan: \"Yeah, I cleared up though.\"",
+                "Dan: (while Tim's in battle) \"Can you do the seductive crawl right now?\" Tim tries the Z-button. Tim: \"I wish.\""
             ]
         ],
         "credit_cookies": [
             [
-                "Audio clips from the",
-                "Quest 64",
-                "replay of Dan voice acting one of the characters, Tim voice acting a sheep, followed by him singing the song he made up, and then the goofy noises he made during the episode.",
-                "Clip of",
-                "Hybrid Heaven",
-                "of Diaz crawling on the ground with Right Said Fred's \"I'm Too Sexy\" song."
+                "Audio clips from the Quest 64 replay of Dan voice acting one of the characters, Tim voice acting a sheep, followed by him singing the song he made up, and then the goofy noises he made during the episode.",
+                "Clip of Hybrid Heaven of Diaz crawling on the ground with Right Said Fred's \"I'm Too Sexy\" song."
             ]
         ],
         "external_links": [
@@ -406,6 +493,32 @@
                 "href": "https://en.wikipedia.org/wiki/Hybrid_Heaven",
                 "title": "Hybrid Heaven"
             }
+        ],
+        "image": {
+            "width": "200",
+            "height": "179",
+            "srcset": [
+                "https://vignette.wikia.nocookie.net/replay/images/7/73/Replay_Quest64.jpg/revision/latest?cb=20120309043426",
+                "1x",
+                "https://vignette.wikia.nocookie.net/replay/images/7/73/Replay_Quest64.jpg/revision/latest?cb=20120309043426",
+                "2x"
+            ]
+        },
+        "system": [
+            "Nintendo 64"
+        ],
+        "gamedate": [
+            "June 11, 1998"
+        ],
+        "airdate": "October 1, 2011",
+        "runtime": "48:59",
+        "host": [
+            "Phil Kollar"
+        ],
+        "featuring": [
+            "Andrew Reiner",
+            "Dan Ryckert",
+            "Tim Turi"
         ]
     },
     {
@@ -421,28 +534,45 @@
         "quotes": [
             "Bushido Blade",
             [
-                "Jeff",
-                "(to Dan): \"You really cannot do any worse.\"",
-                "Jeff",
-                ": \"I like the A.I. that hits you while you are down.\"",
-                "Phil",
-                ": \"Her weakness was her back, there needs to be a glowing, orange dot back there.\""
+                "Jeff (to Dan): \"You really cannot do any worse.\"",
+                "Jeff: \"I like the A.I. that hits you while you are down.\"",
+                "Phil: \"Her weakness was her back, there needs to be a glowing, orange dot back there.\""
             ],
             "NBA Live '96",
             [
-                "Phil",
-                ": \"I also don't know the rules of basketball, so that's going to severely hinder my performance.\"",
-                "Dan",
-                ": \"We have a thrilling four-to-nothing game going on.\"",
-                "Dan",
-                ": \"How are the controls?\"",
-                "Reiner",
-                ": \"Um...atrocious.\"",
-                "Reiner",
-                ": \"I think Shaq just killed someone on the other end of the floor.\""
+                "Phil: \"I also don't know the rules of basketball, so that's going to severely hinder my performance.\"",
+                "Dan: \"We have a thrilling four-to-nothing game going on.\"",
+                "Dan: \"How are the controls?\" Reiner: \"Um...atrocious.\"",
+                "Reiner: \"I think Shaq just killed someone on the other end of the floor.\""
             ]
         ],
-        "gallery": [],
+        "gallery": [
+            {
+                "title": "Vault05 replay bushidoblade.png (1.42 MB)",
+                "src": "https://vignette.wikia.nocookie.net/replay/images/c/cf/Vault05_replay_bushidoblade.png/revision/latest/scale-to-width-down/185?cb=20130719135446",
+                "caption": "Bushido Blade - GI Vault #1"
+            },
+            {
+                "title": "Vault04 replay bushidoblade.png (1.83 MB)",
+                "src": "https://vignette.wikia.nocookie.net/replay/images/8/89/Vault04_replay_bushidoblade.png/revision/latest/scale-to-width-down/185?cb=20130719135436",
+                "caption": "Bushido Blade - GI Vault #2"
+            },
+            {
+                "title": "Vault03 replay bushidoblade.png (1.73 MB)",
+                "src": "https://vignette.wikia.nocookie.net/replay/images/7/73/Vault03_replay_bushidoblade.png/revision/latest/scale-to-width-down/185?cb=20130719135320",
+                "caption": "Bushido Blade - GI Vault #3"
+            },
+            {
+                "title": "Vault02 replay bushidoblade.png (1.84 MB)",
+                "src": "https://vignette.wikia.nocookie.net/replay/images/f/f7/Vault02_replay_bushidoblade.png/revision/latest/scale-to-width-down/185?cb=20130719135137",
+                "caption": "Bushido Blade - GI Vault #4"
+            },
+            {
+                "title": "Vault.png (1.22 MB)",
+                "src": "https://vignette.wikia.nocookie.net/replay/images/c/c9/Vault.png/revision/latest/scale-to-width-down/185?cb=20120209063015",
+                "caption": "Bushido Blade - GI Vault #5"
+            }
+        ],
         "external_links": [
             {
                 "href": "http://www.gameinformer.com/b/features/archive/2010/01/31/replay-bushido-blade.aspx",
@@ -464,6 +594,32 @@
                 "href": "http://www.gamespot.com/nba-live-96/",
                 "title": "NBA Live '96"
             }
+        ],
+        "image": {
+            "width": "200",
+            "height": "179",
+            "srcset": [
+                "https://vignette.wikia.nocookie.net/replay/images/b/bf/Replay_BushidoBlade.jpg/revision/latest?cb=20120207155251",
+                "1x",
+                "https://vignette.wikia.nocookie.net/replay/images/b/bf/Replay_BushidoBlade.jpg/revision/latest?cb=20120207155251",
+                "2x"
+            ]
+        },
+        "system": [
+            "PlayStation"
+        ],
+        "gamedate": [
+            "September 30, 1997"
+        ],
+        "airdate": "January 31, 2010",
+        "runtime": "17:25",
+        "host": [
+            "Dan Ryckert"
+        ],
+        "featuring": [
+            "Phil Kollar",
+            "Jeff Cork",
+            "Andrew Reiner"
         ]
     },
     {
@@ -471,11 +627,18 @@
             "Silent Hill: Downpour is the featured game in the 512th episode of Replay. This episode is hosted by Andrew Reiner and features Bulbasaur, Brian Shea, Dan Tack, and Alex Stadnik. "
         ],
         "see_also": [
-            [
-                "Replay: Silent Hill",
-                "Replay: Silent Hill 3",
-                "Replay: Silent Hill 4: The Room"
-            ]
+            {
+                "href": "/wiki/Replay:_Silent_Hill",
+                "title": "Replay: Silent Hill"
+            },
+            {
+                "href": "/wiki/Replay:_Silent_Hill_3",
+                "title": "Replay: Silent Hill 3"
+            },
+            {
+                "href": "/wiki/Replay:_Silent_Hill_4:_The_Room",
+                "title": "Replay: Silent Hill 4: The Room"
+            }
         ],
         "external_links": [
             {
@@ -490,6 +653,33 @@
                 "href": "https://en.wikipedia.org/wiki/Silent_Hill:_Downpour",
                 "title": "Silent Hill: Downpour"
             }
+        ],
+        "image": {
+            "width": "300",
+            "height": "169",
+            "srcset": [
+                "https://vignette.wikia.nocookie.net/replay/images/5/5b/Downpour.jpg/revision/latest/scale-to-width-down/310?cb=20191108172025",
+                "1x",
+                "https://vignette.wikia.nocookie.net/replay/images/5/5b/Downpour.jpg/revision/latest/scale-to-width-down/619?cb=20191108172025",
+                "2x"
+            ]
+        },
+        "system": [
+            "Xbox 360"
+        ],
+        "gamedate": [
+            "March 13, 2012"
+        ],
+        "airdate": "November 8, 2019",
+        "runtime": "1:37:06",
+        "host": [
+            "Andrew Reiner"
+        ],
+        "featuring": [
+            "Dan Tack",
+            "Brian Shea",
+            "Alex Stadnik",
+            "Bulbasaur"
         ]
     },
     {
@@ -504,19 +694,25 @@
         "quotes": [
             "Crystal's Pony Tale:",
             [
-                "Tim: \"Poop jokes are all the rage on these Replays.\"",
-                "Dan: \"It's a D-pad item that unlocks your ghost pony.\""
+                " Tim: \"Poop jokes are all the rage on these Replays.\"",
+                " Dan: \"It's a D-pad item that unlocks your ghost pony.\""
             ],
             "Shaq-Fu:",
             [
-                "Dan: \"Who just jumps into a portal when some dude's like, 'Hey, get in my portal'?\"",
-                "Tim: \"Why'd they make this game?\""
+                " Dan: \"Who just jumps into a portal when some dude's like, 'Hey, get in my portal'?\"",
+                " Tim: \"Why'd they make this game?\""
             ]
         ],
         "credit_cookie": [
             "The guys mock the \"Good Job\" bit from Crystal's Pony Tale some more and Tim describes how he'll look in twenty years. Then a repeat of Dan's \"ghost pony\" line."
         ],
-        "gallery": [],
+        "gallery": [
+            {
+                "title": "Crystal's Pony Tale - Tim in 20 years.jpg (118 KB)",
+                "src": "https://vignette.wikia.nocookie.net/replay/images/1/15/Crystal%27s_Pony_Tale_-_Tim_in_20_years.jpg/revision/latest/scale-to-width-down/180?cb=20120114055857",
+                "caption": "Tim in twenty years"
+            }
+        ],
         "external_links": [
             {
                 "href": "http://www.gameinformer.com/b/news/archive/2010/12/11/replay-crystal-s-pony-tale.aspx",
@@ -542,6 +738,32 @@
                 "href": "http://www.gamespot.com/shaq-fu/platform/genesis",
                 "title": "Shaq-Fu"
             }
+        ],
+        "image": {
+            "width": "200",
+            "height": "179",
+            "srcset": [
+                "https://vignette.wikia.nocookie.net/replay/images/2/2d/Replay_CrystalsPonyTale.jpg/revision/latest?cb=20120114042942",
+                "1x",
+                "https://vignette.wikia.nocookie.net/replay/images/2/2d/Replay_CrystalsPonyTale.jpg/revision/latest?cb=20120114042942",
+                "2x"
+            ]
+        },
+        "system": [
+            "Genesis"
+        ],
+        "gamedate": [
+            "February 1, 1994"
+        ],
+        "airdate": "December 11, 2010",
+        "runtime": "32:00",
+        "host": [
+            "Dan Ryckert"
+        ],
+        "featuring": [
+            "Andrew Reiner",
+            "Tim Turi",
+            "Jeff Cork"
         ]
     },
     {
@@ -570,6 +792,31 @@
                 "href": "https://en.wikipedia.org/wiki/Dragon_Ball_Z:_The_Legacy_of_Goku_(series)",
                 "title": "Dragon Ball Z: The Legacy of Goku (series)"
             }
+        ],
+        "image": {
+            "width": "300",
+            "height": "169",
+            "srcset": [
+                "https://vignette.wikia.nocookie.net/replay/images/0/09/Replay-dbz-610a.jpg/revision/latest/scale-to-width-down/310?cb=20180128020739",
+                "1x",
+                "https://vignette.wikia.nocookie.net/replay/images/0/09/Replay-dbz-610a.jpg/revision/latest?cb=20180128020739",
+                "2x"
+            ]
+        },
+        "system": [
+            "Super Famicom"
+        ],
+        "gamedate": [
+            "January 25, 1992"
+        ],
+        "airdate": "January 26, 2018",
+        "runtime": "46:56",
+        "host": [
+            "Andrew Reiner"
+        ],
+        "featuring": [
+            "Javy Gwaltney",
+            "Kyle Hilliard"
         ]
     }
 ]

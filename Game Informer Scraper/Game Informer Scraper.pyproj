@@ -27,12 +27,29 @@
     <Compile Include="GI_Replay_Episode_Webpage_Scraper.py">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="GI_Replay_Fandom_Wiki_Scraper.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="GI_Website_Scraper.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Old Scripts\Game_Informer_Scraper_old.py">
+      <SubType>Code</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="gameInformerReplayFandomWikiData - Copy.json" />
+    <Content Include="Episode_Changes.txt" />
+    <Content Include="FLAG_Notes.txt" />
+    <Content Include="gameInformerReplayArticleData.json" />
+    <Content Include="gameInformerReplayFandomWikiData-11-30-19.json" />
+    <Content Include="Old Scripts\gameInformerReplayFandomWikiData - Copy %282%29.json" />
+    <Content Include="Old Scripts\gameInformerReplayFandomWikiData - Copy.json" />
     <Content Include="gameInformerReplayFandomWikiData.json" />
     <Content Include="gameInformerReplayFandomWikiEpisodeData.json" />
     <Content Include="Notes.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Old Scripts\" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets" />
   <!-- Uncomment the CoreCompile target to enable the Build command in
