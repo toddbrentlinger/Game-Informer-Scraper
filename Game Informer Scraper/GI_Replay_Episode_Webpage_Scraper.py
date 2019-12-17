@@ -14,7 +14,7 @@ import time
 def scrapeReplayEpisodeWebpage(episodeURL):
     baseURL = 'https://replay.fandom.com'
     response = requests.get(baseURL + episodeURL, timeout=5)
-    time.sleep(1)
+    time.sleep(.7)
 
     if response:
         content = BeautifulSoup(response.content, "html.parser")
@@ -31,8 +31,8 @@ def scrapeReplayEpisodeWebpage(episodeURL):
 
         # Loop through each child tag of the main content
         for child in mainContent.children:
-            # If tag is a headline (tag = 'aside' or 'h2')
-            if child.name == 'aside' or child.name == 'h2':
+            # If tag is a headline (tag = 'aside' or 'h2' or 'h3')
+            if child.name == 'aside' or child.name == 'h2' or child.name == 'h3':
                 # Get data from each headline
                 headlineID, headlineDataArr = get_headline_data(child)
                 # Add headline data to episode object
@@ -108,6 +108,7 @@ def get_headline_data(headline):
     elif headline.span.has_attr('id'):
     # TODO: Check if id matches known id's or convert to lower case before assigning to headlineID
     # (ex. External_links and External_Links with different capitalized 'L')
+    # TODO: Get element text for header name instead
         headlineID = headline.span['id'].lower()
     else:
         headlineID = 'unknown'
@@ -117,11 +118,14 @@ def get_headline_data(headline):
 
     # Scan each sibling tag until reach table or h2
     for sibling in headline.next_siblings:
-        # Break loop if encounter h2, table, or nav tags
-        if sibling.name == 'h2' or sibling.name == 'table' or sibling.name == 'nav':
+        # Break if 'video' headline
+        if headlineID == 'video': 
             break
-        # Ignore/skip aside tag and tag names that return None
-        if sibling.name is None or sibling.name == 'aside'or sibling.name == 'script':
+        # Break loop if encounter h2, h3, or table tags
+        if sibling.name == 'h2' or sibling.name == 'h3' or sibling.name == 'table':
+            break
+        # Ignore/skip aside, nav, script and tag names that return None
+        if sibling.name is None or sibling.name == 'aside' or sibling.name == 'nav' or sibling.name == 'script':
             continue
 
         # -----------------------
@@ -142,10 +146,14 @@ def get_headline_data(headline):
             for galleryItemElement in sibling.find_all('div', 'wikia-gallery-item'):
                 # Find the img and caption element
                 imgElement = galleryItemElement.find('img')
+                anchorElement = imgElement.find_parent('a')
                 headlineDataArr.append({
                     "title": imgElement.get('title'),
                     "src": imgElement.get('src'),
-                    "caption": galleryItemElement.find(class_=re.compile("caption")).get_text(strip=True)
+                    "caption": galleryItemElement.find(class_=re.compile("caption")).get_text(strip=True),
+                    "link": "https://replay.fandom.com" + anchorElement.get('href'),
+                    "height": re.search('(?<=height:)(.*)(?=; width)', anchorElement['style']).group(0),
+                    "width": re.search('(?<=width:)(.*)(?=;)', anchorElement['style']).group(0)
                     })
 
         # ---------------------------------------------------

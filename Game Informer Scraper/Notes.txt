@@ -1,5 +1,13 @@
 Scrape Game Informer Replay Fandom Wiki
 
+12/16/19
+
+- ISSUE: Some 'See Also' sections have the anchor element with
+URL href attribute inside a paragraph element instead of ul li
+list element.
+
+Pre-12/16/19
+
 TODO:
 Gallery Image Progression from one url
 Start With:

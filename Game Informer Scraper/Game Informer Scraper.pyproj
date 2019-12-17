@@ -41,6 +41,7 @@
     <Content Include="Episode_Changes.txt" />
     <Content Include="FLAG_Notes.txt" />
     <Content Include="gameInformerReplayArticleData.json" />
+    <Content Include="gameInformerReplayFandomWikiData-12-12-19.json" />
     <Content Include="gameInformerReplayFandomWikiData-11-30-19.json" />
     <Content Include="Old Scripts\gameInformerReplayFandomWikiData - Copy %282%29.json" />
     <Content Include="Old Scripts\gameInformerReplayFandomWikiData - Copy.json" />

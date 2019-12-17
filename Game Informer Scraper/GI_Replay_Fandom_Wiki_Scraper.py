@@ -21,7 +21,7 @@ from GI_Website_Scraper import scrapeGameInformerArticle
 def scrapeGameInformerFandomWiki(startEpisode = 0, endEpisode = 0, scrapeEachEpisodeSite = True, scrapeEachGIArticle = True):
     url = 'https://replay.fandom.com/wiki/List_of_Replay_episodes'
     response = requests.get(url, timeout=5)
-    time.sleep(1)
+    time.sleep(.7)
 
     if response:
         content = BeautifulSoup(response.content, "html.parser")
@@ -163,6 +163,7 @@ def scrapeGameInformerFandomWiki(startEpisode = 0, endEpisode = 0, scrapeEachEpi
                             for link in replayEpisodeDict["details"]["external_links"]:
                                 if "gameinformer.com" in link["href"]:
                                     replayEpisodeDict["article"] = scrapeGameInformerArticle(link["href"].split("gameinformer.com", 1)[1])
+                                    break # break out of loop in case other links from gameinformer.com
 
                     # Append replay episode dict to array of episodes
                     replayEpisodeArray.append(replayEpisodeDict)
