@@ -133,7 +133,7 @@ def get_headline_data(headline):
         # -----------------------
         if headlineID == 'external_links' or headlineID == 'see_also':
             # For each anchor tag that has a li tag parent
-            for externalLink in sibling.find_all(lambda tag : tag.name == 'a' and tag.find_parent('li')):
+            for externalLink in sibling.find_all(lambda tag : tag.name == 'a' and (tag.find_parent('li') or tag.find_parent('p'))):
                         headlineDataArr.append({
                             "href": externalLink.get('href'),
                             "title": externalLink.get_text()

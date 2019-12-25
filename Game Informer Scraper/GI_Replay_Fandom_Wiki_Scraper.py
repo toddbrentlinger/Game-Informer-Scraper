@@ -5,6 +5,7 @@ import json
 import time
 from GI_Replay_Episode_Webpage_Scraper import scrapeReplayEpisodeWebpage
 from GI_Website_Scraper import scrapeGameInformerArticle
+from YouTube_Scraper import scrapeYouTubeURL
 
 # Function: scrapeGameInformerFandomWiki()
 # scrapeGameInformerFandomWiki(startEpisode = 1, endEpisode = 0, scrapeEachEpisodeSite = false)
@@ -18,7 +19,7 @@ from GI_Website_Scraper import scrapeGameInformerArticle
 # Else If startEpisode nonzero (end must be zero), scrape from startEpisode to most recent episode
 # Else endEpisode nonzero (start must be zero), scrape from earliest episode to endEpisode
 
-def scrapeGameInformerFandomWiki(startEpisode = 0, endEpisode = 0, scrapeEachEpisodeSite = True, scrapeEachGIArticle = True):
+def scrapeGameInformerFandomWiki(startEpisode = 0, endEpisode = 0, scrapeEachEpisodeSite = True, scrapeEachGIArticle = True, scrapeYouTubeVideo = True):
     url = 'https://replay.fandom.com/wiki/List_of_Replay_episodes'
     response = requests.get(url, timeout=5)
     time.sleep(.7)
@@ -159,11 +160,14 @@ def scrapeGameInformerFandomWiki(startEpisode = 0, endEpisode = 0, scrapeEachEpi
                         replayEpisodeDict["details"] = scrapeReplayEpisodeWebpage(replayEpisodeDict["fandomWikiURL"])
 
                         # Scrape Game Informer article if link is provided from separate page scrape
-                        if scrapeEachGIArticle:
+                        # Scrape YouTube url if link is provided
+                        if scrapeEachGIArticle or scrapeYouTubeVideo:
                             for link in replayEpisodeDict["details"]["external_links"]:
-                                if "gameinformer.com" in link["href"]:
+                                if ("gameinformer.com" in link["href"]) and not hasattr(replayEpisodeDict, "article"):
                                     replayEpisodeDict["article"] = scrapeGameInformerArticle(link["href"].split("gameinformer.com", 1)[1])
-                                    break # break out of loop in case other links from gameinformer.com
+                                    #break # break out of loop in case other links from gameinformer.com
+                                elif ("youtube.com" in link["href"]) and not hasattr(replayEpisodeDict, "youtube"):
+                                    replayEpisodeDict["youtube"] = scrapeYouTubeURL(link["href"])
 
                     # Append replay episode dict to array of episodes
                     replayEpisodeArray.append(replayEpisodeDict)
