@@ -7,7 +7,7 @@ import time
 def scrapeGameInformerArticle(url):
     baseURL = 'https://www.gameinformer.com'
     response = requests.get(baseURL + url, timeout=5)
-    time.sleep(.7)
+    time.sleep(.5)
 
     if response:
         content = BeautifulSoup(response.content, "html.parser")

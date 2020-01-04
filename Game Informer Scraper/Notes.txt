@@ -1,5 +1,10 @@
 Scrape Game Informer Replay Fandom Wiki
 
+12/25/19
+
+- Ignore strings that only include '-' when scraping main list of
+replay episodes
+
 12/16/19
 
 - ISSUE: Some 'See Also' sections have the anchor element with

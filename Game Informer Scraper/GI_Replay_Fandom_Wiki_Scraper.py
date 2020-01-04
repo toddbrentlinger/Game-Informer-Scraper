@@ -22,7 +22,7 @@ from YouTube_Scraper import scrapeYouTubeURL
 def scrapeGameInformerFandomWiki(startEpisode = 0, endEpisode = 0, scrapeEachEpisodeSite = True, scrapeEachGIArticle = True, scrapeYouTubeVideo = True):
     url = 'https://replay.fandom.com/wiki/List_of_Replay_episodes'
     response = requests.get(url, timeout=5)
-    time.sleep(.7)
+    time.sleep(.5)
 
     if response:
         content = BeautifulSoup(response.content, "html.parser")
@@ -163,10 +163,10 @@ def scrapeGameInformerFandomWiki(startEpisode = 0, endEpisode = 0, scrapeEachEpi
                         # Scrape YouTube url if link is provided
                         if scrapeEachGIArticle or scrapeYouTubeVideo:
                             for link in replayEpisodeDict["details"]["external_links"]:
-                                if ("gameinformer.com" in link["href"]) and not hasattr(replayEpisodeDict, "article"):
+                                if ( ("gameinformer.com" in link["href"]) and ("article" not in replayEpisodeDict.keys()) ):
                                     replayEpisodeDict["article"] = scrapeGameInformerArticle(link["href"].split("gameinformer.com", 1)[1])
                                     #break # break out of loop in case other links from gameinformer.com
-                                elif ("youtube.com" in link["href"]) and not hasattr(replayEpisodeDict, "youtube"):
+                                elif (("youtube.com" in link["href"]) and ("youtube" not in replayEpisodeDict.keys()) ):
                                     replayEpisodeDict["youtube"] = scrapeYouTubeURL(link["href"])
 
                     # Append replay episode dict to array of episodes

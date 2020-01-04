@@ -7,6 +7,7 @@ from GI_Replay_Fandom_Wiki_Scraper import scrapeGameInformerFandomWiki
 from GI_Replay_Episode_Webpage_Scraper import scrapeReplayEpisodeWebpage
 from GI_Website_Scraper import scrapeGameInformerArticle
 from YouTube_Scraper import scrapeYouTubeURL
+from YouTube_Scraper import updateYouTubeData
 
 # TODO:
 # - Create second array of objects for game data. Reference the game title string in the first array to link
@@ -31,9 +32,10 @@ tempReplayEpisodeURLArr = [
 #scrapeGameInformerFandomWiki()
 #time.sleep(1)
 
-#scrapeGameInformerFandomWiki(393, 397)
+scrapeGameInformerFandomWiki(519, 520)
+#scrapeGameInformerFandomWiki()
 
-scrapeGameInformerFandomWiki()
+#updateYouTubeData()
 
 tempArticleObjectArr = []
 tempArticleURLArr = [

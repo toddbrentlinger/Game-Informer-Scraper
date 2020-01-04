@@ -1,10 +1,17 @@
-515 - Separate title into two games. 
-Brutal Legend, The Turkey of Christmas Past
+515 - Separate title into two games:
+	The Turkey of Christmas Past - PC - 2016
+	Brutal Legend - Xbox 360 - 2009
+
+504 - Add YouTube Views/Likes
+
+501 - Remove comma from likes 
 
 492 - Separate title into three games.
 Toy Story, Toy Story 2, Toy Story 3
 
 449 - Correct year for each game from year range.
+
+429 - Remove comma from likes
 
 392 - Correct year for each game from year range.
 

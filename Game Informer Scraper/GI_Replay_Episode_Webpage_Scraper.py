@@ -14,7 +14,7 @@ import time
 def scrapeReplayEpisodeWebpage(episodeURL):
     baseURL = 'https://replay.fandom.com'
     response = requests.get(baseURL + episodeURL, timeout=5)
-    time.sleep(.7)
+    time.sleep(.5)
 
     if response:
         content = BeautifulSoup(response.content, "html.parser")
