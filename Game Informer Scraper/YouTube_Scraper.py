@@ -53,6 +53,7 @@ def scrapeYouTubeURL(url):
 
         return youTubeDict
 
+# TODO: Check if views/likes are empty before assigning to each episode
 def updateYouTubeData():
     print('updateYouTubeData() started')
 
@@ -60,18 +61,31 @@ def updateYouTubeData():
     with open('gameInformerReplayFandomWikiData.json', 'r') as outfile:
         episodeList = json.load(outfile)
 
+    tempEpisodesWithErrorFromScrapeList = []
     for episode in episodeList:
         # Get youtube URL
         # If youtube URL was found, scrape url and assign object holding
         # data to 'youtube' key/property
         for link in episode["details"]["external_links"]:
             if ("youtube.com" in link["href"]):
-                episode["youtube"] = scrapeYouTubeURL(link["href"])
-                print('Episode ' + episode["episodeNumber"] + ' was scraped!')
+                # Assign object returned from scrape to temp variable
+                tempScrapedObj = scrapeYouTubeURL(link["href"])
+                # If youtube NOT key in episode dict, add as key
+                if ("youtube" not in episode):
+                    episode["youtube"] = {}
+                # Compare each key/value pair before assigning to episode
+                for key, value in tempScrapedObj.items():
+                    if (value or value == 0):
+                        episode["youtube"][key] = value
+                    else:
+                        tempEpisodesWithErrorFromScrapeList.append('Episode: ' + str(episode["episodeNumber"]) + ' - ' + str(key) + ' is empty')
+                #episode["youtube"] = scrapeYouTubeURL(link["href"])
+                print('Episode ' + str(episode["episodeNumber"]) + ' was scraped!')
                 break
 
     # Write JSON to local file
     with open('gameInformerReplayFandomWikiData.json', 'w') as outfile:
         json.dump(episodeList, outfile, indent=4)
 
+    print(tempEpisodesWithErrorFromScrapeList)
     print('\n', 'Success. YouTube scrape of episode completed!', '\n')

@@ -2,41 +2,115 @@
 	The Turkey of Christmas Past - PC - 2016
 	Brutal Legend - Xbox 360 - 2009
 
-504 - Add YouTube Views/Likes
-
-501 - Remove comma from likes 
-
 492 - Separate title into three games.
 Toy Story, Toy Story 2, Toy Story 3
 
-449 - Correct year for each game from year range.
+483 - Remove 2 instances of "Intern" from episode.details.featuring
 
-429 - Remove comma from likes
+480 - Correct system and year from (2003-2004) for each game.
+	Otogi: Myth of Demons - Xbox - 2003
+	Otogi 2: Immortal Warriors - Xbox - 2004
 
-392 - Correct year for each game from year range.
+449 - Correct system and year from (1995-2005) for each game.
+	Scooby-Doo Mystery
+	Scooby-Doo! Night of 100 Frights
+	Scooby-Doo! Mystery Mayhem
+	Scooby-Doo! Unmasked
 
-362 - 
+392 - Correct system and year from (1990-2008) for each game.
+	Cory in the House
+	Drake and Josh: Talent Showdown
+	Unfabulous
+	Sabrina the Teenage Witch: Potion Commotion
+	Double Dare
 
-361 - 
+362 - NO CHANGE. "Jaguar" system applies to all games. (8 games)
 
-355 - 
+361 - Correct system and check year for each game.
+	RoboCop Versus The Terminator - 1993
+	The Terminator - 1993
+	Terminator 2: Judgement Day - 1993
+	T2: The Arcade Game - 1994
 
-349 - 
+355 - Correct system for each game.
+	South Park: Chef's Luv Shack - 1999
+	South Park Rally - 2000
+	South Park - 1998
+	South Park: Tenorman's Revenge - 2012
 
-347 - 
+349 - Correct system for each game. (11 games)
 
-344 - 
+347 - NO CHANGE. "Sega Saturn" system applies to all games.
 
-331 - 
+344 - NO CHANGE. "Philips CD-i" system applies to all games.
 
-324 - 
+331 - Correct system for each game.
+	Star Fox - 1993
+	Star Fox Adventures - 2002
+	Star Fox: Assault - 2005
+	Star Fox Command - 2006
 
-322 - 
+324 - Check if system is same for both titles.
+	The Incredible Hulk: Ultimate Desctruction - Xbox - 2005
+	Hulk - Xbox - 2003
 
-320 - 
+322 - NO CHANGE. "Sega 32X" system applies to all games.
 
-253 - 
+320 - NO CHANGE. "TurboGrafx-16" system applies to all games.
 
-212 - 
+253 - Add 3 game titles
+	Nintendo 64 - 1998
+	GameCube - 2001
+	GameCube - 2003
 
-1 - 
+212 - Add 3 game titles
+	Game Boy - 1990
+	NES - 1992
+	Super NES - 1994
+
+1 - Add 4 game titles
+	Twisted Metal
+	Twisted Metal 2
+	Twisted Metal 3
+	Twisted Metal 4
+
+{
+    "href": "",
+    "title": "Replay: "
+}
+
+106 https://www.youtube.com/watch?v=puxLZSeDw5I
+105 https://www.youtube.com/watch?v=wDYae-JK_yI
+101 https://www.youtube.com/watch?v=ynxUjcenU0g
+95 https://www.youtube.com/watch?v=WqSstUYxxNk
+93 https://www.youtube.com/watch?v=7upYab0_RuY
+92 https://www.youtube.com/watch?v=LgmvB7WOJM4
+88 https://www.youtube.com/watch?v=1XrnD-HCjBQ
+87 https://www.youtube.com/watch?v=dHX3GMmdulM
+86 https://www.youtube.com/watch?v=gxqQkz1Q2Dk
+85 https://www.youtube.com/watch?v=Hmkoqvec3Z0
+84 https://www.youtube.com/watch?v=eUtAK_beezo
+83 https://www.youtube.com/watch?v=9YcPNxaFJ-U
+82 https://www.youtube.com/watch?v=w3UUAihGTBI
+80 https://www.youtube.com/watch?v=86lkiFFcBbc
+79 https://www.youtube.com/watch?v=__Pwmn7TQjM
+77 https://www.youtube.com/watch?v=q9YjbbJLM3c
+76 https://www.youtube.com/watch?v=vuW-RqC7ZIk
+75 https://www.youtube.com/watch?v=t7rPUP-VwC8
+74 https://www.youtube.com/watch?v=c8pjRvb9anE
+72 https://www.youtube.com/watch?v=i9Sk3ZlBjZo
+70 https://www.youtube.com/watch?v=xckirIft0iA
+69 https://www.youtube.com/watch?v=6jZGVAS-3s8
+68 https://www.youtube.com/watch?v=Flk5LfWPPQ0
+66 https://www.youtube.com/watch?v=Xg9T6Y-ciYE
+64 https://www.youtube.com/watch?v=VyK-crABIes
+
+{
+    "href": "",
+    "title": "Replay: "
+}
+
+['Episode: 114 - dislikes is empty', 
+'Episode: 93 - dislikes is empty', 
+'Episode: 86 - dislikes is empty', 
+'Episode: 84 - dislikes is empty']

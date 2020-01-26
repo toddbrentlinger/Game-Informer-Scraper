@@ -3,49 +3,39 @@ from bs4 import BeautifulSoup
 import re
 import json
 import time
+import math
 from GI_Replay_Fandom_Wiki_Scraper import scrapeGameInformerFandomWiki
 from GI_Replay_Episode_Webpage_Scraper import scrapeReplayEpisodeWebpage
 from GI_Website_Scraper import scrapeGameInformerArticle
 from YouTube_Scraper import scrapeYouTubeURL
 from YouTube_Scraper import updateYouTubeData
+from YouTube_API import updateYouTubeDataWithAPI
 
 # TODO:
 # - Create second array of objects for game data. Reference the game title string in the first array to link
 # the data between them.
 
-tempReplayEpisodeURLArr = [
-    '/wiki/Replay:_The_Jaguar_Disaster',
-    '/wiki/Replay:_Xena:_Warrior_Princess',
-    '/wiki/Replay:_Gex:_Enter_the_Gecko',
-    '/wiki/Replay:_Twisted_Metal_1–4',
-    '/wiki/Replay:_Halloween_Stuptacular!',
-    '/wiki/Replay:_The_Sniper_2',
-    '/wiki/Replay:_Sonic_Adventure',
-    '/wiki/Replay:_Quest_64',
-    '/wiki/Replay:_Bushido_Blade',
-    '/Replay:_Silent_Hill:_Downpour',
-    '/wiki/Replay:_Crystal%27s_Pony_Tale',
-    '/wiki/Replay:_Dragon_Ball_Z:_Chou_Saiya_Densetsu'
-    ]
+def main():
+    # Elapsed Time - Start
+    startTime = time.time()
 
-# Scrape webpage with list of replay episodes
-#scrapeGameInformerFandomWiki()
-#time.sleep(1)
+    # Scrape webpage with list of replay episodes
+    #scrapeGameInformerFandomWiki()
+    #time.sleep(1)
 
-scrapeGameInformerFandomWiki(519, 520)
-#scrapeGameInformerFandomWiki()
+    #scrapeGameInformerFandomWiki(521, 522)
+    #scrapeGameInformerFandomWiki()
 
-#updateYouTubeData()
+    #updateYouTubeData()
 
-tempArticleObjectArr = []
-tempArticleURLArr = [
-    '/b/features/archive/2016/01/08/replay-red-faction.aspx',
-    '/b/features/archive/2017/01/13/replay-the-legend-of-zelda-twilight-princess.aspx',
-    '/replay/replay/2019/08/29/replay-aliens-colonial-marines',
-    '/b/features/archive/2014/03/08/replay-orphen-scion-of-sorcery.aspx',
-    '/b/features/archive/2011/08/27/replay-legacy-of-kain-soul-reaver.aspx',
-    '/replay/replay/2018/12/07/replay-project-snowblind'
-    ]
+    updateYouTubeDataWithAPI()
+
+    # Elapsed Time - End
+    timeElapsed = time.time() - startTime
+    print('\nTime Elapsed: ', math.floor(timeElapsed / 60), 'min:', math.floor(timeElapsed % 60), 'sec')
+
+if __name__ == '__main__':
+    main()
 
 # TEMP - test array of a few random URLs before running on all episode URLs
 #replayEpisodesArray = []

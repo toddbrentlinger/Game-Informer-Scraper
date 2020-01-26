@@ -84,6 +84,8 @@ def scrapeReplayEpisodeWebpage(episodeURL):
                 replayEpisode["host"] = [text for text in hostElement.div.stripped_strings]
 
             # Featuring
+            # TODO: Ignore text in between <sup></sup> or add to previous
+            # node text in parentheses
             featuringElement = asideElement.find('div', {"data-source": "featuring"})
             if featuringElement:
                 replayEpisode["featuring"] = [text for text in featuringElement.div.stripped_strings]

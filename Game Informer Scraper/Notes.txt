@@ -1,5 +1,12 @@
 Scrape Game Informer Replay Fandom Wiki
 
+58, 78, 161, 247, 317, 406
+
+1/9/20
+
+- ISSUE: Some text in Fandom webpage is crossed out and followed by
+corrected text. Ignore text with strike through in html (<s></s>).
+
 12/25/19
 
 - Ignore strings that only include '-' when scraping main list of

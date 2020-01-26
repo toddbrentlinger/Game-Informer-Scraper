@@ -36,6 +36,9 @@
     <Compile Include="Old Scripts\Game_Informer_Scraper_old.py">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="YouTube_API.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="YouTube_Data_API_Scraper.py">
       <SubType>Code</SubType>
     </Compile>
@@ -52,6 +55,7 @@
     <Content Include="Data\gameInformerReplayFandomWikiData-12-12-19.json" />
     <Content Include="Data\gameInformerReplayFandomWikiData-11-30-19.json" />
     <Content Include="Data\gameInformerReplayFandomWikiData_12-24-19.json" />
+    <Content Include="gameInformerReplayFandomWikiData - Copy.json" />
     <Content Include="Old Scripts\gameInformerReplayFandomWikiData - Copy %282%29.json" />
     <Content Include="Old Scripts\gameInformerReplayFandomWikiData - Copy.json" />
     <Content Include="gameInformerReplayFandomWikiData.json" />
