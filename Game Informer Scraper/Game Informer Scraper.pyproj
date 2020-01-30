@@ -49,6 +49,9 @@
   <ItemGroup>
     <Content Include="Data\gameInformerReplayFandomWikiData_1-3-20.json" />
     <Content Include="Data\gameInformerReplayFandomWikiData_12-30-19.json" />
+    <Content Include="Data\specialEpisodes.json">
+      <SubType>Code</SubType>
+    </Content>
     <Content Include="Episode_Changes.txt" />
     <Content Include="FLAG_Notes.txt" />
     <Content Include="gameInformerReplayArticleData.json" />

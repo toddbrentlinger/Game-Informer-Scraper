@@ -1,3 +1,5 @@
+523 - Remove '(Ten Year Anniversary Special)' from game title
+
 515 - Separate title into two games:
 	The Turkey of Christmas Past - PC - 2016
 	Brutal Legend - Xbox 360 - 2009
@@ -17,12 +19,24 @@ Toy Story, Toy Story 2, Toy Story 3
 	Scooby-Doo! Mystery Mayhem
 	Scooby-Doo! Unmasked
 
+448 - Remove two "," from secondSegmentGames
+
+447 - Remove "," from secondSegmentGames
+
+446 - Remove two "," from secondSegmentGames
+
+423 - Remove "," from secondSegmentGames
+
+402 - Remove "," from secondSegmentGames
+
 392 - Correct system and year from (1990-2008) for each game.
 	Cory in the House
 	Drake and Josh: Talent Showdown
 	Unfabulous
 	Sabrina the Teenage Witch: Potion Commotion
 	Double Dare
+
+389 - Combine secondSegmentGames to "Crash Bandicoot (The High Road level)"
 
 362 - NO CHANGE. "Jaguar" system applies to all games. (8 games)
 
@@ -58,21 +72,35 @@ Toy Story, Toy Story 2, Toy Story 3
 
 320 - NO CHANGE. "TurboGrafx-16" system applies to all games.
 
+257 - Remove "X-Perts" from secondSegmentGames
+
 253 - Add 3 game titles
-	Nintendo 64 - 1998
-	GameCube - 2001
-	GameCube - 2003
+	Star Wars: Rogue Squadron - Nintendo 64 - 1998
+	Star Wars: Rogue Squadron II \u2013 Rogue Leader - GameCube - 2001
+	Star Wars: Rogue Squadron III \u2013 Rebel Strike - GameCube - 2003
 
 212 - Add 3 game titles
-	Game Boy - 1990
-	NES - 1992
-	Super NES - 1994
+	Gargoyle's Quest - Game Boy - 1990
+	Gargoyle's Quest II: The Demon Darkness - NES - 1992
+	Demon's Crest - Super NES - 1994
+
+119 - Combine "(NES)" into first game in secondSegmentGames
+
+106 - Change secondSegment and secondSegmentGames to empty
+
+35 - Change secondSegment and secondSegmentGames to empty
+
+13 - Combine "(NES)" into first game in secondSegmentGames
 
 1 - Add 4 game titles
 	Twisted Metal
 	Twisted Metal 2
 	Twisted Metal 3
 	Twisted Metal 4
+
+.07 - Change game title to "Mike Tyson's Punch-Out!!"
+
+.05 - Change game title to "Mike Tyson's Punch-Out!!"
 
 {
     "href": "",
