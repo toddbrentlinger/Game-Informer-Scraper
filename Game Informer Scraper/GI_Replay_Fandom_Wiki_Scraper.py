@@ -58,6 +58,8 @@ def scrapeGameInformerFandomWiki(startEpisode = 0, endEpisode = 0, scrapeEachEpi
                     elif episodeNumber < startEpisode:
                         break;
 
+                    ########
+
                     # empty dict to assign keys and values for current episode
                     replayEpisodeDict = {}
 
@@ -165,7 +167,7 @@ def scrapeGameInformerFandomWiki(startEpisode = 0, endEpisode = 0, scrapeEachEpi
                             for link in replayEpisodeDict["details"]["external_links"]:
                                 if ( ("gameinformer.com" in link["href"]) and ("article" not in replayEpisodeDict.keys()) ):
                                     replayEpisodeDict["article"] = scrapeGameInformerArticle(link["href"].split("gameinformer.com", 1)[1])
-                                    #break # break out of loop in case other links from gameinformer.com
+                                    break # break out of loop in case other links from gameinformer.com
                                 elif (("youtube.com" in link["href"]) and ("youtube" not in replayEpisodeDict.keys()) ):
                                     replayEpisodeDict["youtube"] = scrapeYouTubeURL(link["href"])
 
@@ -173,6 +175,8 @@ def scrapeGameInformerFandomWiki(startEpisode = 0, endEpisode = 0, scrapeEachEpi
                     replayEpisodeArray.append(replayEpisodeDict)
 
                     print("Episode " + str(episodeNumber) + " has been scraped!")
+
+                    ####################
 
         # TEMP 00
         print()
@@ -191,3 +195,119 @@ def scrapeGameInformerFandomWiki(startEpisode = 0, endEpisode = 0, scrapeEachEpi
         print('\n', 'Success. Web scrape completed!', '\n')
     else:
         print('An error has occurred')
+
+def scrapeReplayEpisode(dataArray, replaySeason):
+    # empty dict to assign keys and values for current episode
+    replayEpisodeDict = {}
+
+    # episodeNumber
+    replayEpisodeDict["episodeNumber"] = episodeNumber
+
+    # episodeTitle
+    replayEpisodeDict["episodeTitle"] = dataArray[1].a['title'].replace('\n','')
+
+    # fandom wiki URL
+    replayEpisodeDict["fandomWikiURL"] = dataArray[1].a['href']
+
+    # mainSegmentGames
+    gamesArray = []
+    for gameString in dataArray[1].stripped_strings:
+        if not gameString.endswith(":"): # exclude titles of special episodes
+            if gameString.endswith(","): # remove comma at end of title if part of list
+                gameString = gameString[:-1]
+            gamesArray.append(gameString)
+    #replayEpisodeDict["mainSegmentGames"] = gamesArray
+
+    # system
+    systemsArray = []
+    for systemString in dataArray[2].stripped_strings:
+        systemsArray.append(systemString.replace('\n',''))
+    #replayEpisodeDict["system"] = systemsArray
+    # FLAG if system needs manual edit
+    if len(systemsArray) != 1 and len(systemsArray) != len(gamesArray):
+        flaggedEpisodeArr.append({"episode": replayEpisodeDict["episodeNumber"], "system": systemsArray})
+
+    # yearReleased
+    yearReleasedArray = []
+    for yearString in dataArray[3].stripped_strings:
+        yearReleasedArray.append(yearString.replace('\n',''))
+        # FLAG if year released is a range
+        if yearString.find("-") != -1:
+            flaggedEpisodeArr.append({"episode": replayEpisodeDict["episodeNumber"],
+                                        "yearReleased": yearString})
+    #replayEpisodeDict["yearReleased"] = yearReleasedArray
+
+    # create array of game objects, each with title, system, and releaseDate
+    # ISSUE: Some episodes are special and include the title as the first game (ex. 320 Turbographx Special)
+    # which assigns wrong system and year to actual games
+    # SOLUTION: Use length of yearReleasedArray to control length of array of gameObjects
+    # and ignore first game title if gamesArray length is one more than yearReleasedArray
+    mainSegmentGamesArrayAdv = []
+    arrayLengths = [ len(gamesArray), len(systemsArray), len(yearReleasedArray) ]
+    arrLength = max(arrayLengths)
+    for i in range(arrLength):
+        gameObject = {}
+        # add title
+        gameObject["title"] = gamesArray[i if i < arrayLengths[0] else arrayLengths[0] - 1]
+        # add system
+        gameObject["system"] = systemsArray[i if i < arrayLengths[1] else arrayLengths[1] - 1]
+        # add yearReleased
+        gameObject["yearReleased"] = yearReleasedArray[i if i < arrayLengths[2] else arrayLengths[2] - 1]
+        # append gameObject to array of games
+        mainSegmentGamesArrayAdv.append(gameObject)
+    # add array of games to episode dictionary
+    replayEpisodeDict["mainSegmentGamesAdv"] = mainSegmentGamesArrayAdv
+
+    # TEMP 00
+    if (arrayLengths[1] != 1 and arrayLengths[0] != arrayLengths[1]) or (arrayLengths[2] != 1 and arrayLengths[1] != arrayLengths[2]):
+        allSpecialEpisodesArray.append([replayEpisodeDict["episodeNumber"], arrayLengths[0], arrayLengths[1], arrayLengths[2]])
+                    
+    # airDate
+    replayEpisodeDict["airDate"] = dataArray[4].get_text(strip=True).replace('\n','')
+
+    # videoLength
+    replayEpisodeDict["videoLength"] = dataArray[5].get_text(strip=True).replace('\n','')
+
+    # middleSegment / middleSegmentContent (only for season 3)
+    # TODO: Only add key/value for episodes in Season 3. Don't include in other seasons
+    if replaySeason == 3:
+        replayEpisodeDict["middleSegment"] = dataArray[6].get_text(strip=True).replace('\n','')
+        replayEpisodeDict["middleSegmentContent"] = dataArray[7].get_text(strip=True).replace('\n','')
+
+    # secondSegment (assign RR to first season)
+    if replaySeason == 1:
+        index = 5
+        replayEpisodeDict["secondSegment"] = "RR"
+    else:
+        index = 8 if replaySeason==3 else 6
+        replayEpisodeDict["secondSegment"] = dataArray[index].get_text(strip=True).replace('\n','')
+
+    # secondSegmentGames
+    secondSegmentGamesArray = []
+    # SPECIAL CASE: check if there is a missing tag element (see episode 379)
+    # OR use last element of dataArray assuming it will always be secondSegmentGames
+    if len(dataArray) == index+2:
+        for gameString in dataArray[index+1].stripped_strings:
+            secondSegmentGamesArray.append(gameString)
+    replayEpisodeDict["secondSegmentGames"] = secondSegmentGamesArray
+
+    # Season
+    replayEpisodeDict["season"] = replaySeason
+
+    # Scrape separate webpage about specific replay episode
+    if scrapeEachEpisodeSite:
+        replayEpisodeDict["details"] = scrapeReplayEpisodeWebpage(replayEpisodeDict["fandomWikiURL"])
+
+        # Scrape Game Informer article if link is provided from separate page scrape
+        # Scrape YouTube url if link is provided
+        if scrapeEachGIArticle or scrapeYouTubeVideo:
+            for link in replayEpisodeDict["details"]["external_links"]:
+                if ( ("gameinformer.com" in link["href"]) and ("article" not in replayEpisodeDict.keys()) ):
+                    replayEpisodeDict["article"] = scrapeGameInformerArticle(link["href"].split("gameinformer.com", 1)[1])
+                    break # break out of loop in case other links from gameinformer.com
+                elif (("youtube.com" in link["href"]) and ("youtube" not in replayEpisodeDict.keys()) ):
+                    replayEpisodeDict["youtube"] = scrapeYouTubeURL(link["href"])
+
+    # Return replay episode dict to append to array of episodes
+    print("Episode " + str(episodeNumber) + " has been scraped!")
+    return replayEpisodeDict

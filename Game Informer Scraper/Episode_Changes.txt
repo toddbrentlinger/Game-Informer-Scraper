@@ -4,6 +4,9 @@
 	The Turkey of Christmas Past - PC - 2016
 	Brutal Legend - Xbox 360 - 2009
 
+503 - Remove ":" between "Tom Clancy's" and "Splinter Cell" in 
+episodeTitle, mainSegementGames, AND other titles in episode
+
 492 - Separate title into three games.
 Toy Story, Toy Story 2, Toy Story 3
 
@@ -12,6 +15,22 @@ Toy Story, Toy Story 2, Toy Story 3
 480 - Correct system and year from (2003-2004) for each game.
 	Otogi: Myth of Demons - Xbox - 2003
 	Otogi 2: Immortal Warriors - Xbox - 2004
+
+469 - Correct year from 2008-2010 for each game
+	Iron Man - PS3 - 2008
+	Iron Man 2 - X360 - 2010
+
+455 - Add to secondSegmentGames:
+	" Super Cycle",
+	" Temple of Apshai Trilogy",
+	" The Arc of Yesod",
+	" Tower Toppler",
+	" West Bank",
+	" Zynaps"
+
+453 - *23 games
+
+452 - *27 games
 
 449 - Correct system and year from (1995-2005) for each game.
 	Scooby-Doo Mystery
@@ -72,6 +91,23 @@ Toy Story, Toy Story 2, Toy Story 3
 
 320 - NO CHANGE. "TurboGrafx-16" system applies to all games.
 
+301 - Separate secondSegmentGames into:
+	"Rare Games: The Amazing Spider-Man",
+	"Beetlejuice",
+	"Battletoads in Ragnarok's World",
+	"Monster Max",
+	"Donkey Kong Land"
+
+278 - Replace titles with "Largo Winch: Commando SAR"
+
+269 - Separate secondSegmentGames into:
+	"Rare Games: Slalom",
+	"Wizards & Warriors",
+	"R.C. Pro-Am",
+	"Who Framed Roger Rabbit",
+	"Captain Skyhawk",
+	"Battletoads"
+
 257 - Remove "X-Perts" from secondSegmentGames
 
 253 - Add 3 game titles
@@ -79,16 +115,24 @@ Toy Story, Toy Story 2, Toy Story 3
 	Star Wars: Rogue Squadron II \u2013 Rogue Leader - GameCube - 2001
 	Star Wars: Rogue Squadron III \u2013 Rebel Strike - GameCube - 2003
 
+218 - Combine or remove special characters from secondSegmentGames
+
+215 - Combine "." into first game in secondSegmentGames
+
 212 - Add 3 game titles
 	Gargoyle's Quest - Game Boy - 1990
 	Gargoyle's Quest II: The Demon Darkness - NES - 1992
 	Demon's Crest - Super NES - 1994
+
+131 - Combine "(GBA)" into first game in secondSegmentGames
 
 119 - Combine "(NES)" into first game in secondSegmentGames
 
 106 - Change secondSegment and secondSegmentGames to empty
 
 35 - Change secondSegment and secondSegmentGames to empty
+
+29 - Combine "(N64)" into first game in secondSegmentGames
 
 13 - Combine "(NES)" into first game in secondSegmentGames
 

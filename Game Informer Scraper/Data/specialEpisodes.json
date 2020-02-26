@@ -181,10 +181,13 @@
         }
       ],
       "image": {
-        "width": "300",
-        "height": "169",
+        "width": "200",
+        "height": "179",
         "srcset": [
-          "https://www.gameinformer.com/s3/files/styles/body_default/s3/legacy-images/imagefeed/Bonus%20Replay%20%E2%80%93%20Strider%20%28Guests%3A%20Arj%20Barker%20And%20Louis%20Katz%29/striderreplay_610.jpg"
+          "images/episode-thumbnails/striderreplay_200.jpg",
+          "1x",
+          "images/episode-thumbnails/striderreplay_610.jpg",
+          "2x"
         ]
       },
       "system": [
@@ -253,7 +256,10 @@
         "width": "300",
         "height": "169",
         "srcset": [
-          "https://www.gameinformer.com/s3/files/styles/body_default/s3/legacy-images/imagefeed/Replay%20\u2013%20ToeJam%20%26%20Earl%202%20%28Special%20Guest%3A%20Riff%20Raff%29/Toejam610.jpg"
+          "images/episode-thumbnails/Toejam300.jpg",
+          "1x",
+          "images/episode-thumbnails/Toejam610.jpg",
+          "2x"
         ]
       },
       "system": [
@@ -414,7 +420,10 @@
         "width": "300",
         "height": "169",
         "srcset": [
-          "https://s3.amazonaws.com/prod-media.gameinformer.com/styles/body_default/s3/legacy-images/imagefeed/Replay%20Halloween%20Special%202013/Replay_splatterhouse_600.jpg"
+          "images/episode-thumbnails/Replay_splatterhouse_300.jpg",
+          "1x",
+          "images/episode-thumbnails/Replay_splatterhouse_600.jpg",
+          "2x"
         ]
       },
       "system": [
@@ -484,7 +493,10 @@
         "width": "300",
         "height": "169",
         "srcset": [
-          "https://s3.amazonaws.com/prod-media.gameinformer.com/styles/body_default/s3/legacy-images/imagefeed/Replay%20\u2013%20Mutant%20League%20Football/Replay_mutantleaguefootball_600.jpg"
+          "images/episode-thumbnails/Replay_mutantleaguefootball_300.jpg",
+          "1x",
+          "images/episode-thumbnails/Replay_mutantleaguefootball_600.jpg",
+          "2x"
         ]
       },
       "system": [
@@ -552,7 +564,10 @@
         "width": "300",
         "height": "169",
         "srcset": [
-          "https://s3.amazonaws.com/prod-media.gameinformer.com/styles/body_default/s3/legacy-images/imagefeed/Replay%20\u2013%20Punch-Out%21%21%20Stress%20Test%3A%20Joe%20Vs.%20Tyson%20\u2013%20Episode%202/joevtyson610.jpg"
+          "images/episode-thumbnails/joevtyson300.jpg",
+          "1x",
+          "images/episode-thumbnails/joevtyson610.jpg",
+          "2x"
         ]
       },
       "system": [
@@ -621,7 +636,10 @@
         "width": "300",
         "height": "169",
         "srcset": [
-          "https://s3.amazonaws.com/prod-media.gameinformer.com/styles/body_default/s3/legacy-images/imagefeed/Replay%20\u2013%20Punch-Out%21%21%20Stress%20Test%3A%20Dan%20Vs.%20Tyson%20Part%20III/tyson610.jpg"
+          "images/episode-thumbnails/tyson300.jpg",
+          "1x",
+          "images/episode-thumbnails/tyson610.jpg",
+          "2x"
         ]
       },
       "system": [

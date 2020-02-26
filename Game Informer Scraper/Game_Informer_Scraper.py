@@ -15,6 +15,16 @@ from YouTube_API import updateYouTubeDataWithAPI
 # - Create second array of objects for game data. Reference the game title string in the first array to link
 # the data between them.
 
+def changeIndentOfJSON(fileSrc = 'gameInformerReplayFandomWikiData.json', toIndent = True):
+    # Open JSON array from local file and save to python list
+    with open(fileSrc) as outfile:
+        episodeList = json.load(outfile)
+    with open(fileSrc, 'w') as outfile:
+        if toIndent:
+            json.dump(episodeList, outfile, indent=4)
+        else:
+            json.dump(episodeList, outfile)
+
 def main():
     # Elapsed Time - Start
     startTime = time.time()
@@ -23,12 +33,15 @@ def main():
     #scrapeGameInformerFandomWiki()
     #time.sleep(1)
 
-    #scrapeGameInformerFandomWiki(521, 522)
+    #scrapeGameInformerFandomWiki(527, 527)
     #scrapeGameInformerFandomWiki()
 
     #updateYouTubeData()
+    updateYouTubeDataWithAPI(toIndent = False)
+    #updateYouTubeDataWithAPI('tempGameInformerReplayFandomWikiData.json', False)
 
-    updateYouTubeDataWithAPI()
+    #changeIndentOfJSON(toIndent = True)
+    #changeIndentOfJSON('tempGameInformerReplayFandomWikiData.json')
 
     # Elapsed Time - End
     timeElapsed = time.time() - startTime

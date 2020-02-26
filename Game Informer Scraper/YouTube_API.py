@@ -13,7 +13,7 @@ import json
 
 scopes = ["https://www.googleapis.com/auth/youtube.readonly"]
 
-def updateYouTubeDataWithAPI():
+def updateYouTubeDataWithAPI(fileSrc = 'gameInformerReplayFandomWikiData.json', toIndent = True):
     print('updateYouTubeDataWithAPI() started')
 
     # Disable OAuthlib's HTTPS verification when running locally.
@@ -32,7 +32,7 @@ def updateYouTubeDataWithAPI():
         api_service_name, api_version, credentials=credentials)
 
     # Open JSON array from local file and save to python list
-    with open('gameInformerReplayFandomWikiData.json', 'r') as outfile:
+    with open(fileSrc, 'r') as outfile:
         episodeList = json.load(outfile)
 
     tempEpisodesWithErrorFromScrapeList = []
@@ -63,8 +63,11 @@ def updateYouTubeDataWithAPI():
                 break
 
     # Write JSON to local file
-    with open('gameInformerReplayFandomWikiData.json', 'w') as outfile:
-        json.dump(episodeList, outfile, indent=4)
+    with open(fileSrc, 'w') as outfile:
+        if toIndent:
+            json.dump(episodeList, outfile, indent=4)
+        else:
+            json.dump(episodeList, outfile)
 
     print(tempEpisodesWithErrorFromScrapeList)
     print('\n', 'Success. YouTube API update of episodes completed!', '\n')

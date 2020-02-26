@@ -21,6 +21,9 @@
     <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="Convert_Episode_Format.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="Game_Informer_Scraper.py">
       <SubType>Code</SubType>
     </Compile>
@@ -47,6 +50,8 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Data\gameInformerReplayFandomWikiData_2-20-20.json" />
+    <Content Include="Data\gameInformerReplayFandomWikiData_2-1-20.json" />
     <Content Include="Data\gameInformerReplayFandomWikiData_1-3-20.json" />
     <Content Include="Data\gameInformerReplayFandomWikiData_12-30-19.json" />
     <Content Include="Data\specialEpisodes.json">
@@ -54,11 +59,13 @@
     </Content>
     <Content Include="Episode_Changes.txt" />
     <Content Include="FLAG_Notes.txt" />
-    <Content Include="gameInformerReplayArticleData.json" />
+    <Content Include="Data\gameInformerReplayArticleData.json" />
     <Content Include="Data\gameInformerReplayFandomWikiData-12-12-19.json" />
     <Content Include="Data\gameInformerReplayFandomWikiData-11-30-19.json" />
     <Content Include="Data\gameInformerReplayFandomWikiData_12-24-19.json" />
     <Content Include="gameInformerReplayFandomWikiData - Copy.json" />
+    <Content Include="tempGameInformerReplayFandomWikiData.json" />
+    <Content Include="Data\gameInformerReplayFandomWikiData - Copy.json" />
     <Content Include="Old Scripts\gameInformerReplayFandomWikiData - Copy %282%29.json" />
     <Content Include="Old Scripts\gameInformerReplayFandomWikiData - Copy.json" />
     <Content Include="gameInformerReplayFandomWikiData.json" />
