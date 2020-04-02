@@ -37,30 +37,34 @@ def updateYouTubeDataWithAPI(fileSrc = 'gameInformerReplayFandomWikiData.json', 
 
     tempEpisodesWithErrorFromScrapeList = []
     for episode in episodeList:
-        # Get youtube URL
-        # If youtube URL was found, scrape url and assign object holding
-        # data to 'youtube' key/property
-        for link in episode["details"]["external_links"]:
-            if ("youtube.com" in link["href"]):
-                request = youtube.videos().list(
-                    part="statistics",
-                    id=link["href"].split("watch?v=",1)[1]
-                )
-                response = request.execute()
+        errorMsg = updateEpisodeYouTubeData(episode, youtube)
+        if (errorMsg):
+            tempEpisodesWithErrorFromScrapeList.append(errorMsg)
 
-                if response:
-                    # If youtube NOT key in episode dict, add as key
-                    if ("youtube" not in episode):
-                        episode["youtube"] = {} 
-                    # Views
-                    episode["youtube"]["views"] = int(response["items"][0]["statistics"]["viewCount"])
-                    # Likes
-                    episode["youtube"]["likes"] = int(response["items"][0]["statistics"]["likeCount"])
-                    # Dislikes
-                    episode["youtube"]["dislikes"] = int(response["items"][0]["statistics"]["dislikeCount"])
-                else:
-                    tempEpisodesWithErrorFromScrapeList.append('Episode: ' + str(episode["episodeNumber"]) + ' could NOT update YouTube data')
-                break
+#        # Get youtube URL
+#        # If youtube URL was found, scrape url and assign object holding
+#        # data to 'youtube' key/property
+#        for link in episode["details"]["external_links"]:
+#            if ("youtube.com" in link["href"]):
+#                request = youtube.videos().list(
+#                    part="statistics",
+#                    id=link["href"].split("watch?v=",1)[1]
+#                )
+#                response = request.execute()
+#
+#                if response:
+#                    # If youtube NOT key in episode dict, add as key
+#                    if ("youtube" not in episode):
+#                        episode["youtube"] = {} 
+#                    # Views
+#                    episode["youtube"]["views"] = int(response["items"][0]["statistics"]["viewCount"])
+#                    # Likes
+#                    episode["youtube"]["likes"] = int(response["items"][0]["statistics"]["likeCount"])
+#                    # Dislikes
+#                    episode["youtube"]["dislikes"] = int(response["items"][0]["statistics"]["dislikeCount"])
+#                else:
+#                    tempEpisodesWithErrorFromScrapeList.append('Episode: ' + str(episode["episodeNumber"]) + ' could NOT update YouTube data')
+#                break
 
     # Write JSON to local file
     with open(fileSrc, 'w') as outfile:
@@ -71,3 +75,29 @@ def updateYouTubeDataWithAPI(fileSrc = 'gameInformerReplayFandomWikiData.json', 
 
     print(tempEpisodesWithErrorFromScrapeList)
     print('\n', 'Success. YouTube API update of episodes completed!', '\n')
+
+def updateEpisodeYouTubeData(episode, youtube):
+    # Get youtube URL
+    # If youtube URL was found, scrape url and assign object holding
+    # data to 'youtube' key/property
+    for link in episode["details"]["external_links"]:
+        if ("youtube.com" in link["href"]):
+            request = youtube.videos().list(
+                part="statistics",
+                id=link["href"].split("watch?v=",1)[1]
+            )
+            response = request.execute()
+
+            if response:
+                # If youtube NOT key in episode dict, add as key
+                if ("youtube" not in episode):
+                    episode["youtube"] = {} 
+                # Views
+                episode["youtube"]["views"] = int(response["items"][0]["statistics"]["viewCount"])
+                # Likes
+                episode["youtube"]["likes"] = int(response["items"][0]["statistics"]["likeCount"])
+                # Dislikes
+                episode["youtube"]["dislikes"] = int(response["items"][0]["statistics"]["dislikeCount"])
+            else:
+                return 'Episode: ' + str(episode["episodeNumber"]) + ' could NOT update YouTube data'
+            break

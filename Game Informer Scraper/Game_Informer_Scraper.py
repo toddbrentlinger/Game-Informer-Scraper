@@ -10,6 +10,8 @@ from GI_Website_Scraper import scrapeGameInformerArticle
 from YouTube_Scraper import scrapeYouTubeURL
 from YouTube_Scraper import updateYouTubeData
 from YouTube_API import updateYouTubeDataWithAPI
+from YouTube_API_Dev_Key import updateYouTubeDataWithAPIDevKey
+from Update_Episode_List import updateEpisodeList
 
 # TODO:
 # - Create second array of objects for game data. Reference the game title string in the first array to link
@@ -29,15 +31,25 @@ def main():
     # Elapsed Time - Start
     startTime = time.time()
 
+    #updateYouTubeDataWithAPIDevKey()
+    updateEpisodeList()
+
+    #####
+
+    #scrapeGameInformerFandomWiki(530, 530)
+    #updateYouTubeDataWithAPI(toIndent = False)
+
+    #####
+
     # Scrape webpage with list of replay episodes
     #scrapeGameInformerFandomWiki()
     #time.sleep(1)
 
-    #scrapeGameInformerFandomWiki(527, 527)
+    #scrapeGameInformerFandomWiki(528, 528)
     #scrapeGameInformerFandomWiki()
 
     #updateYouTubeData()
-    updateYouTubeDataWithAPI(toIndent = False)
+    #updateYouTubeDataWithAPI(toIndent = False)
     #updateYouTubeDataWithAPI('tempGameInformerReplayFandomWikiData.json', False)
 
     #changeIndentOfJSON(toIndent = True)
@@ -49,6 +61,10 @@ def main():
 
 if __name__ == '__main__':
     main()
+
+def findEpisodesWithNoArticleContent():
+    with open('gameInformerReplayFandomWikiData.json', 'r') as outfile:
+        episodeList = json.load(outfile)
 
 # TEMP - test array of a few random URLs before running on all episode URLs
 #replayEpisodesArray = []

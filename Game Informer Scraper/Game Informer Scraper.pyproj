@@ -39,7 +39,13 @@
     <Compile Include="Old Scripts\Game_Informer_Scraper_old.py">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Update_Episode_List.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="YouTube_API.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="YouTube_API_Dev_Key.py">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="YouTube_Data_API_Scraper.py">
