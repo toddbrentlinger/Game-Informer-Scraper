@@ -76,7 +76,9 @@ def scrapeReplayEpisodeWebpage(episodeURL):
             replayEpisode["airdate"] = asideElement.find('div', {"data-source": "airdate"}).div.get_text(strip=True).replace('\n', ' ')
 
             # Running Time
-            replayEpisode["runtime"] = asideElement.find('div', {"data-source": "runtime"}).div.get_text(strip=True).replace('\n', ' ')
+            runningTimeElement = asideElement.find('div', {"data-source": "runtime"})
+            if runningTimeElement:
+                replayEpisode["runtime"] = runningTimeElement.div.get_text(strip=True).replace('\n', ' ')
 
             # Host(s)
             hostElement = asideElement.find('div', {"data-source": "host"})
@@ -91,7 +93,7 @@ def scrapeReplayEpisodeWebpage(episodeURL):
                 replayEpisode["featuring"] = [text for text in featuringElement.div.stripped_strings]
 
         # Print success message
-        print('Replay episode - ' + content.title.string.split('|')[0] + ' - webpage was scrapped!')
+        print('Replay episode -', content.title.string.split('|')[0], '- webpage was scraped!')
 
         # Return replay episode dictionary
         return replayEpisode

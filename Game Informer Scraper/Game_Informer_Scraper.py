@@ -12,6 +12,7 @@ from YouTube_Scraper import updateYouTubeData
 from YouTube_API import updateYouTubeDataWithAPI
 from YouTube_API_Dev_Key import updateYouTubeDataWithAPIDevKey
 from Update_Episode_List import updateEpisodeList
+from SuperReplayScraper import scrapeSuperReplays
 
 # TODO:
 # - Create second array of objects for game data. Reference the game title string in the first array to link
@@ -31,8 +32,11 @@ def main():
     # Elapsed Time - Start
     startTime = time.time()
 
+    #updateEpisodeList()
+    scrapeSuperReplays()
+
     #updateYouTubeDataWithAPIDevKey()
-    updateEpisodeList()
+    #updateEpisodeList()
 
     #####
 
