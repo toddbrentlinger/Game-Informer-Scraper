@@ -28,13 +28,12 @@ def scrapeSuperReplays():
 
         superReplayObj = SuperReplay(superReplayDataList)
         superReplayList.append(superReplayObj)
-        print("\n",
-              "Super Replay", superReplayObj.number, "-", superReplayObj.title, "has been scraped",
-              "\n")
+        print("\nSuper Replay", superReplayObj.number, "-", superReplayObj.title, "has been scraped!\n")
 
-    #print(superReplayList[0])
-    pp = pprint.PrettyPrinter(indent=4)
-    pp.pprint(superReplayList[0].convertToJSON())
+    # TEMP - Testing
+    #pp = pprint.PrettyPrinter(indent=4)
+    #pp.pprint(superReplayList[0].convertToJSON())
+    #return
 
     with open('gameInformerSuperReplayFandomWikiData.json', 'w') as outfile:
         superReplayListJSON = []

@@ -24,6 +24,9 @@
     <Compile Include="Convert_Episode_Format.py">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="GameInformerArticle.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="Game_Informer_Scraper.py">
       <SubType>Code</SubType>
     </Compile>
@@ -48,10 +51,16 @@
     <Compile Include="SuperReplayScraper.py">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Thumbnail.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="Update_Episode_List.py">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="VideoGame.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="YouTubeVideo.py">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="YouTube_API.py">
@@ -82,6 +91,7 @@
     <Content Include="Data\gameInformerReplayFandomWikiData-11-30-19.json" />
     <Content Include="Data\gameInformerReplayFandomWikiData_12-24-19.json" />
     <Content Include="gameInformerReplayFandomWikiData - Copy.json" />
+    <Content Include="gameInformerSuperReplayFandomWikiData - Copy.json" />
     <Content Include="gameInformerSuperReplayFandomWikiData.json" />
     <Content Include="tempGameInformerReplayFandomWikiData.json" />
     <Content Include="Data\gameInformerReplayFandomWikiData - Copy.json" />

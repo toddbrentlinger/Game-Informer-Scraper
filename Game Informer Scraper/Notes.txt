@@ -4,6 +4,16 @@ Classic Replay Last Added - Mario Party
 
 58, 78, 161, 247, 317, 406
 
+5/22/20
+
+- Check if tags property in YouTubeVideo is working
+
+- Subtract one second from youtube duration and one day from youtube
+publishedAt
+
+- Check that youtube playlist in Super Replay base page applies each
+video ID to each episode correctly. Sonic the Hedgehog does NOT work.
+
 2/24/20
 
 - Create function to update list which adds any new

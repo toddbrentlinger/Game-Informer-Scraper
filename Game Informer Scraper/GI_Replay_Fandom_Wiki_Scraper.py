@@ -82,7 +82,7 @@ def scrapeGameInformerFandomWiki(startEpisode = 0, endEpisode = 0, scrapeEachEpi
         print('\n', 'Success. Web scrape completed!', '\n')
     else:
         print('An error has occurred')
-
+        
 def scrapeReplayEpisode(dataArray, episodeNumber, replaySeason, scrapeEachEpisodeSite = True, scrapeEachGIArticle = True, scrapeYouTubeVideo = True):
     """
     dataArray - array

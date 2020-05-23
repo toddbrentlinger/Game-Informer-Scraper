@@ -73,7 +73,9 @@ def scrapeReplayEpisodeWebpage(episodeURL):
                 replayEpisode["gamedate"] = [text for text in gameDateElement.div.stripped_strings]
 
             # Air Date
-            replayEpisode["airdate"] = asideElement.find('div', {"data-source": "airdate"}).div.get_text(strip=True).replace('\n', ' ')
+            airdateElement = asideElement.find('div', {"data-source": "airdate"})
+            if airdateElement:
+                replayEpisode["airdate"] = airdateElement.div.get_text(strip=True).replace('\n', ' ')
 
             # Running Time
             runningTimeElement = asideElement.find('div', {"data-source": "runtime"})

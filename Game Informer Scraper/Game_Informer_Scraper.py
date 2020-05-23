@@ -14,6 +14,8 @@ from YouTube_API_Dev_Key import updateYouTubeDataWithAPIDevKey
 from Update_Episode_List import updateEpisodeList
 from SuperReplayScraper import scrapeSuperReplays
 
+from YouTubeVideo import YouTubeVideo
+
 # TODO:
 # - Create second array of objects for game data. Reference the game title string in the first array to link
 # the data between them.
@@ -31,6 +33,15 @@ def changeIndentOfJSON(fileSrc = 'gameInformerReplayFandomWikiData.json', toInde
 def main():
     # Elapsed Time - Start
     startTime = time.time()
+
+    #testYTVideo = YouTubeVideo("27GHhA2UFQE")
+    #print(testYTVideo.convertToJSON())
+    #testYTVideo2 = YouTubeVideo("UrB7Z4vYEd0")
+    #print(testYTVideo2.convertToJSON())
+    #testYTVideo3 = YouTubeVideo("jNE2xsZWt-Q")
+    #print(testYTVideo3.convertToJSON())
+    #testYTVideo4 = YouTubeVideo("bzB_ojeWobs")
+    #print(testYTVideo4.convertToJSON())
 
     #updateEpisodeList()
     scrapeSuperReplays()

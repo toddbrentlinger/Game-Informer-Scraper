@@ -4,42 +4,81 @@ import time
 from bs4 import BeautifulSoup
 from VideoGame import VideoGame
 from GI_Replay_Episode_Webpage_Scraper import scrapeReplayEpisodeWebpage
+from YouTubeVideo import YouTubeVideo
+from GameInformerArticle import GameInformerArticle
 
 class SuperReplayEpisode(object):
-    def __init__(self, game = VideoGame(), fandomURL = ""):
-        self.game = game
-        if fandomURL:
-            self.youtube = {
-                "id": "",
-                "views": 0,
-                "likes": 0
-                }
+    def __init__(self, game, fandomURL = None, youtubeID = None):
+        if game and isinstance(game, VideoGame):
+            self.game = game
 
-        if fandomURL:
+        tempYoutubeURL = ""
+        if fandomURL and isinstance(fandomURL, str):
             episodeObj = scrapeReplayEpisodeWebpage(fandomURL)
+            
             # Description
             if "description" in episodeObj:
                 self.description = SuperReplayEpisode.removeReturnDictValue("description", episodeObj)
+            
             # Airdate
             if "airdate" in episodeObj:
                 self.airdate = SuperReplayEpisode.removeReturnDictValue("airdate", episodeObj)
+            
             # Runtime
             if "runtime" in episodeObj:
                 self.runtime = SuperReplayEpisode.removeReturnDictValue("runtime", episodeObj)
+            
             # Host
             if "host" in episodeObj:
                 self.host = SuperReplayEpisode.removeReturnDictValue("host", episodeObj)
+            
             # Featuring
             if "featuring" in episodeObj:
                 self.featuring = SuperReplayEpisode.removeReturnDictValue("featuring", episodeObj)
+            
             # External Links
             if "external_links" in episodeObj:
                 self.externalLinks = SuperReplayEpisode.removeReturnDictValue("external_links", episodeObj)
-            # Image
-            # Check if episode image same as base super replay image
+                
+                # Game Informer Article
+                #for link in self.externalLinks:
+                #    if "gameinformer.com" in link['href']:
+                #        tempGameInformerArticleObj = GameInformerArticle(link['href'].split("gameinformer.com",1)[1])
+                #        if tempGameInformerArticleObj:
+                #            self.gameInformerArticle = tempGameInformerArticleObj
+                #        break
+
+                # YouTube Video
+                # Cycle through each link to find youtube url
+                for link in self.externalLinks:
+                    if "youtube.com/watch?v=" in link['href']:
+                        tempYoutubeURL = link['href']
+
+            # Thumbnail
+            # Check if episode thumbnail same as base super replay thumbnail
+
+            # Keys to delete/pop from episodeObj: 'system', 'gamedate', 'image'
+            episodeObj.pop('system', None)
+            episodeObj.pop('gamedate', None)
+            episodeObj.pop('image', None)
 
             # Add remaining headlines
             self.headlines = episodeObj
+
+        # YouTube Video
+        # If youtube video URL was found in external links
+        if tempYoutubeURL:
+            self.youtubeVideo = YouTubeVideo(tempYoutubeURL)
+        # Else If youtube ID is provided as argument
+        elif youtubeID:
+            self.youtubeVideo = YouTubeVideo(youtubeID)
+        else:
+            print(
+                "********************************",
+                f"No YouTube video for {fandomURL}"
+                "********************************",
+                sep="\n"
+            )
 
     def scrapeSuperReplayEpisodeFandomPage(fandomURL):
         url = "https://replay.fandom.com" + fandomURL
@@ -49,7 +88,14 @@ class SuperReplayEpisode(object):
             raise Exception("No response from:", url)
         content = BeautifulSoup(rresponse.content, "html.parser")
 
+    # ISSUE: If tempValue is reference, will NOT exist when returned after key has been deleted
     def removeReturnDictValue(key, dict):
+        # Parameters:
+        # key - String of key to remove/return
+        # dict - Dictionary to remove/return the key from
+        # Return: Value associated with the key in the dictionary
+        # Removes key from dictionary and returns the corresponding value
+         
         if key in dict:
             tempValue = dict[key]
             del dict[key]
@@ -67,6 +113,12 @@ class SuperReplayEpisode(object):
             tempObj["host"] = self.host
         if hasattr(self, "featuring"):
             tempObj["featuring"] = self.featuring
+        if hasattr(self, "externalLinks"):
+            tempObj["externalLinks"] = self.externalLinks
         if hasattr(self, "headlines"):
             tempObj["headlines"] = self.headlines
+        if hasattr(self, "gameInformerArticle") and self.gameInformerArticle:
+            tempObj["gameInformerArticle"] = self.gameInformerArticle.convertToJSON()
+        if hasattr(self, "youtubeVideo") and self.youtubeVideo:
+            tempObj["youtubeVideo"] = self.youtubeVideo.convertToJSON()
         return tempObj

@@ -5,7 +5,8 @@ def updateYouTubeDataWithAPIDevKey():
     print('updateYouTubeDataWithAPIKey() started')
 
     # Arguments that need to passed to the build function 
-    DEVELOPER_KEY = "AIzaSyDullnHxGG5X_MZXBHAXJFmKEdn7gohUR4" 
+    with open('../../youtube_developer_key.json', 'r') as outfile:
+        DEVELOPER_KEY = json.load(outfile)['dev_key'] 
     YOUTUBE_API_SERVICE_NAME = "youtube"
     YOUTUBE_API_VERSION = "v3"
    
@@ -58,7 +59,8 @@ def updateEpisodeYouTubeDataWithDevKey(episode, youtube_object):
 
 class YouTubeAPIDevKey(object):
     # Arguments that need to passed to the build function 
-    DEVELOPER_KEY = "AIzaSyDullnHxGG5X_MZXBHAXJFmKEdn7gohUR4" 
+    with open('../../youtube_developer_key.json', 'r') as outfile:
+        DEVELOPER_KEY = json.load(outfile)['dev_key']
     YOUTUBE_API_SERVICE_NAME = "youtube"
     YOUTUBE_API_VERSION = "v3"
 

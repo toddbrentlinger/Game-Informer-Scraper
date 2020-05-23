@@ -3,18 +3,30 @@ import time
 import re
 
 from bs4 import NavigableString, BeautifulSoup
+
 from VideoGame import VideoGame
 from SuperReplayEpisode import SuperReplayEpisode
+from YouTubeVideo import YouTubeVideo
+from GameInformerArticle import GameInformerArticle
+
 from GI_Replay_Episode_Webpage_Scraper import get_headline_data
 
 class SuperReplay(object):
+    """
+    Class representing Super Replay video series from Game Informer.
+
+    Attributes:
+        superReplayDataList (list[<BeautifulSoupTag Object>]): List of BeautifulSoup Tag objects for one Super Replay from web scrape of site with list of all Super Replays
+    """
     def __init__(self, superReplayDataList):
+        """
+        Constructor for SuperReplay class.
+
+        Parameters:
+            superReplayDataList (list[<BeautifulSoupTag Object>]): List of BeautifulSoup Tag objects from web scraper
+        """
+        # Super Replay Number
         self.number = int(superReplayDataList[0].get_text(strip=True).replace('\n', ''))
-        #self.airdate = {
-        #    "start": superReplayDataList[4].get_text(strip=True).replace('\n', ''),
-        #    "end": superReplayDataList[5].get_text(strip=True).replace('\n', '')
-        #    }
-        #self.hosts = SuperReplay.getTextListFromAnchorList(superReplayDataList[7])
         
         # List of VideoGame objects
         self.games = []
@@ -58,6 +70,15 @@ class SuperReplay(object):
                 # Add headline data to super replay object
                 self.content[headlineID] = headlineDataList
 
+        # Game Informer Article
+        if "external_links" in self.content:
+            for link in self.content["external_links"]:
+                if "gameinformer.com" in link["href"]:
+                    tempGameInformerArticleObj = GameInformerArticle(link["href"].split("gameinformer.com",1)[1])
+                    if tempGameInformerArticleObj:
+                        self.gameInformerArticle = tempGameInformerArticleObj
+                    break   
+
         # ---------------------------
         # ---------- Aside ----------
         # ---------------------------
@@ -97,21 +118,41 @@ class SuperReplay(object):
                 self.games[i].releaseDate = releaseDateList[i]
 
         # Air Date/Episode List
-        airdateAndEpisodeElement = asideElement.find('div', {"data-source": "airdate"})
-        if airdateAndEpisodeElement:
-            self.episodeList = []
-            for link in airdateAndEpisodeElement.div.find_all('a'):
-                superReplayEpisodeObj = SuperReplayEpisode(self.games[0], link["href"])
-                self.episodeList.append(superReplayEpisodeObj)
+        #airdateAndEpisodeElement = asideElement.find('div', {"data-source": "airdate"})
+        #if airdateAndEpisodeElement:
+        #    self.episodeList = []
+        #    for link in airdateAndEpisodeElement.div.find_all('a'):
+        #        superReplayEpisodeObj = SuperReplayEpisode(self.games[0], link["href"])
+        #        self.episodeList.append(superReplayEpisodeObj)
 
-        # Host(s)
-        # Check if matches exisiting hosts property
+        # ----------------------------------
+        # ---------- Episode List ----------
+        # ----------------------------------
 
-        # Featuring
-        #featuringElement = asideElement.find('div', {"data-source": "featuring"})
-        #if featuringElement:
-        #    self.featuring = [text for text in featuringElement.div.stripped_strings]
+        # Check External Links for YouTube playlist
+        videoIdListFromPlaylist = []
+        if "external_links" in self.content:
+            for link in self.content["external_links"]:
+                if "youtube.com/playlist?list=" in link["href"]:
+                    playlistID = link["href"].split("youtube.com/playlist?list=",1)[1]
+                    videoIdListFromPlaylist = YouTubeVideo.getVideoListFromPlaylist(playlistID)
+                    break
 
+        # Section at bottom of page with links to each episode
+        episodeElement = mainContent.find("td", re.compile("navbox-list"))
+        episodeURLList = [link["href"] for link in episodeElement.find_all("a")]
+        
+        # Create list of SuperReplayEpisode objects
+        self.episodeList = []
+        for i in range(len(episodeURLList)):
+            superReplayEpisodeObj = SuperReplayEpisode(
+                self.games[0], 
+                episodeURLList[i], 
+                videoIdListFromPlaylist[i] if videoIdListFromPlaylist and not len(videoIdListFromPlaylist) < len(episodeURLList) else None
+                )
+            self.episodeList.append(superReplayEpisodeObj)
+
+    # Deprecated/Remove
     def __str__(self):
         tempStr = (f"Title: {self.title}\n"
         f"Number: {self.number}\n"
@@ -126,30 +167,6 @@ class SuperReplay(object):
     def getEpisodeCount(self):
         return len(self.episodeList)
 
-    def getTextListFromAnchorList(bs4List):
-        # Parameter: List of BeautifulSoup anchor elements
-        # Return: List of text of each anchor element as strings
-        textList = []
-        for anchorElement in bs4List.find_all("a"):
-            textList.append(anchorElement.get_text(strip=True).replace('\n', ''))
-        return textList
-
-    def getTextListFromTextSeparatedByBr(bs4Obj):
-        # Find <br> element(s)
-        brElements = bs4Obj.find_all("br")
-        # If NO <br> elements, return text from the bs4Obj in a list
-        if not brElements:
-            return [bs4Obj.get_text(strip=True).replace('\n', '')]
-
-        textList = []
-        # First Sibling
-        textList.append(str(brElements[0].previous_sibling).replace('\n', ''))
-        # Next Sibling(s)
-        for brEl in brElements:
-            textList.append(str(brEl.next_sibling).replace('\n', ''))
-
-        return textList
-    
     def convertToJSON(self):
         tempObj = {}
         if hasattr(self, "title"):
@@ -165,3 +182,44 @@ class SuperReplay(object):
         if hasattr(self, "episodeList"):
             tempObj["episodeList"] = [episode.convertToJSON() for episode in self.episodeList]
         return tempObj
+
+    # ---------- Static Methods ----------
+
+    def getTextListFromAnchorList(bs4List):
+        """
+        Return list of text from each anchor element as strings
+
+        Parameters:
+            bs4List (list[<BeautifulSoupTag Objects>]): List of BeautifulSoup anchor elements
+
+        Return:
+            list[string]: List of text from each anchor element as strings
+        """
+        
+        textList = []
+        for anchorElement in bs4List.find_all("a"):
+            textList.append(anchorElement.get_text(strip=True).replace('\n', ''))
+        return textList
+
+    def getTextListFromTextSeparatedByBr(bs4Obj):
+        """
+        Return list of text from BeautifulSoup object
+
+        Paramters:
+            bs4Obj (<BeautifulSoup Object>): BeautifulSoup object
+        """
+        
+        # Find <br> element(s)
+        brElements = bs4Obj.find_all("br")
+        # If NO <br> elements, return text from the bs4Obj in a list
+        if not brElements:
+            return [bs4Obj.get_text(strip=True).replace('\n', '')]
+
+        textList = []
+        # First Sibling
+        textList.append(str(brElements[0].previous_sibling).replace('\n', ''))
+        # Next Sibling(s)
+        for brEl in brElements:
+            textList.append(str(brEl.next_sibling).replace('\n', ''))
+
+        return textList
