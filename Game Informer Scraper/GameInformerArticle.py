@@ -26,7 +26,8 @@ class GameInformerArticle(object):
             self.title = ""
             self.author = ""
             self.date = ""
-            self.content = []
+            #self.content = []
+            self.contentHTML = []
             print("NO response from:", completeURL)
         else:
             content = BeautifulSoup(response.content, "html.parser")
@@ -50,27 +51,31 @@ class GameInformerArticle(object):
                 self.date = dateElement.string.replace('\n', '')
         
             # Content
-            self.content = []
+            #self.content = []
+            self.contentHTML = ""
             contentElement = content.find(class_=re.compile("text-with-summary"))
             # Cycle direct children paragraph element until reaching paragraph element
             # with video player inside
             for para in contentElement.find_all('p', recursive=False):
-                # If para contains video class, break for loop
-                if para.find(class_=re.compile("video")):
-                    break
+                # Check if should skip: if class has 'video' or 'cboxElement'
+                if para.find(class_=re.compile("video|cboxElement")) or para.find('img'):
+                    continue
                 # Get all text from paragraph element
-                textContent = para.get_text().replace('\n', '')
+                #textContent = para.get_text().replace('\n', '')
                 # If text is NOT empty, append to article property array
-                if textContent:
-                    self.content.append(textContent)
+                #if textContent:
+                #    self.content.append(textContent)
+                # Get element HTML as string
+                self.contentHTML += str(para)
 
             print("Game Informer article:", self.title, "was scraped!")
 
     def convertToJSON(self):
         return {
-            "url": self.url,
-            "title": self.title,
-            "author": self.author,
-            "date": self.date,
-            "content": self.content
+            'url': self.url,
+            'title': self.title,
+            'author': self.author,
+            'date': self.date,
+            #'content': self.content,
+            'contentHTML': self.contentHTML
             }

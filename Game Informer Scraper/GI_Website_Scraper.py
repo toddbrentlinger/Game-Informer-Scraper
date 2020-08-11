@@ -40,8 +40,8 @@ def scrapeGameInformerArticle(url):
         # with video player inside
         for para in contentElement.find_all('p', recursive=False):
             # If para contains video class, break for loop
-            if para.find(class_=re.compile("video")):
-                break
+            if para.find(class_=re.compile("video")) or para.find('img'):
+                continue
             # Get all text from paragraph element
             textContent = para.get_text().replace('\n', '')
             # If text is NOT empty, append to article property array

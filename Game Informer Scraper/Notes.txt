@@ -1,8 +1,47 @@
 Scrape Game Informer Replay Fandom Wiki
 
+Super Replay Issues:
+YT video with no tags:
+- Killer 7 Episode 13
+
+Game Informer Articles Not Scraped:
+- Conker's Bad Fur Day (episodes have different GI pages)
+- Mortal Kombat Shaolin Monks (url should work but does NOT)
+- Blue Stinger
+- Overblood 2
+
+Super Replays with no videos:
+- Mortal Kombat Shaolin Monks
+- Resident Evil 2 (first episode has video)
+- Legend of Zelda: A Link To The Past
+
 Classic Replay Last Added - Mario Party
 
 58, 78, 161, 247, 317, 406
+
+6/4/20
+
+- ISSUE: GI Article scraper does not get get all content.
+EX. Super Replay: Galerians content stops at first video.
+
+6/2/20
+
+- Get 'host' and 'featuring' from base Super Replay page and only use
+if there is no 'host' or 'featuring' in episodes.
+ISSUE: Would need 'host' and 'featuring' to be undefined for most Super
+Replays since most super replay episodes has their own 'host' and 'featuring'.
+
+5/27/20
+
+- GI article not being saved to SuperReplay object. May need to add
+parameter to fandom page scraper to make scraping GI article optional.
+OR set to external links in SuperReplay class.
+
+5/23/20
+
+- Send GI article url from SuperReplay to SuperReplayEpisode. If there
+is any GI articles in the episode page, only scrape and add if different
+than base GI article url.
 
 5/22/20
 

@@ -31,6 +31,8 @@ class SuperReplayEpisode(object):
             # Host
             if "host" in episodeObj:
                 self.host = SuperReplayEpisode.removeReturnDictValue("host", episodeObj)
+                # Remove any values that include "unofficial"
+                self.host = [name for name in self.host if ("unofficial" not in name)]
             
             # Featuring
             if "featuring" in episodeObj:
@@ -54,6 +56,14 @@ class SuperReplayEpisode(object):
                     if "youtube.com/watch?v=" in link['href']:
                         tempYoutubeURL = link['href']
 
+            # Add Fandom URL to top of externalLinks
+            #if hasattr(self, 'externalLinks'):
+            #    self.externalLinks.insert(0, {
+            #        'href': "https://replay.fandom.com" + fandomURL, 
+            #        'title': ""
+            #    })
+            # If YouTube URL NOT in externalLinks, add below first Game Informer article
+
             # Thumbnail
             # Check if episode thumbnail same as base super replay thumbnail
 
@@ -74,9 +84,10 @@ class SuperReplayEpisode(object):
             self.youtubeVideo = YouTubeVideo(youtubeID)
         else:
             print(
-                "********************************",
-                f"No YouTube video for {fandomURL}"
-                "********************************",
+                15*"*",
+                f"No YouTube video for {fandomURL}",
+                f"given youtubeID: {youtubeID}",
+                15*"*",
                 sep="\n"
             )
 
@@ -86,7 +97,7 @@ class SuperReplayEpisode(object):
         time.sleep(.5)
         if not response:
             raise Exception("No response from:", url)
-        content = BeautifulSoup(rresponse.content, "html.parser")
+        return BeautifulSoup(response.content, "html.parser")
 
     # ISSUE: If tempValue is reference, will NOT exist when returned after key has been deleted
     def removeReturnDictValue(key, dict):

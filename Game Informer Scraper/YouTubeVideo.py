@@ -19,8 +19,7 @@ class YouTubeVideo(object):
                                         developerKey = DEVELOPER_KEY)
 
     def __init__(self, videoID):
-        # Check if videoID is valid
-        # TODO
+        # TODO - Check if videoID is valid
         # Check if string
         if not isinstance(videoID, str):
             raise TypeError("Argument 'videoID' is NOT a string.")
@@ -68,11 +67,9 @@ class YouTubeVideo(object):
             # Thumbnails
             self.thumbnails = videoData['snippet']['thumbnails']
             # Tags
-            self.tags = getattr(videoData['snippet'], 'tags', [])
-            #if hasattr(videoData['snippet'], 'tags'):
-            #    self.tags = videoData['snippet']['tags']
-            #else:
-            #    self.tags = []
+            if 'tags' not in videoData['snippet']:
+                print(10*"*", f"{self.title} HAS NO TAGS!!!", 10*"*", sep="\n")
+            self.tags = videoData['snippet']['tags'] if 'tags' in videoData['snippet'] else []
             # Runtime
             self.runtime = YouTubeVideo.convertYouTubeDuration(
                 videoData['contentDetails']['duration']

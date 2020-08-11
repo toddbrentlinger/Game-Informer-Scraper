@@ -77,7 +77,13 @@ class SuperReplay(object):
                     tempGameInformerArticleObj = GameInformerArticle(link["href"].split("gameinformer.com",1)[1])
                     if tempGameInformerArticleObj:
                         self.gameInformerArticle = tempGameInformerArticleObj
-                    break   
+                    break
+
+        # Add Fandom url as first external link
+        if "external_links" in self.content:
+            self.content['external_links'].insert(0, {'href': wikiPageURL, 'title': self.title})
+        else:
+            self.content['external_links'] = [{ 'href': wikiPageURL, 'title': self.title }]
 
         # ---------------------------
         # ---------- Aside ----------
@@ -177,6 +183,8 @@ class SuperReplay(object):
             tempObj["games"] = [game.convertToJSON() for game in self.games]
         if hasattr(self, "content"):
             tempObj["content"] = self.content
+        if hasattr(self, "gameInformerArticle"):
+            tempObj["gameInformerArticle"] = self.gameInformerArticle.convertToJSON()
         if hasattr(self, "image"):
             tempObj["image"] = self.image
         if hasattr(self, "episodeList"):

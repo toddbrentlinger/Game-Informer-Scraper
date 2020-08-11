@@ -34,6 +34,11 @@ def main():
     # Elapsed Time - Start
     startTime = time.time()
 
+    updateEpisodeList()
+    #scrapeSuperReplays()
+
+    #########################################
+
     #testYTVideo = YouTubeVideo("27GHhA2UFQE")
     #print(testYTVideo.convertToJSON())
     #testYTVideo2 = YouTubeVideo("UrB7Z4vYEd0")
@@ -43,18 +48,15 @@ def main():
     #testYTVideo4 = YouTubeVideo("bzB_ojeWobs")
     #print(testYTVideo4.convertToJSON())
 
-    #updateEpisodeList()
-    scrapeSuperReplays()
-
     #updateYouTubeDataWithAPIDevKey()
     #updateEpisodeList()
 
-    #####
+    #########################################
 
     #scrapeGameInformerFandomWiki(530, 530)
     #updateYouTubeDataWithAPI(toIndent = False)
 
-    #####
+    #########################################
 
     # Scrape webpage with list of replay episodes
     #scrapeGameInformerFandomWiki()
