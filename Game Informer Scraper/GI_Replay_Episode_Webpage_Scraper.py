@@ -27,8 +27,8 @@ def scrapeReplayEpisodeWebpage(episodeURL):
         # ----------------------------------
 
         # Content to scrape within tag with id = mw-content-text
-        mainContent = content.find(id='mw-content-text')
-
+        mainContent = content.find(id='mw-content-text').find(class_='mw-parser-output')
+        
         # Loop through each child tag of the main content
         for child in mainContent.children:
             # If tag is a headline (tag = 'aside' or 'h2' or 'h3')
@@ -42,7 +42,7 @@ def scrapeReplayEpisodeWebpage(episodeURL):
         # ---------- Aside ----------
         # ---------------------------
 
-        asideElement = mainContent.find('aside', recursive=False)
+        asideElement = mainContent.find('aside')
         if asideElement: # check if there is an aside element (value is not None)
 
             # Image

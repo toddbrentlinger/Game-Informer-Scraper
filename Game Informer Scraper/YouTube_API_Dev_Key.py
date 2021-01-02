@@ -47,7 +47,7 @@ def updateEpisodeYouTubeDataWithDevKey(episode, youtube_object):
                 # If youtube NOT key in episode dict, add as key
                 if ("youtube" not in episode):
                     episode["youtube"] = {} 
-                print(response['items'])
+                #print(response['items'])
                 # Views
                 episode["youtube"]["views"] = int(response["items"][0]["statistics"]["viewCount"])
                 # Likes

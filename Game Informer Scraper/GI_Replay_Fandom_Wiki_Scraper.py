@@ -196,7 +196,7 @@ def scrapeReplayEpisode(dataArray, episodeNumber, replaySeason, scrapeEachEpisod
     # Scrape separate webpage about specific replay episode
     if scrapeEachEpisodeSite:
         replayEpisodeDict["details"] = scrapeReplayEpisodeWebpage(replayEpisodeDict["fandomWikiURL"])
-
+        print(replayEpisodeDict["details"])
         # Scrape Game Informer article if link is provided from separate page scrape
         # Scrape YouTube url if link is provided
         if scrapeEachGIArticle or scrapeYouTubeVideo:

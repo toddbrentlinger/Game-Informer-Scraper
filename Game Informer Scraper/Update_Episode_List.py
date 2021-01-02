@@ -52,12 +52,12 @@ def updateEpisodeList():
         allSpecialEpisodesArray = []
 
         # for each season
-        for season in content.find_all("span", text=re.compile("Season")):
+        for season in content.find_all("span", class_="mw-headline", text=re.compile("Season")):
 
             # Assign int to replaySeason
             match = re.search(r'\d+', season.get_text())
             replaySeason = int(match.group(0)) if match else 0
-        
+            
             # For each episode of replay
             for replayEpisode in season.parent.find_next_sibling("table").find_all("tr"):
                 dataArray = replayEpisode.find_all("td", recursive=False, limit=10)
@@ -122,6 +122,17 @@ def updateEpisodeList():
 
     print(tempEpisodesWithErrorFromScrapeList)
     print('\n', 'Success. Update episode list completed!', '\n')
+
+if __name__ == "__main__":
+    # Elapsed Time - Start
+    startTime = time.time()
+
+    # Update Replay episode list JSON
+    updateEpisodeList()
+
+    # Elapsed Time - End
+    timeElapsed = time.time() - startTime
+    print('\nTime Elapsed: ', math.floor(timeElapsed / 60), 'min:', math.floor(timeElapsed % 60), 'sec')
 
 def oldYouTubeUpdate():
     # Disable OAuthlib's HTTPS verification when running locally.
