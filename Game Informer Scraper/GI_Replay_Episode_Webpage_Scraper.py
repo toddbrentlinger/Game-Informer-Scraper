@@ -31,8 +31,10 @@ def scrapeReplayEpisodeWebpage(episodeURL):
         
         # Loop through each child tag of the main content
         for child in mainContent.children:
-            # If tag is a headline (tag = 'aside' or 'h2' or 'h3')
-            if child.name == 'aside' or child.name == 'h2' or child.name == 'h3':
+            if child.name is None:
+                continue
+            # If tag is a headline (tag = 'h2' or 'h3' or has aside as child for description)
+            if child.find('aside') or child.name == 'h2' or child.name == 'h3':
                 # Get data from each headline
                 headlineID, headlineDataArr = get_headline_data(child)
                 # Add headline data to episode object
@@ -105,11 +107,11 @@ def scrapeReplayEpisodeWebpage(episodeURL):
 
 def get_headline_data(headline):
     # Raise error if not BeautifulSoup tag
-#    if type(headline) != BeatifulSoupTag:
-#        raise TypeError('Headline passed as argument is NOT of type BeatifulSoup tag')
+    # if type(headline) != BeatifulSoupTag:
+    #   raise TypeError('Headline passed as argument is NOT of type BeatifulSoup tag')
 
     # Assign title of headline
-    if headline.name == 'aside':
+    if headline.find('aside'):
         headlineID = 'description'
     elif headline.span.has_attr('id'):
     # TODO: Check if id matches known id's or convert to lower case before assigning to headlineID
