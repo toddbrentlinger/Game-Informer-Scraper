@@ -57,6 +57,9 @@
     <Compile Include="Update_Episode_List.py">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Utilities.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="VideoGame.py">
       <SubType>Code</SubType>
     </Compile>
@@ -77,6 +80,7 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Data\gameInformerReplayFandomWikiData_2-20-21.json" />
     <Content Include="Data\gameInformerReplayFandomWikiData_8-10-20.json" />
     <Content Include="Data\gameInformerReplayFandomWikiData_2-20-20.json" />
     <Content Include="Data\gameInformerReplayFandomWikiData_2-1-20.json" />

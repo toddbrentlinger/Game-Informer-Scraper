@@ -5,7 +5,7 @@ import json
 import time
 from GI_Replay_Episode_Webpage_Scraper import scrapeReplayEpisodeWebpage
 from GI_Website_Scraper import scrapeGameInformerArticle
-from YouTube_Scraper import scrapeYouTubeURL
+from YouTube_Scraper import scrapeYouTubeURL, getYouTubeData
 
 # Function: scrapeGameInformerFandomWiki()
 # scrapeGameInformerFandomWiki(startEpisode = 1, endEpisode = 0, scrapeEachEpisodeSite = false)
@@ -203,9 +203,11 @@ def scrapeReplayEpisode(dataArray, episodeNumber, replaySeason, scrapeEachEpisod
                 if ( ("gameinformer.com" in link["href"]) and ("article" not in replayEpisodeDict.keys()) ):
                     replayEpisodeDict["article"] = scrapeGameInformerArticle(link["href"].split("gameinformer.com", 1)[1])
                     break # break out of loop in case other links from gameinformer.com
-                elif (("youtube.com" in link["href"]) and ("youtube" not in replayEpisodeDict.keys()) ):
-                    replayEpisodeDict["youtube"] = scrapeYouTubeURL(link["href"])
-
+            for link in replayEpisodeDict["details"]["external_links"]:
+                if (("youtube.com" in link["href"]) and ("youtube" not in replayEpisodeDict.keys()) ):
+                    replayEpisodeDict["youtube"] = getYouTubeData(link["href"])
+                    break
     # Return replay episode dict to append to array of episodes
     print("Episode " + str(episodeNumber) + " has been scraped!")
+    print(json.dumps(replayEpisodeDict, indent=4))
     return (replayEpisodeDict, flaggedEpisodeArr, allSpecialEpisodesArray)

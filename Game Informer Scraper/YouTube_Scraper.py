@@ -4,6 +4,14 @@ import re
 import json
 import time
 
+from apiclient.discovery import build
+import os
+import google_auth_oauthlib.flow
+import googleapiclient.discovery
+import googleapiclient.errors
+
+scopes = ["https://www.googleapis.com/auth/youtube.readonly"]
+
 def isDateTag(tag):
     return tag.name == 'yt-formatted-string' and tag.parent['id'] == 'date'
 def isLikesTag(tag):
@@ -11,6 +19,38 @@ def isLikesTag(tag):
 def isDislikesTag(tag):
     return tag.name == 'yt-formatted-string' and tag.has_attr('aria-label') and re.search(' dislikes', tag['aria-label'])
 
+
+def getYouTubeData(url):
+    # Arguments that need to passed to the build function 
+    with open('../../youtube_developer_key.json', 'r') as outfile:
+        DEVELOPER_KEY = json.load(outfile)['dev_key']
+    YOUTUBE_API_SERVICE_NAME = "youtube"
+    YOUTUBE_API_VERSION = "v3"
+   
+    # creating Youtube Resource Object 
+    youtube_object = build(YOUTUBE_API_SERVICE_NAME, YOUTUBE_API_VERSION, 
+                                            developerKey = DEVELOPER_KEY)
+
+    request = youtube_object.videos().list(
+        part="snippet,statistics",
+        id=url.split("watch?v=",1)[1]
+    )
+    response = request.execute()
+
+    youtubeData = {}
+    if response['items']:
+        # Views
+        youtubeData["views"] = int(response["items"][0]["statistics"]["viewCount"])
+        # Likes
+        youtubeData["likes"] = int(response["items"][0]["statistics"]["likeCount"])
+        # Dislikes
+        youtubeData["dislikes"] = int(response["items"][0]["statistics"]["dislikeCount"])
+        # Thumbnails
+        youtubeData["thumbnails"] = response["items"][0]["snippet"]["thumbnails"]
+    else:
+        print("Could NOT get data from YouTube url: " + url)
+
+    return youtubeData
 
 # Function: scrapeYouTubeURL(url)
 def scrapeYouTubeURL(url):
