@@ -36,8 +36,8 @@ def main():
     startTime = time.time()
 
     # TODO: Replace 'static' with 'vignette' in image urls
-    updateEpisodeList()
-    #scrapeSuperReplays()
+    #updateEpisodeList()
+    scrapeSuperReplays()
 
     #updateThumbnailImages()
 

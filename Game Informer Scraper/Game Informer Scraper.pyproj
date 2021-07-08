@@ -96,6 +96,7 @@
     <Content Include="Data\gameInformerReplayFandomWikiData-11-30-19.json" />
     <Content Include="Data\gameInformerReplayFandomWikiData_12-24-19.json" />
     <Content Include="gameInformerReplayFandomWikiData - Copy.json" />
+    <Content Include="gameInformerSuperReplayFandomWikiData - 7-7-21.json" />
     <Content Include="gameInformerSuperReplayFandomWikiData - Copy.json" />
     <Content Include="gameInformerSuperReplayFandomWikiData.json" />
     <Content Include="tempGameInformerReplayFandomWikiData.json" />
