@@ -109,7 +109,7 @@ def get_headline_data(headline):
     # Raise error if not BeautifulSoup tag
     # if type(headline) != BeatifulSoupTag:
     #   raise TypeError('Headline passed as argument is NOT of type BeatifulSoup tag')
-
+    
     # Assign title of headline
     if headline.find('aside'):
         headlineID = 'description'
@@ -124,7 +124,7 @@ def get_headline_data(headline):
     # Variable to hold array of headline data
     headlineDataArr = []
 
-    # Scan each sibling tag until reach table or h2
+    # Scan each sibling tag until reach table, h2, h3
     for sibling in headline.next_siblings:
         # Break if 'video' headline
         if headlineID == 'video': 

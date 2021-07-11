@@ -25,7 +25,7 @@ def scrapeSuperReplays():
         superReplayObj = SuperReplay(superReplayDataList)
         superReplayList.append(superReplayObj)
         print("\nSuper Replay", superReplayObj.number, "-", superReplayObj.title, "has been scraped!\n")
-        #break
+
     # TEMP - Testing
     #pp = pprint.PrettyPrinter(indent=4)
     #pp.pprint(superReplayList[0].convertToJSON())

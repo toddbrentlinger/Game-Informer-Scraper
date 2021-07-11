@@ -59,17 +59,21 @@ class SuperReplay(object):
         self.content = { "description": "" }
 
         # Content to scrape within tag with id=mw-content-text
-        mainContent = content.find(id="mw-content-text")
+        mainContent = content.find(id="mw-content-text").find(class_='mw-parser-output')
+        #print(content.prettify())
 
         # Loop through each child tag of the main content
         for child in mainContent.children:
-            # If tag is a headline (tag = 'aside' or 'h2' or 'h3')
-            if child.name == 'aside' or child.name == 'h2' or child.name == 'h3':
+            if child.name is None:
+                continue
+            # If tag is a headline (tag = 'h2' or 'h3' or has aside as child for description)
+            if child.find('aside') or child.name == 'h2' or child.name == 'h3':
                 # Get data from each headline
                 headlineID, headlineDataList = get_headline_data(child)
                 # Add headline data to super replay object
                 self.content[headlineID] = headlineDataList
-
+                #print(f"{headlineID}:\n"f"{headlineDataList}\n")
+        
         # Game Informer Article
         if "external_links" in self.content:
             for link in self.content["external_links"]:
