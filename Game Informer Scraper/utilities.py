@@ -48,3 +48,23 @@ def updateThumbnailImages():
     # Write updated list to file
     with open('gameInformerReplayFandomWikiData.json', 'w') as outfile:
         json.dump(episodeList, outfile)
+
+def updateThumbnailsForSuperReplay():
+    # Open JSON array from local file and save to python list
+    episodeList = []
+    with open('gameInformerSuperReplayFandomWikiData.json', 'r') as outfile:
+        superReplayList = json.load(outfile)
+
+    # For each Super Replay
+    for superReplay in superReplayList:
+        # Remove 'image' property from Super Replay
+        
+        # Add thumbnail object from first Super Replay episode
+        superReplay['thumbnails'] = superReplay['episodeList'][0]['youtubeVideo']['thumbnails']
+
+        # For each episode in Super Replay
+            # Remove 'thumbnails' property (will use property in main Super Replay class instance)
+
+    # Write updated list to file
+    with open('gameInformerSuperReplayFandomWikiData.json', 'w') as outfile:
+        json.dump(superReplayList, outfile)

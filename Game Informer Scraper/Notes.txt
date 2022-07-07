@@ -1,5 +1,12 @@
 Scrape Game Informer Replay Fandom Wiki
 
+7/12/21
+
+ISSUE: Each Super Replay episode in a Super Replay has the same thumbnail objects in JSON.
+SOLUTION: Only add thumbnail to main Super Replay object and use when render each episode.
+
+6/4/20
+
 Super Replay Issues:
 YT video with no tags:
 - Killer 7 Episode 13

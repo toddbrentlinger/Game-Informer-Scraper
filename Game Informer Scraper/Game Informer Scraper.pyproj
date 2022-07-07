@@ -30,6 +30,12 @@
     <Compile Include="Game_Informer_Scraper.py">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="GI_People_Scraper.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="GI_Person.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="GI_Replay_Episode_Webpage_Scraper.py">
       <SubType>Code</SubType>
     </Compile>
@@ -97,6 +103,7 @@
     <Content Include="Data\gameInformerReplayFandomWikiData_12-24-19.json" />
     <Content Include="gameInformerReplayFandomWikiData - Copy.json" />
     <Content Include="gameInformerSuperReplayFandomWikiData - 7-7-21.json" />
+    <Content Include="gameInformerSuperReplayFandomWikiData - 7-12-21.json" />
     <Content Include="gameInformerSuperReplayFandomWikiData - Copy.json" />
     <Content Include="gameInformerSuperReplayFandomWikiData.json" />
     <Content Include="tempGameInformerReplayFandomWikiData.json" />

@@ -12,10 +12,11 @@ from YouTube_API import updateYouTubeDataWithAPI
 from YouTube_API_Dev_Key import updateYouTubeDataWithAPIDevKey
 from Update_Episode_List import updateEpisodeList
 from SuperReplayScraper import scrapeSuperReplays
+from GI_People_Scraper import scrapePeople
 
 from YouTubeVideo import YouTubeVideo
 
-from Utilities import updateThumbnailImages
+from Utilities import updateThumbnailImages, updateThumbnailsForSuperReplay
 
 # TODO:
 # - Create second array of objects for game data. Reference the game title string in the first array to link
@@ -37,9 +38,11 @@ def main():
 
     # TODO: Replace 'static' with 'vignette' in image urls
     #updateEpisodeList()
-    scrapeSuperReplays()
+    #scrapeSuperReplays()
+    scrapePeople()
 
     #updateThumbnailImages()
+    #updateThumbnailsForSuperReplay()
 
     #########################################
 
