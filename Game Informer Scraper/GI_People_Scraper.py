@@ -36,16 +36,23 @@ def scrapePeople():
     for url in people.values():
         person_obj = scrapePerson(url)
         person_list.append(person_obj)
-        # TEMP - Testing
-        pp = pprint.PrettyPrinter(indent=4)
-        pp.pprint(person_obj.convertToJSON())
-        return
+        print(f'Finished scraping for {person_obj.name}')
+        ## TEMP - Testing
+        #pp = pprint.PrettyPrinter(indent=4)
+        #pp.pprint(person_obj.convertToJSON())
+        #print(person_obj.description)
 
     ## TEMP - Testing
     #person_list_json = map(lambda person: person.convertToJSON(), person_list)
     #pp = pprint.PrettyPrinter(indent=4)
     #pp.pprint(person_list_json)
     #return
+
+    with open('gameInformerPeopleFandomWikiData.json', 'w') as outfile:
+        person_list_json = []
+        for person in person_list:
+            person_list_json.append(person.convertToJSON())
+        json.dump(person_list_json, outfile, indent=4)
 
 def scrapePerson(url):
     content = getBeautifulSoupContent(url)
